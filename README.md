@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/ruupert/eduroam-location-api.png)](https://travis-ci.org/ruupert/eduroam-location-api)
+
+[![Code Climate](https://codeclimate.com/github/ruupert/eduroam-location-api.png)](https://codeclimate.com/github/ruupert/eduroam-location-api)
+
 An attemnt on creating an api for eduroam access point placement onto the 'Where can I eduroam'-map. This application is intended to work as an intermediary between organization(s) and the party responsible for adding the locations.
 
 Basic features that should be are:
