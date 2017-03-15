@@ -43,7 +43,6 @@ group :development, :test do
   gem 'better_errors'
   gem 'rspec-rails', '~> 3.0'
   gem 'rails_layout'
-  gem 'railroady'
 end
 
 group :development do
