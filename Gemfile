@@ -27,8 +27,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.7'
- gem 'coveralls', require: false
- gem 'simplecov'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -43,6 +41,8 @@ group :development, :test do
   gem 'better_errors'
   gem 'rspec-rails', '~> 3.0'
   gem 'rails_layout'
+  gem 'coveralls', require: false
+  gem 'simplecov'
 end
 
 group :development do
