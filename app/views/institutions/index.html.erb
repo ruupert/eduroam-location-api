@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Institutions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>Institution type</th>
+      <th>Inst realm</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Contact name</th>
+      <th>Contact email</th>
+      <th>Contact phone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @institutions.each do |institution| %>
+      <tr>
+        <td><%= institution.country %></td>
+        <td><%= institution.institution_type %></td>
+        <td><%= institution.inst_realm %></td>
+        <td><%= institution.address %></td>
+        <td><%= institution.city %></td>
+        <td><%= institution.contact_name %></td>
+        <td><%= institution.contact_email %></td>
+        <td><%= institution.contact_phone %></td>
+        <td><%= link_to 'Show', institution %></td>
+        <td><%= link_to 'Edit', edit_institution_path(institution) %></td>
+        <td><%= link_to 'Destroy', institution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Institution', new_institution_path %>

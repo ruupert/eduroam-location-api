@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @institution.country %>
+</p>
+
+<p>
+  <strong>Institution type:</strong>
+  <%= @institution.institution_type %>
+</p>
+
+<p>
+  <strong>Inst realm:</strong>
+  <%= @institution.inst_realm %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @institution.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @institution.city %>
+</p>
+
+<p>
+  <strong>Contact name:</strong>
+  <%= @institution.contact_name %>
+</p>
+
+<p>
+  <strong>Contact email:</strong>
+  <%= @institution.contact_email %>
+</p>
+
+<p>
+  <strong>Contact phone:</strong>
+  <%= @institution.contact_phone %>
+</p>
+
+<%= link_to 'Edit', edit_institution_path(@institution) %> |
+<%= link_to 'Back', institutions_path %>
