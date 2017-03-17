@@ -10,14 +10,10 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :country %><br>
-    <%= f.text_field :country %>
-  </div>
+  <p>Country: <%= ENV['NRO_COUNTRY'] %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# set by NRO_COUNTRY environment variable for now</p>
   <div class="field">
     <%= f.label :institution_type %><br>
-    <%= f.number_field :institution_type %>
+    <%= f.select :institution_type, @institution_types %>
   </div>
   <div class="field">
     <%= f.label :inst_realm %><br>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170316220501) do
+ActiveRecord::Schema.define(version: 20170317000511) do
 
   create_table "institutions", force: :cascade do |t|
     t.string   "country"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20170316220501) do
     t.string   "contact_phone"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "apikey"
+    t.string   "pw_hash"
   end
 
 end

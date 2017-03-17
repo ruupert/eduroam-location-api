@@ -73,6 +73,11 @@ GEM
     execjs (2.7.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    google_maps_service (0.4.2)
+      hurley (~> 0.1)
+      multi_json (~> 1.11)
+      retriable (~> 2.0)
+    hurley (0.2)
     i18n (0.8.1)
     i18n_data (0.7.0)
     jbuilder (2.6.3)
@@ -141,6 +146,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (12.0.0)
     rdoc (4.3.0)
+    retriable (2.1.0)
     rspec-core (3.5.4)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -213,6 +219,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   countries
   coveralls
+  google_maps_service
   jbuilder (~> 2.0)
   jquery-rails
   pg

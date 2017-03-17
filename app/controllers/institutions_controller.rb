@@ -1,6 +1,7 @@
 class InstitutionsController < ApplicationController
   before_action :set_institution, only: [:show, :edit, :update, :destroy]
 
+
   # GET /institutions
   # GET /institutions.json
   def index
@@ -15,10 +16,15 @@ class InstitutionsController < ApplicationController
   # GET /institutions/new
   def new
     @institution = Institution.new
+    @countries = ISO3166::Country.codes
+    @institution_types = {'IdP&SP' => 3, 'SP' => 2 }
   end
 
   # GET /institutions/1/edit
   def edit
+    @institution = Institution.find(params[:id])
+    @countries = ISO3166::Country.codes
+    @institution_types = {'IdP&SP' => 3, 'SP' => 2}
   end
 
   # POST /institutions
