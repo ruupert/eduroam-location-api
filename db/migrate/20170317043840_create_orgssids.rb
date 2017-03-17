@@ -10,6 +10,7 @@ class CreateOrgssids < ActiveRecord::Migration
       t.integer :transp_proxy
       t.integer :ipv6
       t.integer :nat
+      t.integer :institution_id
 
       t.timestamps null: false
     end

@@ -15,10 +15,20 @@
     <%= f.label :institution_type %><br>
     <%= f.select :institution_type, @institution_types %>
   </div>
+    <div class="field">
+      Institution (English)
+      <%= f.fields_for @orgname do |name| %>
+          <%= name.label :name %><br>
+          <%= name.text_field :name %>
+      <% end %>
+
+    </div>
+
   <div class="field">
     <%= f.label :inst_realm %><br>
     <%= f.text_field :inst_realm %>
   </div>
+
   <div class="field">
     <%= f.label :address %><br>
     <%= f.text_field :address %>
@@ -40,11 +50,30 @@
     <%= f.text_field :contact_phone %>
   </div>
     <div class="field">
-
-      <%= f.fields_for @orgpolicy do |policy| %>
-          <%= policy.label :name %><br>
-          <%= policy.text_field :name %>
+      <%= f.fields_for :orginfos do |oinf| %>
+        Info (english) <%= oinf.label :url %><br>
+        <%= oinf.text_field :url %>
       <% end %>
+
+    </div>
+
+      <div class="field">
+      Policy (English)
+      <%= f.fields_for @orgpolicy do |policy| %>
+          <%= policy.label :url %><br>
+          <%= policy.text_field :url %>
+      <% end %>
+
+    </div>
+    <div class="field">
+      Info (English)
+      <%= f.fields_for @orginfo do |info| %>
+          <%= info.label :url %><br>
+          <%= info.text_field :url %>
+      <% end %>
+
+    </div>
+
 
     </div>
   <div class="actions">

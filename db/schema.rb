@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317041517) do
+ActiveRecord::Schema.define(version: 20170317043840) do
 
   create_table "institutions", force: :cascade do |t|
     t.string   "country"
@@ -62,8 +62,9 @@ ActiveRecord::Schema.define(version: 20170317041517) do
     t.integer  "transp_proxy"
     t.integer  "ipv6"
     t.integer  "nat"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "institution_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
 end

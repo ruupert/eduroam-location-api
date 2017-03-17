@@ -16,6 +16,11 @@ class InstitutionsController < ApplicationController
   # GET /institutions/new
   def new
     @institution = Institution.new
+    @institution.orgnames.build
+    @institution.orgpolicies.build
+    @institution.orginfos.build
+    @institution.orgssids.build
+
     @orginfo = Orginfo.new
     @orgpolicy = Orgpolicy.new
     @orgname = Orgname.new
@@ -34,6 +39,12 @@ class InstitutionsController < ApplicationController
   # POST /institutions.json
   def create
     @institution = Institution.new(institution_params)
+    @orginfo = Orginfo.new(institution_params)
+    @orginfo.save
+    @orgpolicy = Orgpolicy(institution_params)
+    @orgpolicy.save
+    @orgname = Orgname(institution_params)
+    @orgname.save
 
     respond_to do |format|
       if @institution.save
