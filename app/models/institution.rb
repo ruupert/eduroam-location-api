@@ -10,7 +10,7 @@ class Institution < ActiveRecord::Base
 
   private
   def new_apikey
-    self.apikey = self.generate_api_key
+    self.apikey = generate_api_key()
 
   end
 
