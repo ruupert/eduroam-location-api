@@ -3410,3 +3410,423 @@ Processing by InstitutionsController#index as HTML
   [1m[36mInstitution Load (0.2ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
   Rendered institutions/index.html.erb within layouts/application (2.1ms)
 Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2017-03-17 05:31:06 +0200
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mInstitution Load (0.2ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered institutions/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/institutions/1/edit" for 127.0.0.1 at 2017-03-17 05:31:11 +0200
+Processing by InstitutionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstitution Load (0.2ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered institutions/_form.html.erb (4.7ms)
+  Rendered institutions/edit.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 36ms (Views: 33.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2017-03-17 05:31:21 +0200
+Processing by InstitutionsController#index as HTML
+  [1m[36mInstitution Load (0.8ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  Rendered institutions/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 59ms (Views: 56.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/institutions/1/edit" for 127.0.0.1 at 2017-03-17 05:31:24 +0200
+Processing by InstitutionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mInstitution Load (0.1ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered institutions/_form.html.erb (3.0ms)
+  Rendered institutions/edit.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateOrgnames (20170317034008)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "orgnames" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lang" varchar, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20170317034008"]]
+  [1m[36m (57.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateOrginfos (20170317034029)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "orginfos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lang" varchar, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20170317034029"]]
+  [1m[36m (23.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateOrgpolicies (20170317034038)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "orgpolicies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lang" varchar, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20170317034038"]]
+  [1m[36m (23.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddInstitutionidToOrginfo (20170317034117)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "orginfos" ADD "institution_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20170317034117"]]
+  [1m[36m (23.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddInstitutionidToOrgname (20170317034126)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "orgnames" ADD "institution_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20170317034126"]]
+  [1m[36m (23.2ms)[0m  [1mcommit transaction[0m
+Migrating to AddInstitutionidToOrgpolicy (20170317034133)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "orgpolicies" ADD "institution_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20170317034133"]]
+  [1m[36m (23.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/institutions/new" for ::1 at 2017-03-17 06:00:02 +0200
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (4.2ms)
+  Rendered institutions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 100ms (Views: 23.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/exporter.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-03-17 06:00:03 +0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2017-03-17 06:00:03 +0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2017-03-17 06:00:03 +0200
+
+
+Started GET "/assets/institutions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-03-17 06:00:03 +0200
+
+
+Started GET "/assets/institutions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-03-17 06:00:03 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2017-03-17 06:00:03 +0200
+
+
+Started GET "/assets/exporter.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-03-17 06:00:03 +0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2017-03-17 06:00:03 +0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2017-03-17 06:00:03 +0200
+
+
+Started GET "/assets/scaffolds.self-ec1b26ecdc4a06027bffac61974c88a052e9469f95b1a1bd598854c24bd8ca07.css?body=1" for ::1 at 2017-03-17 06:00:03 +0200
+
+
+Started GET "/institutions/new" for ::1 at 2017-03-17 06:00:48 +0200
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (4.5ms)
+  Rendered institutions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/exporter.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-03-17 06:00:48 +0200
+
+
+Started GET "/assets/institutions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-03-17 06:00:48 +0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2017-03-17 06:00:48 +0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2017-03-17 06:00:48 +0200
+
+
+Started GET "/assets/institutions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-03-17 06:00:48 +0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2017-03-17 06:00:48 +0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2017-03-17 06:00:48 +0200
+
+
+Started GET "/assets/scaffolds.self-ec1b26ecdc4a06027bffac61974c88a052e9469f95b1a1bd598854c24bd8ca07.css?body=1" for ::1 at 2017-03-17 06:00:48 +0200
+
+
+Started GET "/assets/exporter.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-03-17 06:00:48 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2017-03-17 06:00:48 +0200
+
+
+Started GET "/institutions/new" for ::1 at 2017-03-17 06:00:57 +0200
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (4.5ms)
+  Rendered institutions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 23ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/exporter.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-03-17 06:00:57 +0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2017-03-17 06:00:57 +0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2017-03-17 06:00:57 +0200
+
+
+Started GET "/assets/exporter.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-03-17 06:00:57 +0200
+
+
+Started GET "/assets/institutions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-03-17 06:00:57 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2017-03-17 06:00:57 +0200
+
+
+Started GET "/assets/institutions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-03-17 06:00:57 +0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2017-03-17 06:00:57 +0200
+
+
+Started GET "/assets/scaffolds.self-ec1b26ecdc4a06027bffac61974c88a052e9469f95b1a1bd598854c24bd8ca07.css?body=1" for ::1 at 2017-03-17 06:00:57 +0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2017-03-17 06:00:57 +0200
+
+
+Started GET "/institutions/new" for ::1 at 2017-03-17 06:00:59 +0200
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (3.0ms)
+  Rendered institutions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/exporter.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-03-17 06:00:59 +0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2017-03-17 06:00:59 +0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2017-03-17 06:00:59 +0200
+
+
+Started GET "/assets/institutions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-03-17 06:00:59 +0200
+
+
+Started GET "/assets/institutions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-03-17 06:00:59 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2017-03-17 06:00:59 +0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2017-03-17 06:00:59 +0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2017-03-17 06:00:59 +0200
+
+
+Started GET "/assets/scaffolds.self-ec1b26ecdc4a06027bffac61974c88a052e9469f95b1a1bd598854c24bd8ca07.css?body=1" for ::1 at 2017-03-17 06:00:59 +0200
+
+
+Started GET "/assets/exporter.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-03-17 06:00:59 +0200
+
+
+Started GET "/institutions/new" for ::1 at 2017-03-17 06:01:01 +0200
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (3.0ms)
+  Rendered institutions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/exporter.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-03-17 06:01:01 +0200
+
+
+Started GET "/assets/institutions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-03-17 06:01:01 +0200
+
+
+Started GET "/assets/scaffolds.self-ec1b26ecdc4a06027bffac61974c88a052e9469f95b1a1bd598854c24bd8ca07.css?body=1" for ::1 at 2017-03-17 06:01:01 +0200
+
+
+Started GET "/assets/exporter.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-03-17 06:01:01 +0200
+
+
+Started GET "/assets/institutions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-03-17 06:01:01 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2017-03-17 06:01:01 +0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2017-03-17 06:01:01 +0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2017-03-17 06:01:01 +0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2017-03-17 06:01:01 +0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2017-03-17 06:01:01 +0200
+
+
+Started GET "/institutions/new" for ::1 at 2017-03-17 06:01:25 +0200
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (3.5ms)
+  Rendered institutions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/exporter.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-03-17 06:01:25 +0200
+
+
+Started GET "/assets/scaffolds.self-ec1b26ecdc4a06027bffac61974c88a052e9469f95b1a1bd598854c24bd8ca07.css?body=1" for ::1 at 2017-03-17 06:01:25 +0200
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2017-03-17 06:01:25 +0200
+
+
+Started GET "/assets/exporter.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-03-17 06:01:25 +0200
+
+
+Started GET "/assets/institutions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-03-17 06:01:25 +0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2017-03-17 06:01:25 +0200
+
+
+Started GET "/assets/institutions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-03-17 06:01:25 +0200
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2017-03-17 06:01:25 +0200
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2017-03-17 06:01:25 +0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2017-03-17 06:01:25 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddInstitutionidToOrgpolicy (20170317034133)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "aorgpolicies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lang" varchar, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "institution_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "orgpolicies"[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "orgpolicies"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "orgpolicies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lang" varchar, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "aorgpolicies"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "aorgpolicies"[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?  [["version", "20170317034133"]]
+  [1m[36m (31.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddInstitutionidToOrgname (20170317034126)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TEMPORARY TABLE "aorgnames" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lang" varchar, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "institution_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "orgnames"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "orgnames"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "orgnames" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lang" varchar, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "aorgnames"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "aorgnames"[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?  [["version", "20170317034126"]]
+  [1m[36m (45.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddInstitutionidToOrginfo (20170317034117)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TEMPORARY TABLE "aorginfos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lang" varchar, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "institution_id" integer) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "orginfos"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "orginfos"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "orginfos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lang" varchar, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "aorginfos"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "aorginfos"[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?  [["version", "20170317034117"]]
+  [1m[36m (52.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateOrgpolicies (20170317034038)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "orgpolicies"
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20170317034038"]]
+  [1m[35m (33.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateOrginfos (20170317034029)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "orginfos"
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20170317034029"]]
+  [1m[35m (45.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateOrgnames (20170317034008)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "orgnames"
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20170317034008"]]
+  [1m[35m (38.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddApikeyToInstitution (20170317000511)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TEMPORARY TABLE "ainstitutions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "country" varchar, "institution_type" integer, "inst_realm" varchar, "address" varchar, "city" varchar, "contact_name" varchar, "contact_email" varchar, "contact_phone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "apikey" varchar, "pw_hash" varchar) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "institutions"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ainstitutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at","apikey","pw_hash") VALUES (1, 'FI', 2, 'lauttasaari.fi', 'Lauttasaarentie 10', 'Helsinki', 'Raul Becker', 'raul.becker@iki.fi', '050505050', '2017-03-16 22:05:56.427956', '2017-03-17 00:09:57.768038', NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ainstitutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at","apikey","pw_hash") VALUES (2, 'AD', 3, 'laru.fi', 'Lauttasaarentie 10', 'Helsinki', 'Raul Becker', 'raul.becker@iki.fi', '050505050', '2017-03-17 02:20:38.238930', '2017-03-17 02:20:38.238930', 'Wco5yjFIAx2iivkSt3Nregtt', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "ainstitutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at","apikey","pw_hash") VALUES (3, 'AD', 3, 'laru.fidas', 'Lauttasaarentie 10', 'Helsinki', 'Raul Becker', 'raul.becker@iki.fi', '050505050', '2017-03-17 02:21:22.412611', '2017-03-17 02:21:22.412611', 'PAjCyuQTi059DI03MqrIbAtt', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "ainstitutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at","apikey","pw_hash") VALUES (4, 'fi', 3, 'lauttasaari.fi', 'Lauttasaarentie 10', 'Helsinki', 'Raul Becker', 'raul.becker@iki.fi', '050505050', '2017-03-17 03:21:41.126558', '2017-03-17 03:21:41.126558', 'gUb9oCTsqIXyIHiyAAc6cQtt', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "ainstitutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at","apikey","pw_hash") VALUES (5, 'fi', 3, 'laru.fi', 'dsaddas', 'aasd', 'dasdasa', 'dsas', 'asdsa', '2017-03-17 03:27:01.861834', '2017-03-17 03:27:01.861834', 'TrcIubgpQBrVswfToDhohwtt', NULL)
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "institutions"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "institutions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "country" varchar, "institution_type" integer, "inst_realm" varchar, "address" varchar, "city" varchar, "contact_name" varchar, "contact_email" varchar, "contact_phone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "apikey" varchar) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "ainstitutions"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "institutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at","apikey") VALUES (1, 'FI', 2, 'lauttasaari.fi', 'Lauttasaarentie 10', 'Helsinki', 'Raul Becker', 'raul.becker@iki.fi', '050505050', '2017-03-16 22:05:56.427956', '2017-03-17 00:09:57.768038', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "institutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at","apikey") VALUES (2, 'AD', 3, 'laru.fi', 'Lauttasaarentie 10', 'Helsinki', 'Raul Becker', 'raul.becker@iki.fi', '050505050', '2017-03-17 02:20:38.238930', '2017-03-17 02:20:38.238930', 'Wco5yjFIAx2iivkSt3Nregtt')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "institutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at","apikey") VALUES (3, 'AD', 3, 'laru.fidas', 'Lauttasaarentie 10', 'Helsinki', 'Raul Becker', 'raul.becker@iki.fi', '050505050', '2017-03-17 02:21:22.412611', '2017-03-17 02:21:22.412611', 'PAjCyuQTi059DI03MqrIbAtt')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "institutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at","apikey") VALUES (4, 'fi', 3, 'lauttasaari.fi', 'Lauttasaarentie 10', 'Helsinki', 'Raul Becker', 'raul.becker@iki.fi', '050505050', '2017-03-17 03:21:41.126558', '2017-03-17 03:21:41.126558', 'gUb9oCTsqIXyIHiyAAc6cQtt')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "institutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at","apikey") VALUES (5, 'fi', 3, 'laru.fi', 'dsaddas', 'aasd', 'dasdasa', 'dsas', 'asdsa', '2017-03-17 03:27:01.861834', '2017-03-17 03:27:01.861834', 'TrcIubgpQBrVswfToDhohwtt')
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "ainstitutions"[0m
+  [1m[35m (0.1ms)[0m  CREATE TEMPORARY TABLE "ainstitutions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "country" varchar, "institution_type" integer, "inst_realm" varchar, "address" varchar, "city" varchar, "contact_name" varchar, "contact_email" varchar, "contact_phone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "apikey" varchar) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "institutions"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ainstitutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at","apikey") VALUES (1, 'FI', 2, 'lauttasaari.fi', 'Lauttasaarentie 10', 'Helsinki', 'Raul Becker', 'raul.becker@iki.fi', '050505050', '2017-03-16 22:05:56.427956', '2017-03-17 00:09:57.768038', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ainstitutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at","apikey") VALUES (2, 'AD', 3, 'laru.fi', 'Lauttasaarentie 10', 'Helsinki', 'Raul Becker', 'raul.becker@iki.fi', '050505050', '2017-03-17 02:20:38.238930', '2017-03-17 02:20:38.238930', 'Wco5yjFIAx2iivkSt3Nregtt')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ainstitutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at","apikey") VALUES (3, 'AD', 3, 'laru.fidas', 'Lauttasaarentie 10', 'Helsinki', 'Raul Becker', 'raul.becker@iki.fi', '050505050', '2017-03-17 02:21:22.412611', '2017-03-17 02:21:22.412611', 'PAjCyuQTi059DI03MqrIbAtt')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "ainstitutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at","apikey") VALUES (4, 'fi', 3, 'lauttasaari.fi', 'Lauttasaarentie 10', 'Helsinki', 'Raul Becker', 'raul.becker@iki.fi', '050505050', '2017-03-17 03:21:41.126558', '2017-03-17 03:21:41.126558', 'gUb9oCTsqIXyIHiyAAc6cQtt')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "ainstitutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at","apikey") VALUES (5, 'fi', 3, 'laru.fi', 'dsaddas', 'aasd', 'dasdasa', 'dsas', 'asdsa', '2017-03-17 03:27:01.861834', '2017-03-17 03:27:01.861834', 'TrcIubgpQBrVswfToDhohwtt')
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "institutions"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "institutions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "country" varchar, "institution_type" integer, "inst_realm" varchar, "address" varchar, "city" varchar, "contact_name" varchar, "contact_email" varchar, "contact_phone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "ainstitutions"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "institutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at") VALUES (1, 'FI', 2, 'lauttasaari.fi', 'Lauttasaarentie 10', 'Helsinki', 'Raul Becker', 'raul.becker@iki.fi', '050505050', '2017-03-16 22:05:56.427956', '2017-03-17 00:09:57.768038')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "institutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at") VALUES (2, 'AD', 3, 'laru.fi', 'Lauttasaarentie 10', 'Helsinki', 'Raul Becker', 'raul.becker@iki.fi', '050505050', '2017-03-17 02:20:38.238930', '2017-03-17 02:20:38.238930')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "institutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at") VALUES (3, 'AD', 3, 'laru.fidas', 'Lauttasaarentie 10', 'Helsinki', 'Raul Becker', 'raul.becker@iki.fi', '050505050', '2017-03-17 02:21:22.412611', '2017-03-17 02:21:22.412611')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "institutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at") VALUES (4, 'fi', 3, 'lauttasaari.fi', 'Lauttasaarentie 10', 'Helsinki', 'Raul Becker', 'raul.becker@iki.fi', '050505050', '2017-03-17 03:21:41.126558', '2017-03-17 03:21:41.126558')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "institutions" ("id","country","institution_type","inst_realm","address","city","contact_name","contact_email","contact_phone","created_at","updated_at") VALUES (5, 'fi', 3, 'laru.fi', 'dsaddas', 'aasd', 'dasdasa', 'dsas', 'asdsa', '2017-03-17 03:27:01.861834', '2017-03-17 03:27:01.861834')
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "ainstitutions"[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?  [["version", "20170317000511"]]
+  [1m[36m (45.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddApikeyToInstitution (20170317000511)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "institutions" ADD "apikey" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "institutions" ADD "pw_hash" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170317000511"]]
+  [1m[35m (45.9ms)[0m  commit transaction
+Migrating to CreateOrgnames (20170317041027)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "orgnames" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lang" varchar, "name" varchar, "institution_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170317041027"]]
+  [1m[35m (21.7ms)[0m  commit transaction
+Migrating to CreateOrginfos (20170317041034)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "orginfos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lang" varchar, "url" varchar, "institution_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170317041034"]]
+  [1m[35m (18.2ms)[0m  commit transaction
+Migrating to CreateOrgpolicies (20170317041046)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "orgpolicies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lang" varchar, "url" varchar, "institution_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170317041046"]]
+  [1m[35m (28.7ms)[0m  commit transaction
+Migrating to CreateOrgssids (20170317041517)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "orgssids" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "number" integer, "wpa_tkip" integer, "wpa_aes" integer, "wpa2_tkip" integer, "wpa2_aes" integer, "port_restrict" integer, "transp_proxy" integer, "ipv6" integer, "nat" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170317041517"]]
+  [1m[35m (22.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m

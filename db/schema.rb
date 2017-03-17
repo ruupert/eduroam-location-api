@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317000511) do
+ActiveRecord::Schema.define(version: 20170317041517) do
 
   create_table "institutions", force: :cascade do |t|
     t.string   "country"
@@ -26,6 +26,44 @@ ActiveRecord::Schema.define(version: 20170317000511) do
     t.datetime "updated_at",       null: false
     t.string   "apikey"
     t.string   "pw_hash"
+  end
+
+  create_table "orginfos", force: :cascade do |t|
+    t.string   "lang"
+    t.string   "url"
+    t.integer  "institution_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "orgnames", force: :cascade do |t|
+    t.string   "lang"
+    t.string   "name"
+    t.integer  "institution_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "orgpolicies", force: :cascade do |t|
+    t.string   "lang"
+    t.string   "url"
+    t.integer  "institution_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "orgssids", force: :cascade do |t|
+    t.integer  "number"
+    t.integer  "wpa_tkip"
+    t.integer  "wpa_aes"
+    t.integer  "wpa2_tkip"
+    t.integer  "wpa2_aes"
+    t.integer  "port_restrict"
+    t.integer  "transp_proxy"
+    t.integer  "ipv6"
+    t.integer  "nat"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end

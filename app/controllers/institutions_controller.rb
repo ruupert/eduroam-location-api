@@ -16,6 +16,9 @@ class InstitutionsController < ApplicationController
   # GET /institutions/new
   def new
     @institution = Institution.new
+    @orginfo = Orginfo.new
+    @orgpolicy = Orgpolicy.new
+    @orgname = Orgname.new
     @countries = ISO3166::Country.codes
     @institution_types = {'IdP&SP' => 3, 'SP' => 2 }
   end

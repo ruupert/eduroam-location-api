@@ -1,4 +1,11 @@
 class Institution < ActiveRecord::Base
+  has_many :orgnames
+  has_many :orginfos
+  has_many :orgpolicies
+  has_many :orgssids
+  accepts_nested_attributes_for :orgnames, :orginfos, :orgpolicies, :orgssids
+
+
   before_create :new_apikey, :default_country
 
   def generate_api_key
