@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'exporter/institutions'
 
   get ':apikey/get/locations' => 'exporter#locations'
+  get 'import' => 'institutions#new_import'
+  post '/institution/import' => 'institutions#import'
 
   #get 'institutions/:id/edit' => 'institution#edit'
   resources :institutions
