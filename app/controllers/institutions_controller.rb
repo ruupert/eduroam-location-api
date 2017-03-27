@@ -20,10 +20,6 @@ class InstitutionsController < ApplicationController
     @institution.orgpolicies.build
     @institution.orginfos.build
     @institution.orgssids.build
-
-    @orginfo = Orginfo.new
-    @orgpolicy = Orgpolicy.new
-    @orgname = Orgname.new
     @countries = ISO3166::Country.codes
     @institution_types = {'IdP&SP' => 3, 'SP' => 2 }
   end
@@ -31,20 +27,34 @@ class InstitutionsController < ApplicationController
   # GET /institutions/1/edit
   def edit
     @institution = Institution.find(params[:id])
+    @institution.orgnames.build
+    @institution.orgpolicies.build
+    @institution.orginfos.build
+    @institution.orgssids.build
+
     @countries = ISO3166::Country.codes
     @institution_types = {'IdP&SP' => 3, 'SP' => 2}
   end
 
   # POST /institutions
   # POST /institutions.json
+
+  #  Parameters: {"utf8"=>"✓",
+  # "authenticity_token"=>"QrmsUkCUesfW7OWpr3al5nmKBwywyzGIfqKW
+  # prkqoopGKTpUkBwEihJw4PODVtPOrXcSjQAfYdBLTBhmH0Bi5g==",
+  # "institution"=>{"institution_type"=>"3",
+  # "orgname"=>{"name"=>"HelloUniversity"},
+  # "inst_realm"=>"lauttasaari.fi",
+  # "address"=>"Lauttasaarentie 10",
+  # "city"=>"Helsinki", "contact_name"=>"Raul Becker",
+  # "contact_email"=>"raul.becker@iki.fi",
+  # "contact_phone"=>"050505050",
+  # "orginfo"=>{"url"=>"lauttasaari.fi/info_english"},
+  # "orgpolicy"=>{"url"=>"http://lauttasaari.fi/policy_english"}},
+  # "commit"=>"Create Institution"}
+
   def create
     @institution = Institution.new(institution_params)
-    @orginfo = Orginfo.new(institution_params)
-    @orginfo.save
-    @orgpolicy = Orgpolicy(institution_params)
-    @orgpolicy.save
-    @orgname = Orgname(institution_params)
-    @orgname.save
 
     respond_to do |format|
       if @institution.save
@@ -89,6 +99,16 @@ class InstitutionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def institution_params
-      params.require(:institution).permit(:country, :institution_type, :inst_realm, :address, :city, :contact_name, :contact_email, :contact_phone)
+      params.require(:institution).permit(:country,
+                                          :institution_type,
+                                          :inst_realm,
+                                          :address,
+                                          :city,
+                                          :contact_name,
+                                          :contact_email,
+                                          :contact_phone,
+                                          orgnames_attributes: [:lang, :name],
+                                          orgpolicies_attributes: [:lang, :url],
+                                          orginfos_attributes: [:lang, :url])
     end
 end

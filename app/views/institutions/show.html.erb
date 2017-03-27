@@ -1,7 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Country:</strong>
+  <strong>Institution</strong>
+  <%= @institution.primary_name %>
+</p>
+
+<p>
+  <strong>Country</strong>
   <%= @institution.country %>
 </p>
 
@@ -39,6 +44,17 @@
   <strong>Contact phone:</strong>
   <%= @institution.contact_phone %>
 </p>
+
+<p>
+  <strong>Primary info url:</strong>
+  <%= @institution.primary_info_url %>
+</p>
+
+<p>
+  <strong>Primary policy url:</strong>
+  <%= @institution.primary_policy_url %>
+</p>
+
 
 <p>
   <strong>APIKEY:</strong>

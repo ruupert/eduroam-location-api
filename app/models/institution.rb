@@ -3,9 +3,10 @@ class Institution < ActiveRecord::Base
   has_many :orginfos
   has_many :orgpolicies
   has_many :orgssids
-  accepts_nested_attributes_for :orgnames, :orginfos, :orgpolicies, :orgssids
-
-
+  accepts_nested_attributes_for :orgnames
+  accepts_nested_attributes_for :orginfos
+  accepts_nested_attributes_for :orgpolicies
+  accepts_nested_attributes_for :orgssids
   before_create :new_apikey, :default_country
 
   def generate_api_key
@@ -14,6 +15,18 @@ class Institution < ActiveRecord::Base
       break token unless Institution.exists?(apikey: token)
     end
   end
+
+  def primary_name
+    self.orgnames.first.name
+  end
+  def primary_info_url
+    self.orginfos.first.url
+  end
+  def primary_policy_url
+    self.orgpolicies.first.url
+  end
+
+
 
   private
   def new_apikey
