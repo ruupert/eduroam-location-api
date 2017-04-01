@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317043840) do
+ActiveRecord::Schema.define(version: 20170331122823) do
+
+  create_table "entries", force: :cascade do |t|
+    t.integer  "institution_id"
+    t.integer  "location_id"
+    t.integer  "ap_count"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "orgssid_id"
+  end
 
   create_table "institutions", force: :cascade do |t|
     t.string   "country"
@@ -25,7 +34,25 @@ ActiveRecord::Schema.define(version: 20170317043840) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "apikey"
-    t.string   "pw_hash"
+  end
+
+  create_table "loc_names", force: :cascade do |t|
+    t.string   "lang"
+    t.string   "name"
+    t.integer  "entry_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "address"
+    t.integer  "street_nr"
+    t.string   "city"
+    t.string   "country"
+    t.string   "longitude"
+    t.string   "latitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "orginfos", force: :cascade do |t|

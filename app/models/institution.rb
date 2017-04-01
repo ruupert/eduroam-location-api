@@ -3,11 +3,12 @@ class Institution < ActiveRecord::Base
   has_many :orginfos
   has_many :orgpolicies
   has_many :orgssids
+  has_many :entries
   accepts_nested_attributes_for :orgnames
   accepts_nested_attributes_for :orginfos
   accepts_nested_attributes_for :orgpolicies
   accepts_nested_attributes_for :orgssids
-  validates :inst_realm, presence: true, length: {minimum: 3}, uniqueness: {scope: [:realm], message: "Given realm already exists!"}
+  validates :inst_realm, presence: true, length: {minimum: 3}, uniqueness: {scope: [:inst_realm], message: "Given realm already exists!"}
   before_create :new_apikey, :default_country
 
   def generate_api_key
@@ -18,7 +19,8 @@ class Institution < ActiveRecord::Base
   end
 
   def primary_name
-    self.orgnames.first.name
+    orgnames.first.name
+#    self.orgnames.first.name
   end
 
   def primary_info_url

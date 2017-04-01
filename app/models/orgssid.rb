@@ -1,5 +1,6 @@
 class Orgssid < ActiveRecord::Base
   belongs_to :institution
+  has_many :entries
   before_create :default_values
 
   private
