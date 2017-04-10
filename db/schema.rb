@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170331122823) do
+ActiveRecord::Schema.define(version: 20170410214459) do
 
   create_table "entries", force: :cascade do |t|
     t.integer  "institution_id"
@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 20170331122823) do
   create_table "loc_names", force: :cascade do |t|
     t.string   "lang"
     t.string   "name"
-    t.integer  "entry_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "location_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -51,8 +51,9 @@ ActiveRecord::Schema.define(version: 20170331122823) do
     t.string   "country"
     t.string   "longitude"
     t.string   "latitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "institution_id"
   end
 
   create_table "orginfos", force: :cascade do |t|
@@ -81,17 +82,21 @@ ActiveRecord::Schema.define(version: 20170331122823) do
 
   create_table "orgssids", force: :cascade do |t|
     t.integer  "number"
-    t.integer  "wpa_tkip"
-    t.integer  "wpa_aes"
-    t.integer  "wpa2_tkip"
-    t.integer  "wpa2_aes"
-    t.integer  "port_restrict"
-    t.integer  "transp_proxy"
-    t.integer  "ipv6"
-    t.integer  "nat"
     t.integer  "institution_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "name"
+    t.boolean  "port_restrict"
+    t.boolean  "transp_proxy"
+    t.boolean  "ipv6"
+    t.boolean  "nat"
+    t.boolean  "wpa_tkip"
+    t.boolean  "wpa_aes"
+    t.boolean  "wpa2_tkip"
+    t.boolean  "wpa2_aes"
+    t.boolean  "wired"
   end
+
+  add_index "orgssids", ["id", "institution_id"], name: "index_orgssids_on_id_and_institution_id"
 
 end

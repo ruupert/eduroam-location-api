@@ -1,11 +1,16 @@
 module InstitutionsHelper
 
   def import_data
-
+    q = Queue.new
     o = OpenStruct.new(Hash.from_xml(File.read("lib/assets/haagahelia2.xml")))
 
+    doc = Nokogiri::XML(File.open("lib/assets/haagahelia2.xml")) do |config|
+      config.options = Nokogiri::XML::ParseOptions::STRICT | Nokogiri::XML::ParseOptions::NOBLANKS
+    end
+    doc.search("[lang]").each do |s|
+      q.push(s['lang'])
+    end
     o['institutions']['institution'].each do |x|
-      q = Queue.new
       n = Institution.new
       n.country = x['country']
       n.inst_realm = x['inst_realm']
@@ -15,53 +20,107 @@ module InstitutionsHelper
       n.institution_type = x['type'].to_i
       n.address = x['address']['street']
       n.city = x['address']['city']
-      q.push("en")
-      q.push("fi")
       x['org_name'].each do |org|
         n.orgnames.build
         n.orgnames.last.name = org || " "
         n.orgnames.last.lang = q.pop
       end
-      q.push("en")
-      q.push("fi")
 
       x['policy_URL'].each do |org|
-            n.orgpolicies.build
-            n.orgpolicies.last.url = org
-            n.orgpolicies.last.lang = q.pop
+        n.orgpolicies.build
+        n.orgpolicies.last.url = org
+        n.orgpolicies.last.lang = q.pop
       end
-      q.push("en")
-      q.push("fi")
 
       x['info_URL'].each do |org|
         n.orginfos.build
         n.orginfos.last.url = org
         n.orginfos.last.lang = q.pop
       end
-      x['location'].each do |item|
-        nloc = Location.new
-        nloc.address = item['address']['street']
-        nloc.city = item['address']['city']
-        nloc.longitude = item['longitude']
-        nloc.latitude = item['latitude']
-        q.push("en")
-        q.push("fi")
-        nloc['loc_name'].each do |lname|
-          nloc.loc_names.build
-          nloc.loc_names.name = lname
-          nloc.loc_names.lang = q.pop
-        end
-        nloc.save!
-        n.entries.build
-        n.entries.location_id = nloc.id
-        n.entries.institution_id = n.id
-        n.entries.ap_count = item['AP_no']
-      end
+      x['location'].first do |ssid|  # Purkkaa
+        n.orgssids.build
+        n.orgssids.first.name = ssid['SSID']
 
-        #n.save!
+
+
+      end
+      x['location'].each do |item|
+        n.locations.build
+        n.locations.last.address = item['address']['street']
+        n.locations.last.city = item['address']['city']
+        n.locations.last.country = item['address']['country']
+        n.locations.last.longitude = item['longitude']
+        n.locations.last.latitude = item['latitude']
+        item['loc_name'].each do |lname|
+          n.locations.last.loc_names.build
+          n.locations.last.loc_names.last.name = lname
+          n.locations.last.loc_names.last.lang = q.pop
+        end
+
+        n.orgssids.build
+        n.orgssids.last.name = item['SSID']
+        n.orgssids.last.port_restrict = item['port_restrict']
+        n.orgssids.last.ipv6 = item['IPv6']
+        n.orgssids.last.nat = item['NAT']
+        n.orgssids.last.transp_proxy = item['transp_proxy']
+        n.orgssids.last.wired = item['wired']
+        n.orgssids.last.port_restrict = false
+        n.orgssids.last.transp_proxy = false
+        n.orgssids.last.ipv6 = false
+        n.orgssids.last.nat = false
+        n.orgssids.last.wpa2_aes = false
+        n.orgssids.last.wpa2_tkip = false
+        n.orgssids.last.wpa_tkip = false
+        n.orgssids.last.wpa_aes = false
+        enc_str = item['enc_level'].to_s
+        puts enc_str
+        if enc_str.include? "WPA2/AES"
+          n.orgssids.last.wpa2_aes = true
+        end
+        if enc_str.include? "WPA2/TKIP"
+          n.orgssids.last.wpa2_tkip = true
+        end
+        if enc_str.include? "WPA/TKIP"
+          n.orgssids.last.wpa_tkip = true
+        end
+        if enc_str.include? "WPA/AES"
+          n.orgssids.last.wpa_aes = true
+        end
+
+        n.save
+        n.entries.build
+        n.entries.last.location_id = n.locations.last.id
+        n.entries.last.orgssid_id = n.orgssids.last.id
+        n.entries.last.institution_id = n.id
+
+        n.entries.last.ap_count = item['AP_no']
+        n.save
+
+      end
+      pp n.orgssids
+      puts n.inspect
+      distinctSSIDs = Orgssid.group(:institution_id, :name,:port_restrict,:transp_proxy,:ipv6,:nat,:wpa_tkip,:wpa_aes,:wpa2_tkip,:wpa2_aes,:wired).select('id,institution_id')
 
     end
+    Entry.all.each do |e|
+      b = Orgssid.find(e['id'])
+      distinctSSIDs = Orgssid.where(institution_id: b['institution_id']).group(:institution_id,
+                                                                               :name,
+                                                                               :port_restrict,
+                                                                               :transp_proxy,
+                                                                               :ipv6,
+                                                                               :nat,
+                                                                               :wpa_tkip,
+                                                                               :wpa_aes,
+                                                                               :wpa2_tkip,
+                                                                               :wpa2_aes,
+                                                                               :wired).select('id,institution_id')
+      u = Entry.find(e['id'])
+      u.orgssid_id = distinctSSIDs.last.id
+      u.save
 
+    end
+    Orgssid.where(["id NOT IN (?)", Entry.pluck("orgssid_id")]).destroy_all
 
 
   end

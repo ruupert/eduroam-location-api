@@ -1,15 +1,20 @@
 class Institution < ActiveRecord::Base
   has_many :orgnames
-  has_many :orginfos
-  has_many :orgpolicies
-  has_many :orgssids
-  has_many :entries
+  has_many :orginfos, autosave: true
+  has_many :orgpolicies, autosave: true
+  has_many :orgssids, autosave: true
+  has_many :entries, autosave: true
+  has_many :locations, autosave: true
   accepts_nested_attributes_for :orgnames
   accepts_nested_attributes_for :orginfos
   accepts_nested_attributes_for :orgpolicies
   accepts_nested_attributes_for :orgssids
+  accepts_nested_attributes_for :locations
+  accepts_nested_attributes_for :entries
+
   validates :inst_realm, presence: true, length: {minimum: 3}, uniqueness: {scope: [:inst_realm], message: "Given realm already exists!"}
   before_create :new_apikey, :default_country
+
 
   def generate_api_key
     loop do
