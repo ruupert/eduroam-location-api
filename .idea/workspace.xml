@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="160597e9-f167-4b07-90e4-ca7f1acf1c1a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/development.sqlite3" afterPath="$PROJECT_DIR$/db/development.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/test.sqlite3" afterPath="$PROJECT_DIR$/db/test.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/eduroam-location-api.iml" afterPath="$PROJECT_DIR$/.idea/eduroam-location-api.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/institutions_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/institutions_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/entry.rb" afterPath="$PROJECT_DIR$/app/models/entry.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/institution.rb" afterPath="$PROJECT_DIR$/app/models/institution.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/loc_name.rb" afterPath="$PROJECT_DIR$/app/models/loc_name.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/location.rb" afterPath="$PROJECT_DIR$/app/models/location.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/orgssid.rb" afterPath="$PROJECT_DIR$/app/models/orgssid.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/controllers_brief.svg" afterPath="$PROJECT_DIR$/doc/controllers_brief.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/controllers_complete.svg" afterPath="$PROJECT_DIR$/doc/controllers_complete.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/models_brief.svg" afterPath="$PROJECT_DIR$/doc/models_brief.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/models_complete.svg" afterPath="$PROJECT_DIR$/doc/models_complete.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/haagahelia2.xml" afterPath="$PROJECT_DIR$/lib/assets/haagahelia2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -130,8 +114,8 @@
       <file leaf-file-name="institutions_helper.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/helpers/institutions_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="115" column="89" lean-forward="true" selection-start-line="115" selection-start-column="89" selection-end-line="115" selection-end-column="89" />
+            <state relative-caret-position="568">
+              <caret line="122" column="75" lean-forward="true" selection-start-line="122" selection-start-column="75" selection-end-line="122" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -695,12 +679,12 @@
       <workItem from="1490941344321" duration="23637000" />
       <workItem from="1491404336673" duration="3375000" />
       <workItem from="1491833789620" duration="87000" />
-      <workItem from="1491839840883" duration="21791000" />
+      <workItem from="1491839840883" duration="22515000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116083000" />
+    <option name="totallyTimeSpent" value="116807000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="2" width="1920" height="1078" extended-state="0" />
@@ -1044,8 +1028,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/institutions_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="115" column="89" lean-forward="true" selection-start-line="115" selection-start-column="89" selection-end-line="115" selection-end-column="89" />
+        <state relative-caret-position="568">
+          <caret line="122" column="75" lean-forward="true" selection-start-line="122" selection-start-column="75" selection-end-line="122" selection-end-column="75" />
           <folding />
         </state>
       </provider>

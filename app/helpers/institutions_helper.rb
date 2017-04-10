@@ -114,7 +114,7 @@ module InstitutionsHelper
                                                                                :wpa_aes,
                                                                                :wpa2_tkip,
                                                                                :wpa2_aes,
-                                                                               :wired).select('id,institution_id')
+                                                                               :wired).select('orgssids.id,orgssids.institution_id')
       u = Entry.find(e['id'])
       u.orgssid_id = distinctSSIDs.last.id
       u.save
