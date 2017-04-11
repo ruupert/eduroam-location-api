@@ -9,19 +9,9 @@ Rails.application.routes.draw do
   resources :institutions
 
 
-  # namespace :api do
-  #    namespace :v1 do
 
-  #      resources :ssids, only: [:set, :list, :show]
-  # resources :realm, only: [:set]
-
-  #  end
-  #end
   get '/api/v1/:apikey/list/ssids' => 'api/v1/ssids#list'
   get '/api/v1/:apikey/list/locations' => 'api/v1/locations#list'
-  #get '/api/v1/:apikey/show/:ssid' => 'api/v1/ssids#show'
-  get '/api/v1/:apikey/get/:address/:city/:ap' => 'api/v1/ssids#list'
-
   get '/api/v1/:apikey/set/:address/:city/:ap' => 'api/v1/entries#set'
 
 
