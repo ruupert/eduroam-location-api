@@ -33,7 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
  gem 'countries'
  gem 'google_maps_service'
 
-
+gem 'active_model_serializers', '~>0.9.4'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
