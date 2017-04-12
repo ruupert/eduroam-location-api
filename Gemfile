@@ -43,11 +43,11 @@ group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
   gem 'better_errors'
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails', '~> 3.5'
   gem 'rails_layout'
   gem 'railroady'
   gem 'coveralls', require: false
-  gem 'simplecov'
+  gem 'simplecov', '0.12.0'
 end
 
 group :development do
