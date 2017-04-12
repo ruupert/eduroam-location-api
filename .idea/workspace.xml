@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="160597e9-f167-4b07-90e4-ca7f1acf1c1a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/rails_helper.rb" afterPath="$PROJECT_DIR$/spec/rails_helper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/spec_helper.rb" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -32,21 +32,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="rails_helper.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="rails_helper.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spec/rails_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="126">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spec_helper.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="spec_helper.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="-360">
+              <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -178,6 +178,7 @@
         <option value="$PROJECT_DIR$/spec/lib/g_map_handler_spec.rb" />
         <option value="$PROJECT_DIR$/lib/g_map_handler.rb" />
         <option value="$PROJECT_DIR$/spec/spec_helper.rb" />
+        <option value="$PROJECT_DIR$/spec/rails_helper.rb" />
       </list>
     </option>
   </component>
@@ -697,12 +698,12 @@
       <workItem from="1491404336673" duration="3375000" />
       <workItem from="1491833789620" duration="87000" />
       <workItem from="1491839840883" duration="30448000" />
-      <workItem from="1491945230395" duration="19444000" />
+      <workItem from="1491945230395" duration="20103000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144184000" />
+    <option name="totallyTimeSpent" value="144843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="2" width="1366" height="766" extended-state="0" />
@@ -1079,18 +1080,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/rails_helper.rb">
+    <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-360">
+          <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
+    <entry file="file://$PROJECT_DIR$/spec/rails_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="126">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>

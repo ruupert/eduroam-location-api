@@ -1,0 +1,92 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ExporterController#institutions as HTML
+  Rendered exporter/institutions.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 60ms (Views: 59.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by InstitutionsController#new as HTML
+  Parameters: {"params"=>{}, "session"=>{}}
+  Rendered institutions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 141ms (Views: 8.7ms | ActiveRecord: 2.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "institutions"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/institutions" for 127.0.0.1 at 2017-04-12 06:23:59 +0300
+Processing by InstitutionsController#index as HTML
+  [1m[35mInstitution Load (0.2ms)[0m  SELECT "institutions".* FROM "institutions"
+  Rendered institutions/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 804ms (Views: 783.3ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInstitution Exists (0.2ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'MyString' AND "institutions"."inst_realm" = 'MyString') LIMIT 1
+  [1m[36mInstitution Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE "institutions"."apikey" = ? LIMIT 1[0m  [["apikey", "q7ceWe3u9Sw6k9mfgsUhIQtt"]]
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInstitution Exists (0.2ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'Inst Realm' AND "institutions"."inst_realm" = 'Inst Realm') LIMIT 1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE "institutions"."apikey" = ? LIMIT 1[0m  [["apikey", "KNXxKEQVYfwLZy5sQStAngtt"]]
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  Rendered institutions/_form.html.erb (94.5ms)
+  Rendered institutions/new.html.erb (143.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInstitution Exists (0.1ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'Inst Realm' AND "institutions"."inst_realm" = 'Inst Realm') LIMIT 1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE "institutions"."apikey" = ? LIMIT 1[0m  [["apikey", "738xTcYr56bKEG5FtVH6yQtt"]]
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
