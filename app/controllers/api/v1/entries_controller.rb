@@ -10,7 +10,6 @@ class Api::V1::EntriesController < Api::V1::BaseController
   private
   def entry_params
     params.require(:apikey).permit(:address,:city,:ap)
-
-
   end
+
 end

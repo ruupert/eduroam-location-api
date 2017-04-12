@@ -1,6 +1,24 @@
 module InstitutionsHelper
 
   def import_data
+    # This method handles eduroam any xml-file that complies with the institution.xsd schema and
+    # is by no means perfect or the best way to do things but given that the xml-data needs to be split
+    # into multiple tables I saw no other reasonably fast way to walk and insert data to this applications
+    # database structure. This would also get a rewrite or another in the future if/when the .xsd schema
+    # changes.
+    #
+    # This method is intended to be run just once and only for the admin.
+    # This method should not mind if there were multiple imports
+    # containing duplicates. Not yet there.
+    #
+    # Basic gist of the method:
+    # 1. validate the uploaded file
+    # 2. unless valid, do nothing
+    # 3. otherwise process the file and insert into institutions, locations, loc_names, orgnames, orgssids
+    #    and entries
+    # 4. Yet not quite working: after insertions, check for orgssids that are indentical and change entries
+    #    to point to one of the distinct ssids and then remove all orphaned ssids.
+
 
     doc = Nokogiri::XML(File.open("lib/assets/haagahelia2.xml")) do |config|
       config.options = Nokogiri::XML::ParseOptions::STRICT | Nokogiri::XML::ParseOptions::NOBLANKS
@@ -10,6 +28,8 @@ module InstitutionsHelper
       q = Queue.new
       o = OpenStruct.new(Hash.from_xml(File.read("lib/assets/haagahelia2.xml")))
 
+      # OpenStruct doesn't map attributes, so given that the lang-attributes
+      # are found in the document in same order, they can be queued and then dequeued appropriately
       doc.search("[lang]").each do |s|
         q.push(s['lang'])
       end
@@ -99,12 +119,10 @@ module InstitutionsHelper
           n.save
 
         end
-#        pp n.orgssids
-#        puts n.inspect
-#        distinctSSIDs = Orgssid.group(:institution_id, :name, :port_restrict, :transp_proxy, :ipv6, :nat, :wpa_tkip,
-#                             :wpa_aes, :wpa2_tkip, :wpa2_aes, :wired).select('id,institution_id')
 
       end
+      # check each entry orgssid_id from orgssid and change the orgssid_it to the last orgssid.id that
+      # is identical to the current orgssid.
       Entry.all.each do |e|
         b = Orgssid.find(e['id'])
         distinctSSIDs = Orgssid.where(institution_id: b['institution_id']).group(:institution_id,
@@ -123,117 +141,8 @@ module InstitutionsHelper
         u.save
 
       end
+      # Delete orphaned records
       Orgssid.where(["id NOT IN (?)", Entry.pluck("orgssid_id")]).destroy_all
-    end
-
-  end
-
-  def import_data2 import_file
-    doc = Nokogiri::XML(File.open("lib/assets/haagahelia2.xml")) do |config|
-      config.options = Nokogiri::XML::ParseOptions::STRICT | Nokogiri::XML::ParseOptions::NOBLANKS
-    end
-
-    institutions = doc.xpath('//institutions')
-
-    institutions.each do |institution|
-      temp = Institution.new
-      # puts "country: #{institution.css('country').children}"
-      temp.country = institution.css('country').children
-
-      #puts "type: #{institution.css('type').children}"
-      temp.institution_type = institution.css('type').children
-
-      #puts "realm: #{institution.css('inst_realm').children}"
-      temp.inst_realm = "#{institution.css('inst_realm').children}"
-
-      address = institution.css('institution address')
-      #puts "street: #{address.css('street').children}"
-      temp.address = address.css('street').children
-
-      #puts "city: #{address.css('city').children}"
-      temp.city = address.css('city').children
-
-      contact = institution.css('institution contact')
-      # puts "c name: #{contact.css('name').children}"
-      temp.contact_name = contact.css('name').children
-
-      #puts "c email: #{contact.css('email').children}"
-      temp.contact_email = contact.css('email').children
-
-      #puts "c phone: #{contact.css('phone').children}"
-      temp.contact_phone = contact.css('phone').children
-
-      #puts "ts: #{institution.css('institution ts').children}"
-
-      pp temp
-
-      temp.save
-
-      institutionID = temp.id
-
-      orgnames = institution.css('org_name')
-      orgnames.each do |org|
-#      temp = Orgname.new
-#     temp.name = org.child
-#   puts "org name: #{org.child}"
-        org.each { |attr_name, attr_value|
-          #      temp.lang = attr_value
-          #    puts "#{attr_name} -> #{attr_value}"
-        }
-#   temp.institution_id = institutionID
-#   temp.save
-      end
-      info_url = institution.css('institution info_URL')
-      info_url.each do |info|
-        #  temp = Orginfo.new
-        #  temp.url = info.child
-        #   puts "info url: #{info.child}"
-        info.each { |attr_name, attr_value|
-          #   temp.lang = attr_value
-          #    puts "#{attr_name} -> #{attr_value}"
-        }
-        #  temp.institution_id = institutionID
-        #      temp.save
-
-      end
-      policy_url = institution.css('institution policy_URL')
-      policy_url.each do |policy|
-#      temp = Orgpolicy.new
-#     temp.url = policy.child
-#  puts "policy url: #{policy.child}"
-        info.each { |attr_name, attr_value|
-          #      temp.lang = attr_value
-          #   puts "#{attr_name} -> #{attr_value}"
-        }
-#  temp.institution_id = institutionID
-#   temp.save
-
-      end
-
-      locations = institution.css('location')
-      locations.each do |location|
-        #  puts "longitude: #{location.css('longitude').children}"
-        #  puts "latitude: #{location.css('latitude').children}"
-        location.css('loc_name').each do |loc_name|
-          #   puts "loc_name #{loc_name.child}"
-          loc_name.each { |attr_name, attr_value|
-            #    puts "#{attr_name} -> #{attr_value}"
-          }
-        end
-        location.css('address').each do |address|
-          #    puts "street: #{address.css('street').children}"
-          #    puts "city: #{address.css('city').children}"
-        end
-        #  puts "SSID: #{location.css('SSID').children}"
-        #  puts "enc_level: #{location.css('enc_level').children}"
-        #  puts "port_restrict: #{location.css('port_restrict').children}"
-        #  puts "transp_proxy: #{location.css('transp_proxy').children}"
-        #  puts "IPv6: #{location.css('IPv6').children}"
-        #  puts "NAT: #{location.css('NAT').children}"
-        #  puts "AP_no: #{location.css('AP_no').children}"
-        #  puts "wired: #{location.css('wired').children}"
-      end
-      # puts " "
     end
 
   end
