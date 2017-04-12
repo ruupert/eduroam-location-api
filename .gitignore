@@ -1,3 +1,5 @@
 tmp/cache
 .byebug_history
+.coveralls.yml
+
 
