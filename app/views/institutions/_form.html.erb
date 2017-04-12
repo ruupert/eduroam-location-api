@@ -1,0 +1,79 @@
+<%= form_for(@institution) do |f| %>
+    <% if @institution.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@institution.errors.count, "error") %> prohibited this institution from being saved:</h2>
+
+          <ul>
+            <% @institution.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <p>Country: <%= ENV['NRO_COUNTRY'] %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# set by NRO_COUNTRY environment variable for
+      now</p>
+    <div class="field">
+      <%= f.label :institution_type %><br>
+      <%= f.select :institution_type, @institution_types %>
+    </div>
+    <div class="field">
+      <%= f.fields_for :orgnames do |oname| %>
+          <%= oname.hidden_field :lang, value: "en" %>
+              Institution (english) <%= oname.label :name %><br>
+          <%= oname.text_field :name %>
+      <% end %>
+
+    </div>
+
+    <div class="field">
+      <%= f.label :inst_realm %><br>
+      <%= f.text_field :inst_realm %>
+    </div>
+
+    <div class="field">
+      <%= f.label :address %><br>
+      <%= f.text_field :address %>
+    </div>
+    <div class="field">
+      <%= f.label :city %><br>
+      <%= f.text_field :city %>
+    </div>
+    <div class="field">
+      <%= f.label :contact_name %><br>
+      <%= f.text_field :contact_name %>
+    </div>
+    <div class="field">
+      <%= f.label :contact_email %><br>
+      <%= f.text_field :contact_email %>
+    </div>
+    <div class="field">
+      <%= f.label :contact_phone %><br>
+      <%= f.text_field :contact_phone %>
+    </div>
+    <div class="field">
+      <%= f.fields_for :orginfos do |oinf| %>
+          <%= oinf.hidden_field :lang, value: "en" %>
+          Info (english) <%= oinf.label :url %><br>
+          <%= oinf.text_field :url %>
+      <% end %>
+
+    </div>
+
+    <div class="field">
+
+      <%= f.fields_for :orgpolicies do |policy| %>
+          <%= policy.hidden_field :lang, value: "en" %>
+          Policy (english) <%= policy.label :url %><br>
+          <%= policy.text_field :url %>
+      <% end %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+    <div>
+
+      <%= pp @institution.as_json %>
+    </div>
+<% end %>
