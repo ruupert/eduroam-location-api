@@ -1,6 +1,6 @@
 module InstitutionsHelper
 
-  def import_data
+  def import_data import_file
     # This method handles eduroam any xml-file that complies with the institution.xsd schema and
     # is by no means perfect or the best way to do things but given that the xml-data needs to be split
     # into multiple tables I saw no other reasonably fast way to walk and insert data to this applications
@@ -20,13 +20,13 @@ module InstitutionsHelper
     #    to point to one of the distinct ssids and then remove all orphaned ssids.
 
 
-    doc = Nokogiri::XML(File.open("lib/assets/haagahelia2.xml")) do |config|
+    doc = Nokogiri::XML(File.read(import_file)) do |config|
       config.options = Nokogiri::XML::ParseOptions::STRICT | Nokogiri::XML::ParseOptions::NOBLANKS
     end
     xsd = Nokogiri::XML::Schema(File.read("lib/assets/institution.xsd"))
     if xsd.valid?(doc)
       q = Queue.new
-      o = OpenStruct.new(Hash.from_xml(File.read("lib/assets/haagahelia2.xml")))
+      o = OpenStruct.new(Hash.from_xml(File.read(import_file)))
 
       # OpenStruct doesn't map attributes, so given that the lang-attributes
       # are found in the document in same order, they can be queued and then dequeued appropriately
@@ -95,7 +95,6 @@ module InstitutionsHelper
           n.orgssids.last.wpa_tkip = false
           n.orgssids.last.wpa_aes = false
           enc_str = item['enc_level'].to_s
-          puts enc_str
           if enc_str.include? "WPA2/AES"
             n.orgssids.last.wpa2_aes = true
           end

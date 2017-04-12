@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 # Specs in this file have access to a helper object that includes
 # the InstitutionsHelper. For example:
 #
@@ -11,5 +10,9 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe InstitutionsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  #pending "add some examples to (or delete) #{__FILE__}"
+  it "successfully imports" do
+    self.import_data("lib/assets/haagahelia2.xml")
+    expect(Institution.count).to eql(2)
+  end
 end

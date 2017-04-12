@@ -94,7 +94,7 @@ include InstitutionsHelper
 
 
   def new_import
-    import_data
+
   end
 
   def import
