@@ -5,7 +5,7 @@ class GMapHandler
     results = gmaps.geocode("#{address}, #{city}")
     # and I get a crap array that does not respond to any sane access methods presented by documentation...
     # 3 hours of wtf:ing
-    # so fuck this array'o'clock:
+    # so f*** this array'o'clock:
     split = results.to_s.split("geometry")[1].split("location_type")[0].split(", :")
     # And here we have our values....... in 5 minutes.... piece of crap rails
     lng = split[1].match(/[+-]?([0-9]*[.])?[0-9]+/)[0]
@@ -14,7 +14,8 @@ class GMapHandler
     # and now we can convert coordinates to Degrees-Minutes-Seconds:
     dmslng = deg2dms(lng,'lng')
     dmslat = deg2dms(lat,'lat')
-    
+
+    return [dmslng, dmslat]
 
   end
 
