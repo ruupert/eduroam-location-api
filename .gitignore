@@ -1,1 +1,4 @@
 tmp/cache
+.travis.yml
+.byebug_history
+
