@@ -1654,3 +1654,519 @@ Completed 200 OK in 296ms (Views: 279.6ms | ActiveRecord: 1.2ms)
   [1m[36mOrgname Load (0.2ms)[0m  [1mSELECT  "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = ?  ORDER BY "orgnames"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
   Rendered institutions/show.html.erb (14.3ms)
   [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ExporterController#institutions as HTML
+  Rendered exporter/institutions.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 23ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by InstitutionsController#new as HTML
+  Parameters: {"params"=>{}, "session"=>{}}
+  Rendered institutions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 96ms (Views: 10.9ms | ActiveRecord: 2.9ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "institutions"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1[0m
+  [1m[35mInstitution Exists (0.2ms)[0m  SELECT  1 AS one FROM "institutions" WHERE "institutions"."apikey" = ? LIMIT 1  [["apikey", "8VdSMZx9cxScrmbFxmSQVQtt"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "institutions" ("country", "inst_realm", "contact_email", "institution_type", "address", "city", "created_at", "updated_at", "apikey") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["country", "fi"], ["inst_realm", "haaga-helia.fi"], ["contact_email", "helpdesk@haaga-helia.fi"], ["institution_type", 3], ["address", "Ratapihantie 13"], ["city", "Helsinki"], ["created_at", "2017-04-12 04:43:25.870339"], ["updated_at", "2017-04-12 04:43:25.870339"], ["apikey", "8VdSMZx9cxScrmbFxmSQVQtt"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "orgnames" ("name", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Haaga-Helia University of Applied Sciences"], ["lang", "en"], ["institution_id", 1], ["created_at", "2017-04-12 04:43:25.891001"], ["updated_at", "2017-04-12 04:43:25.891001"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "orgnames" ("name", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Haaga-Helia ammattikorkeakoulu"], ["lang", "fi"], ["institution_id", 1], ["created_at", "2017-04-12 04:43:25.892028"], ["updated_at", "2017-04-12 04:43:25.892028"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "orginfos" ("url", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["url", "{\"lang\"=>\"en\"}"], ["lang", "en"], ["institution_id", 1], ["created_at", "2017-04-12 04:43:25.892928"], ["updated_at", "2017-04-12 04:43:25.892928"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "orginfos" ("url", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["url", "{\"lang\"=>\"fi\"}"], ["lang", "fi"], ["institution_id", 1], ["created_at", "2017-04-12 04:43:25.893840"], ["updated_at", "2017-04-12 04:43:25.893840"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "orgpolicies" ("url", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["url", "{\"lang\"=>\"en\"}"], ["lang", "en"], ["institution_id", 1], ["created_at", "2017-04-12 04:43:25.894734"], ["updated_at", "2017-04-12 04:43:25.894734"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "orgpolicies" ("url", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["url", "{\"lang\"=>\"fi\"}"], ["lang", "fi"], ["institution_id", 1], ["created_at", "2017-04-12 04:43:25.895756"], ["updated_at", "2017-04-12 04:43:25.895756"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orgssids" ("name", "port_restrict", "ipv6", "nat", "transp_proxy", "wired", "wpa2_aes", "wpa2_tkip", "wpa_tkip", "wpa_aes", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "eduroam"], ["port_restrict", "f"], ["ipv6", "f"], ["nat", "f"], ["transp_proxy", "f"], ["wired", "f"], ["wpa2_aes", "t"], ["wpa2_tkip", "f"], ["wpa_tkip", "f"], ["wpa_aes", "f"], ["institution_id", 1], ["created_at", "2017-04-12 04:43:25.899726"], ["updated_at", "2017-04-12 04:43:25.899726"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "locations" ("address", "city", "longitude", "latitude", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["address", "Ratapihantie 13"], ["city", "Helsinki"], ["longitude", "24°56'02.00\"E"], ["latitude", "60°12'04.00\"N"], ["institution_id", 1], ["created_at", "2017-04-12 04:43:25.903229"], ["updated_at", "2017-04-12 04:43:25.903229"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Haaga-Helia University of Applied Sciences, Päsila"], ["lang", "en"], ["location_id", 1], ["created_at", "2017-04-12 04:43:25.905301"], ["updated_at", "2017-04-12 04:43:25.905301"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Haaga-Helia ammattikorkeakoulu, Pasila"], ["lang", "fi"], ["location_id", 1], ["created_at", "2017-04-12 04:43:25.906368"], ["updated_at", "2017-04-12 04:43:25.906368"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."institution_id" = ?[0m  [["institution_id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."id" != 1 AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entries" ("institution_id", "location_id", "orgssid_id", "ap_count", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["institution_id", 1], ["location_id", 1], ["orgssid_id", 1], ["ap_count", 46], ["created_at", "2017-04-12 04:43:25.922365"], ["updated_at", "2017-04-12 04:43:25.922365"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."id" != 1 AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "orgssids" ("institution_id", "name", "port_restrict", "ipv6", "nat", "transp_proxy", "wired", "wpa2_aes", "wpa2_tkip", "wpa_tkip", "wpa_aes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["institution_id", 1], ["name", "eduroam"], ["port_restrict", "f"], ["ipv6", "f"], ["nat", "f"], ["transp_proxy", "f"], ["wired", "f"], ["wpa2_aes", "t"], ["wpa2_tkip", "f"], ["wpa_tkip", "f"], ["wpa_aes", "f"], ["created_at", "2017-04-12 04:43:25.928781"], ["updated_at", "2017-04-12 04:43:25.928781"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "locations" ("institution_id", "address", "city", "longitude", "latitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["institution_id", 1], ["address", "Hietakummuntie 1 A"], ["city", "Helsinki"], ["longitude", "25°00'55.00\"E"], ["latitude", "60°14'50.00\"N"], ["created_at", "2017-04-12 04:43:25.930323"], ["updated_at", "2017-04-12 04:43:25.930323"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Haaga-Helia University of Applied Sciences, Malmi"], ["lang", "en"], ["location_id", 2], ["created_at", "2017-04-12 04:43:25.933693"], ["updated_at", "2017-04-12 04:43:25.933693"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Haaga-Helia ammattikorkeakoulu, Malmi"], ["lang", "en"], ["location_id", 2], ["created_at", "2017-04-12 04:43:25.936166"], ["updated_at", "2017-04-12 04:43:25.936166"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInstitution Exists (0.1ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."id" != 1 AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entries" ("institution_id", "location_id", "orgssid_id", "ap_count", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["institution_id", 1], ["location_id", 2], ["orgssid_id", 2], ["ap_count", 28], ["created_at", "2017-04-12 04:43:25.942263"], ["updated_at", "2017-04-12 04:43:25.942263"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInstitution Exists (0.1ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."id" != 1 AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "orgssids" ("institution_id", "name", "port_restrict", "ipv6", "nat", "transp_proxy", "wired", "wpa2_aes", "wpa2_tkip", "wpa_tkip", "wpa_aes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["institution_id", 1], ["name", "eduroam"], ["port_restrict", "f"], ["ipv6", "f"], ["nat", "f"], ["transp_proxy", "f"], ["wired", "f"], ["wpa2_aes", "t"], ["wpa2_tkip", "f"], ["wpa_tkip", "f"], ["wpa_aes", "f"], ["created_at", "2017-04-12 04:43:25.950354"], ["updated_at", "2017-04-12 04:43:25.950354"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "locations" ("institution_id", "address", "city", "longitude", "latitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["institution_id", 1], ["address", "Pajuniityntie 11"], ["city", "Helsinki"], ["longitude", "24°54'22.00\"E"], ["latitude", "60°13'06.00\"N"], ["created_at", "2017-04-12 04:43:25.953437"], ["updated_at", "2017-04-12 04:43:25.953437"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Haaga-Helia University of Applied Sciences, Haaga"], ["lang", "fi"], ["location_id", 3], ["created_at", "2017-04-12 04:43:25.954556"], ["updated_at", "2017-04-12 04:43:25.954556"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Haaga-Helia ammattikorkeakoulu, Haaga"], ["lang", "en"], ["location_id", 3], ["created_at", "2017-04-12 04:43:25.955453"], ["updated_at", "2017-04-12 04:43:25.955453"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."id" != 1 AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entries" ("institution_id", "location_id", "orgssid_id", "ap_count", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["institution_id", 1], ["location_id", 3], ["orgssid_id", 3], ["ap_count", 26], ["created_at", "2017-04-12 04:43:25.959414"], ["updated_at", "2017-04-12 04:43:25.959414"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."id" != 1 AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orgssids" ("institution_id", "name", "port_restrict", "ipv6", "nat", "transp_proxy", "wired", "wpa2_aes", "wpa2_tkip", "wpa_tkip", "wpa_aes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["institution_id", 1], ["name", "eduroam"], ["port_restrict", "f"], ["ipv6", "f"], ["nat", "f"], ["transp_proxy", "f"], ["wired", "f"], ["wpa2_aes", "t"], ["wpa2_tkip", "f"], ["wpa_tkip", "f"], ["wpa_aes", "f"], ["created_at", "2017-04-12 04:43:25.969056"], ["updated_at", "2017-04-12 04:43:25.969056"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "locations" ("institution_id", "address", "city", "longitude", "latitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["institution_id", 1], ["address", "Taidetehtaankatu 1"], ["city", "Porvoo"], ["longitude", "25°39'26.00\"E"], ["latitude", "60°23'13.00\"N"], ["created_at", "2017-04-12 04:43:25.973182"], ["updated_at", "2017-04-12 04:43:25.973182"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Haaga-Helia University of Applied Sciences, Porvoo"], ["lang", "en"], ["location_id", 4], ["created_at", "2017-04-12 04:43:25.974325"], ["updated_at", "2017-04-12 04:43:25.974325"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Haaga-Helia ammattikorkeakoulu, Porvoo"], ["lang", "fi"], ["location_id", 4], ["created_at", "2017-04-12 04:43:25.975486"], ["updated_at", "2017-04-12 04:43:25.975486"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInstitution Exists (0.1ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."id" != 1 AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entries" ("institution_id", "location_id", "orgssid_id", "ap_count", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["institution_id", 1], ["location_id", 4], ["orgssid_id", 4], ["ap_count", 28], ["created_at", "2017-04-12 04:43:25.981865"], ["updated_at", "2017-04-12 04:43:25.981865"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInstitution Exists (0.1ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."id" != 1 AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "orgssids" ("institution_id", "name", "port_restrict", "ipv6", "nat", "transp_proxy", "wired", "wpa2_aes", "wpa2_tkip", "wpa_tkip", "wpa_aes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["institution_id", 1], ["name", "eduroam"], ["port_restrict", "f"], ["ipv6", "f"], ["nat", "f"], ["transp_proxy", "f"], ["wired", "f"], ["wpa2_aes", "t"], ["wpa2_tkip", "f"], ["wpa_tkip", "f"], ["wpa_aes", "f"], ["created_at", "2017-04-12 04:43:25.990522"], ["updated_at", "2017-04-12 04:43:25.990522"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "locations" ("institution_id", "address", "city", "longitude", "latitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["institution_id", 1], ["address", "Hattulantie 2"], ["city", "Helsinki"], ["longitude", "24°57'25.00\"E"], ["latitude", "60°11'46.00\"N"], ["created_at", "2017-04-12 04:43:25.992129"], ["updated_at", "2017-04-12 04:43:25.992129"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Haaga-Helia University of Applied Sciences, Vallila"], ["lang", "en"], ["location_id", 5], ["created_at", "2017-04-12 04:43:25.993016"], ["updated_at", "2017-04-12 04:43:25.993016"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Haaga-Helia ammattikorkeakoulu, Vallila"], ["lang", "en"], ["location_id", 5], ["created_at", "2017-04-12 04:43:25.993996"], ["updated_at", "2017-04-12 04:43:25.993996"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."id" != 1 AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entries" ("institution_id", "location_id", "orgssid_id", "ap_count", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["institution_id", 1], ["location_id", 5], ["orgssid_id", 5], ["ap_count", 19], ["created_at", "2017-04-12 04:43:26.004415"], ["updated_at", "2017-04-12 04:43:26.004415"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'lauttasaari.fi' AND "institutions"."inst_realm" = 'lauttasaari.fi') LIMIT 1[0m
+  [1m[35mInstitution Exists (0.0ms)[0m  SELECT  1 AS one FROM "institutions" WHERE "institutions"."apikey" = ? LIMIT 1  [["apikey", "IccWTphivbZ7YKhPKl4YEwtt"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "institutions" ("country", "inst_realm", "contact_email", "institution_type", "address", "city", "created_at", "updated_at", "apikey") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["country", "fi"], ["inst_realm", "lauttasaari.fi"], ["contact_email", "raul.becker@iki.fi"], ["institution_type", 3], ["address", "Lauttasaarentie 10"], ["city", "Helsinki"], ["created_at", "2017-04-12 04:43:26.025719"], ["updated_at", "2017-04-12 04:43:26.025719"], ["apikey", "IccWTphivbZ7YKhPKl4YEwtt"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "orgnames" ("name", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Lauttasaari University"], ["lang", "fi"], ["institution_id", 2], ["created_at", "2017-04-12 04:43:26.030601"], ["updated_at", "2017-04-12 04:43:26.030601"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "orgnames" ("name", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lauttasaaren yliopisto"], ["lang", "en"], ["institution_id", 2], ["created_at", "2017-04-12 04:43:26.034513"], ["updated_at", "2017-04-12 04:43:26.034513"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "orginfos" ("url", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["url", "http://joopajoo.en"], ["lang", "en"], ["institution_id", 2], ["created_at", "2017-04-12 04:43:26.036430"], ["updated_at", "2017-04-12 04:43:26.036430"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "orginfos" ("url", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["url", "http://joopajoo.fi"], ["lang", "en"], ["institution_id", 2], ["created_at", "2017-04-12 04:43:26.038945"], ["updated_at", "2017-04-12 04:43:26.038945"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "orgpolicies" ("url", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["url", "{\"lang\"=>\"en\"}"], ["lang", "en"], ["institution_id", 2], ["created_at", "2017-04-12 04:43:26.039997"], ["updated_at", "2017-04-12 04:43:26.039997"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "orgpolicies" ("url", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["url", "{\"lang\"=>\"fi\"}"], ["lang", "fi"], ["institution_id", 2], ["created_at", "2017-04-12 04:43:26.040875"], ["updated_at", "2017-04-12 04:43:26.040875"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "orgssids" ("name", "port_restrict", "ipv6", "nat", "transp_proxy", "wired", "wpa2_aes", "wpa2_tkip", "wpa_tkip", "wpa_aes", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "eduroam"], ["port_restrict", "f"], ["ipv6", "f"], ["nat", "f"], ["transp_proxy", "f"], ["wired", "f"], ["wpa2_aes", "t"], ["wpa2_tkip", "f"], ["wpa_tkip", "f"], ["wpa_aes", "f"], ["institution_id", 2], ["created_at", "2017-04-12 04:43:26.041749"], ["updated_at", "2017-04-12 04:43:26.041749"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "locations" ("address", "city", "longitude", "latitude", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["address", "Lauttasaarentie 10"], ["city", "Helsinki"], ["longitude", "24°56'02.00\"E"], ["latitude", "60°12'04.00\"N"], ["institution_id", 2], ["created_at", "2017-04-12 04:43:26.042902"], ["updated_at", "2017-04-12 04:43:26.042902"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Lauttasaari University, main building"], ["lang", "fi"], ["location_id", 6], ["created_at", "2017-04-12 04:43:26.043792"], ["updated_at", "2017-04-12 04:43:26.043792"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lauttasaaren yliopisto, päärakennus"], ["lang", "en"], ["location_id", 6], ["created_at", "2017-04-12 04:43:26.044748"], ["updated_at", "2017-04-12 04:43:26.044748"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEntry Load (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."institution_id" = ?[0m  [["institution_id", 2]]
+  [1m[35m (2.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'lauttasaari.fi' AND "institutions"."id" != 2 AND "institutions"."inst_realm" = 'lauttasaari.fi') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entries" ("institution_id", "location_id", "orgssid_id", "ap_count", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["institution_id", 2], ["location_id", 6], ["orgssid_id", 6], ["ap_count", 146], ["created_at", "2017-04-12 04:43:26.053436"], ["updated_at", "2017-04-12 04:43:26.053436"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'lauttasaari.fi' AND "institutions"."id" != 2 AND "institutions"."inst_realm" = 'lauttasaari.fi') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "orgssids" ("institution_id", "name", "port_restrict", "ipv6", "nat", "transp_proxy", "wired", "wpa2_aes", "wpa2_tkip", "wpa_tkip", "wpa_aes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["institution_id", 2], ["name", "eduroam"], ["port_restrict", "f"], ["ipv6", "f"], ["nat", "f"], ["transp_proxy", "f"], ["wired", "f"], ["wpa2_aes", "t"], ["wpa2_tkip", "f"], ["wpa_tkip", "f"], ["wpa_aes", "t"], ["created_at", "2017-04-12 04:43:26.059803"], ["updated_at", "2017-04-12 04:43:26.059803"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "locations" ("institution_id", "address", "city", "longitude", "latitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["institution_id", 2], ["address", "Lauttasaarentie 10"], ["city", "Helsinki"], ["longitude", "24°56'02.00\"E"], ["latitude", "60°12'04.00\"N"], ["created_at", "2017-04-12 04:43:26.061234"], ["updated_at", "2017-04-12 04:43:26.061234"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Lauttasaari University, main building"], ["lang", "fi"], ["location_id", 7], ["created_at", "2017-04-12 04:43:26.062123"], ["updated_at", "2017-04-12 04:43:26.062123"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lauttasaaren yliopisto, päärakennus"], ["lang", "en"], ["location_id", 7], ["created_at", "2017-04-12 04:43:26.063169"], ["updated_at", "2017-04-12 04:43:26.063169"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInstitution Exists (0.3ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'lauttasaari.fi' AND "institutions"."id" != 2 AND "institutions"."inst_realm" = 'lauttasaari.fi') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entries" ("institution_id", "location_id", "orgssid_id", "ap_count", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["institution_id", 2], ["location_id", 7], ["orgssid_id", 7], ["ap_count", 146], ["created_at", "2017-04-12 04:43:26.073204"], ["updated_at", "2017-04-12 04:43:26.073204"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries"[0m
+  [1m[35mOrgssid Load (0.1ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrgssid Load (0.2ms)[0m  SELECT  orgssids.id,orgssids.institution_id FROM "orgssids" WHERE "orgssids"."institution_id" = ? GROUP BY "orgssids"."institution_id", "orgssids"."name", "orgssids"."port_restrict", "orgssids"."transp_proxy", "orgssids"."ipv6", "orgssids"."nat", "orgssids"."wpa_tkip", "orgssids"."wpa_aes", "orgssids"."wpa2_tkip", "orgssids"."wpa2_aes", "orgssids"."wired"  ORDER BY "orgssids"."id" DESC LIMIT 1  [["institution_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "entries" SET "orgssid_id" = ?, "updated_at" = ? WHERE "entries"."id" = ?  [["orgssid_id", 5], ["updated_at", "2017-04-12 04:43:26.078480"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrgssid Load (0.1ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mOrgssid Load (0.6ms)[0m  SELECT  orgssids.id,orgssids.institution_id FROM "orgssids" WHERE "orgssids"."institution_id" = ? GROUP BY "orgssids"."institution_id", "orgssids"."name", "orgssids"."port_restrict", "orgssids"."transp_proxy", "orgssids"."ipv6", "orgssids"."nat", "orgssids"."wpa_tkip", "orgssids"."wpa_aes", "orgssids"."wpa2_tkip", "orgssids"."wpa2_aes", "orgssids"."wired"  ORDER BY "orgssids"."id" DESC LIMIT 1  [["institution_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "entries" SET "orgssid_id" = ?, "updated_at" = ? WHERE "entries"."id" = ?  [["orgssid_id", 5], ["updated_at", "2017-04-12 04:43:26.085797"], ["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrgssid Load (0.0ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mEntry Load (0.0ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mOrgssid Load (0.1ms)[0m  SELECT  orgssids.id,orgssids.institution_id FROM "orgssids" WHERE "orgssids"."institution_id" = ? GROUP BY "orgssids"."institution_id", "orgssids"."name", "orgssids"."port_restrict", "orgssids"."transp_proxy", "orgssids"."ipv6", "orgssids"."nat", "orgssids"."wpa_tkip", "orgssids"."wpa_aes", "orgssids"."wpa2_tkip", "orgssids"."wpa2_aes", "orgssids"."wired"  ORDER BY "orgssids"."id" DESC LIMIT 1  [["institution_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "entries" SET "orgssid_id" = ?, "updated_at" = ? WHERE "entries"."id" = ?  [["orgssid_id", 5], ["updated_at", "2017-04-12 04:43:26.088312"], ["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrgssid Load (0.0ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mEntry Load (0.0ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mOrgssid Load (0.2ms)[0m  SELECT  orgssids.id,orgssids.institution_id FROM "orgssids" WHERE "orgssids"."institution_id" = ? GROUP BY "orgssids"."institution_id", "orgssids"."name", "orgssids"."port_restrict", "orgssids"."transp_proxy", "orgssids"."ipv6", "orgssids"."nat", "orgssids"."wpa_tkip", "orgssids"."wpa_aes", "orgssids"."wpa2_tkip", "orgssids"."wpa2_aes", "orgssids"."wired"  ORDER BY "orgssids"."id" DESC LIMIT 1  [["institution_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "entries" SET "orgssid_id" = ?, "updated_at" = ? WHERE "entries"."id" = ?  [["orgssid_id", 5], ["updated_at", "2017-04-12 04:43:26.090942"], ["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrgssid Load (0.0ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEntry Load (0.0ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mOrgssid Load (0.1ms)[0m  SELECT  orgssids.id,orgssids.institution_id FROM "orgssids" WHERE "orgssids"."institution_id" = ? GROUP BY "orgssids"."institution_id", "orgssids"."name", "orgssids"."port_restrict", "orgssids"."transp_proxy", "orgssids"."ipv6", "orgssids"."nat", "orgssids"."wpa_tkip", "orgssids"."wpa_aes", "orgssids"."wpa2_tkip", "orgssids"."wpa2_aes", "orgssids"."wired"  ORDER BY "orgssids"."id" DESC LIMIT 1  [["institution_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrgssid Load (0.0ms)[0m  [1mSELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mEntry Load (0.0ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mOrgssid Load (0.1ms)[0m  [1mSELECT  orgssids.id,orgssids.institution_id FROM "orgssids" WHERE "orgssids"."institution_id" = ? GROUP BY "orgssids"."institution_id", "orgssids"."name", "orgssids"."port_restrict", "orgssids"."transp_proxy", "orgssids"."ipv6", "orgssids"."nat", "orgssids"."wpa_tkip", "orgssids"."wpa_aes", "orgssids"."wpa2_tkip", "orgssids"."wpa2_aes", "orgssids"."wired"  ORDER BY "orgssids"."id" DESC LIMIT 1[0m  [["institution_id", 2]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "entries" SET "orgssid_id" = ?, "updated_at" = ? WHERE "entries"."id" = ?[0m  [["orgssid_id", 7], ["updated_at", "2017-04-12 04:43:26.095353"], ["id", 6]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrgssid Load (0.0ms)[0m  [1mSELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mEntry Load (0.0ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mOrgssid Load (0.1ms)[0m  [1mSELECT  orgssids.id,orgssids.institution_id FROM "orgssids" WHERE "orgssids"."institution_id" = ? GROUP BY "orgssids"."institution_id", "orgssids"."name", "orgssids"."port_restrict", "orgssids"."transp_proxy", "orgssids"."ipv6", "orgssids"."nat", "orgssids"."wpa_tkip", "orgssids"."wpa_aes", "orgssids"."wpa2_tkip", "orgssids"."wpa2_aes", "orgssids"."wired"  ORDER BY "orgssids"."id" DESC LIMIT 1[0m  [["institution_id", 2]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT "entries"."orgssid_id" FROM "entries"
+  [1m[36mOrgssid Load (0.5ms)[0m  [1mSELECT "orgssids".* FROM "orgssids" WHERE (id NOT IN (5,5,5,5,5,7,7))[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "orgssids" WHERE "orgssids"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "orgssids" WHERE "orgssids"."id" = ?  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "orgssids" WHERE "orgssids"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "orgssids" WHERE "orgssids"."id" = ?  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "orgssids" WHERE "orgssids"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "institutions"[0m
+  [1m[35m (32.4ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+Started GET "/institutions" for 127.0.0.1 at 2017-04-12 07:43:26 +0300
+Processing by InstitutionsController#index as HTML
+  [1m[35mInstitution Load (0.2ms)[0m  SELECT "institutions".* FROM "institutions"
+  Rendered institutions/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 371ms (Views: 353.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInstitution Exists (0.2ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'MyString' AND "institutions"."inst_realm" = 'MyString') LIMIT 1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE "institutions"."apikey" = ? LIMIT 1[0m  [["apikey", "DVftzH1Jpe5NlmTMcA1FHQtt"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "institutions" ("country", "institution_type", "inst_realm", "address", "city", "contact_name", "contact_email", "contact_phone", "created_at", "updated_at", "apikey") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["country", "fi"], ["institution_type", 1], ["inst_realm", "MyString"], ["address", "MyString"], ["city", "MyString"], ["contact_name", "MyString"], ["contact_email", "MyString"], ["contact_phone", "MyString"], ["created_at", "2017-04-12 04:43:26.587889"], ["updated_at", "2017-04-12 04:43:26.587889"], ["apikey", "DVftzH1Jpe5NlmTMcA1FHQtt"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered institutions/_form.html.erb (32.6ms)
+  Rendered institutions/edit.html.erb (52.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'Inst Realm' AND "institutions"."inst_realm" = 'Inst Realm') LIMIT 1[0m
+  [1m[35mInstitution Exists (0.5ms)[0m  SELECT  1 AS one FROM "institutions" WHERE "institutions"."apikey" = ? LIMIT 1  [["apikey", "YpYvdsWU9aMqDeNJ8yHtkAtt"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "institutions" ("country", "institution_type", "inst_realm", "address", "city", "contact_name", "contact_email", "contact_phone", "created_at", "updated_at", "apikey") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["country", "fi"], ["institution_type", 2], ["inst_realm", "Inst Realm"], ["address", "Address"], ["city", "City"], ["contact_name", "Contact Name"], ["contact_email", "Contact Email"], ["contact_phone", "Contact Phone"], ["created_at", "2017-04-12 04:43:26.662683"], ["updated_at", "2017-04-12 04:43:26.662683"], ["apikey", "YpYvdsWU9aMqDeNJ8yHtkAtt"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInstitution Exists (0.1ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'Inst Realm' AND "institutions"."inst_realm" = 'Inst Realm') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  Rendered institutions/_form.html.erb (12.2ms)
+  Rendered institutions/new.html.erb (13.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'Inst Realm' AND "institutions"."inst_realm" = 'Inst Realm') LIMIT 1[0m
+  [1m[35mInstitution Exists (0.1ms)[0m  SELECT  1 AS one FROM "institutions" WHERE "institutions"."apikey" = ? LIMIT 1  [["apikey", "Fo3cmtCDetrm8y3CpfY3gAtt"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "institutions" ("country", "institution_type", "inst_realm", "address", "city", "contact_name", "contact_email", "contact_phone", "created_at", "updated_at", "apikey") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["country", "fi"], ["institution_type", 2], ["inst_realm", "Inst Realm"], ["address", "Address"], ["city", "City"], ["contact_name", "Contact Name"], ["contact_email", "Contact Email"], ["contact_phone", "Contact Phone"], ["created_at", "2017-04-12 04:43:26.720343"], ["updated_at", "2017-04-12 04:43:26.720343"], ["apikey", "Fo3cmtCDetrm8y3CpfY3gAtt"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrgname Load (0.1ms)[0m  [1mSELECT  "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = ?  ORDER BY "orgnames"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  Rendered institutions/show.html.erb (14.8ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ExporterController#institutions as HTML
+  Rendered exporter/institutions.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by InstitutionsController#new as HTML
+  Parameters: {"params"=>{}, "session"=>{}}
+  Rendered institutions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 89ms (Views: 5.7ms | ActiveRecord: 1.8ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "institutions"[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.8ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1[0m
+  [1m[35mInstitution Exists (0.2ms)[0m  SELECT  1 AS one FROM "institutions" WHERE "institutions"."apikey" = ? LIMIT 1  [["apikey", "7D5aVduX0powSejMQIF7lQtt"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "institutions" ("country", "inst_realm", "contact_email", "institution_type", "address", "city", "created_at", "updated_at", "apikey") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["country", "fi"], ["inst_realm", "haaga-helia.fi"], ["contact_email", "helpdesk@haaga-helia.fi"], ["institution_type", 3], ["address", "Ratapihantie 13"], ["city", "Helsinki"], ["created_at", "2017-04-12 04:44:33.840224"], ["updated_at", "2017-04-12 04:44:33.840224"], ["apikey", "7D5aVduX0powSejMQIF7lQtt"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "orgnames" ("name", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Haaga-Helia University of Applied Sciences"], ["lang", "en"], ["institution_id", 1], ["created_at", "2017-04-12 04:44:33.860719"], ["updated_at", "2017-04-12 04:44:33.860719"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "orgnames" ("name", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Haaga-Helia ammattikorkeakoulu"], ["lang", "fi"], ["institution_id", 1], ["created_at", "2017-04-12 04:44:33.861787"], ["updated_at", "2017-04-12 04:44:33.861787"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "orginfos" ("url", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["url", "{\"lang\"=>\"en\"}"], ["lang", "en"], ["institution_id", 1], ["created_at", "2017-04-12 04:44:33.862673"], ["updated_at", "2017-04-12 04:44:33.862673"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "orginfos" ("url", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["url", "{\"lang\"=>\"fi\"}"], ["lang", "fi"], ["institution_id", 1], ["created_at", "2017-04-12 04:44:33.863693"], ["updated_at", "2017-04-12 04:44:33.863693"]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "orgpolicies" ("url", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["url", "{\"lang\"=>\"en\"}"], ["lang", "en"], ["institution_id", 1], ["created_at", "2017-04-12 04:44:33.867406"], ["updated_at", "2017-04-12 04:44:33.867406"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "orgpolicies" ("url", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["url", "{\"lang\"=>\"fi\"}"], ["lang", "fi"], ["institution_id", 1], ["created_at", "2017-04-12 04:44:33.869708"], ["updated_at", "2017-04-12 04:44:33.869708"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "orgssids" ("name", "port_restrict", "ipv6", "nat", "transp_proxy", "wired", "wpa2_aes", "wpa2_tkip", "wpa_tkip", "wpa_aes", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "eduroam"], ["port_restrict", "f"], ["ipv6", "f"], ["nat", "f"], ["transp_proxy", "f"], ["wired", "f"], ["wpa2_aes", "t"], ["wpa2_tkip", "f"], ["wpa_tkip", "f"], ["wpa_aes", "f"], ["institution_id", 1], ["created_at", "2017-04-12 04:44:33.872323"], ["updated_at", "2017-04-12 04:44:33.872323"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "locations" ("address", "city", "longitude", "latitude", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["address", "Ratapihantie 13"], ["city", "Helsinki"], ["longitude", "24°56'02.00\"E"], ["latitude", "60°12'04.00\"N"], ["institution_id", 1], ["created_at", "2017-04-12 04:44:33.874115"], ["updated_at", "2017-04-12 04:44:33.874115"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Haaga-Helia University of Applied Sciences, Päsila"], ["lang", "en"], ["location_id", 1], ["created_at", "2017-04-12 04:44:33.875191"], ["updated_at", "2017-04-12 04:44:33.875191"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Haaga-Helia ammattikorkeakoulu, Pasila"], ["lang", "fi"], ["location_id", 1], ["created_at", "2017-04-12 04:44:33.876203"], ["updated_at", "2017-04-12 04:44:33.876203"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."institution_id" = ?[0m  [["institution_id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."id" != 1 AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entries" ("institution_id", "location_id", "orgssid_id", "ap_count", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["institution_id", 1], ["location_id", 1], ["orgssid_id", 1], ["ap_count", 46], ["created_at", "2017-04-12 04:44:33.893113"], ["updated_at", "2017-04-12 04:44:33.893113"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."id" != 1 AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "orgssids" ("institution_id", "name", "port_restrict", "ipv6", "nat", "transp_proxy", "wired", "wpa2_aes", "wpa2_tkip", "wpa_tkip", "wpa_aes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["institution_id", 1], ["name", "eduroam"], ["port_restrict", "f"], ["ipv6", "f"], ["nat", "f"], ["transp_proxy", "f"], ["wired", "f"], ["wpa2_aes", "t"], ["wpa2_tkip", "f"], ["wpa_tkip", "f"], ["wpa_aes", "f"], ["created_at", "2017-04-12 04:44:33.903835"], ["updated_at", "2017-04-12 04:44:33.903835"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "locations" ("institution_id", "address", "city", "longitude", "latitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["institution_id", 1], ["address", "Hietakummuntie 1 A"], ["city", "Helsinki"], ["longitude", "25°00'55.00\"E"], ["latitude", "60°14'50.00\"N"], ["created_at", "2017-04-12 04:44:33.906404"], ["updated_at", "2017-04-12 04:44:33.906404"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Haaga-Helia University of Applied Sciences, Malmi"], ["lang", "en"], ["location_id", 2], ["created_at", "2017-04-12 04:44:33.907340"], ["updated_at", "2017-04-12 04:44:33.907340"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Haaga-Helia ammattikorkeakoulu, Malmi"], ["lang", "en"], ["location_id", 2], ["created_at", "2017-04-12 04:44:33.908251"], ["updated_at", "2017-04-12 04:44:33.908251"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInstitution Exists (0.1ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."id" != 1 AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "entries" ("institution_id", "location_id", "orgssid_id", "ap_count", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["institution_id", 1], ["location_id", 2], ["orgssid_id", 2], ["ap_count", 28], ["created_at", "2017-04-12 04:44:33.912156"], ["updated_at", "2017-04-12 04:44:33.912156"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInstitution Exists (0.1ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."id" != 1 AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "orgssids" ("institution_id", "name", "port_restrict", "ipv6", "nat", "transp_proxy", "wired", "wpa2_aes", "wpa2_tkip", "wpa_tkip", "wpa_aes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["institution_id", 1], ["name", "eduroam"], ["port_restrict", "f"], ["ipv6", "f"], ["nat", "f"], ["transp_proxy", "f"], ["wired", "f"], ["wpa2_aes", "t"], ["wpa2_tkip", "f"], ["wpa_tkip", "f"], ["wpa_aes", "f"], ["created_at", "2017-04-12 04:44:33.922324"], ["updated_at", "2017-04-12 04:44:33.922324"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "locations" ("institution_id", "address", "city", "longitude", "latitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["institution_id", 1], ["address", "Pajuniityntie 11"], ["city", "Helsinki"], ["longitude", "24°54'22.00\"E"], ["latitude", "60°13'06.00\"N"], ["created_at", "2017-04-12 04:44:33.923836"], ["updated_at", "2017-04-12 04:44:33.923836"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Haaga-Helia University of Applied Sciences, Haaga"], ["lang", "fi"], ["location_id", 3], ["created_at", "2017-04-12 04:44:33.924718"], ["updated_at", "2017-04-12 04:44:33.924718"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Haaga-Helia ammattikorkeakoulu, Haaga"], ["lang", "en"], ["location_id", 3], ["created_at", "2017-04-12 04:44:33.925619"], ["updated_at", "2017-04-12 04:44:33.925619"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."id" != 1 AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entries" ("institution_id", "location_id", "orgssid_id", "ap_count", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["institution_id", 1], ["location_id", 3], ["orgssid_id", 3], ["ap_count", 26], ["created_at", "2017-04-12 04:44:33.929519"], ["updated_at", "2017-04-12 04:44:33.929519"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."id" != 1 AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "orgssids" ("institution_id", "name", "port_restrict", "ipv6", "nat", "transp_proxy", "wired", "wpa2_aes", "wpa2_tkip", "wpa_tkip", "wpa_aes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["institution_id", 1], ["name", "eduroam"], ["port_restrict", "f"], ["ipv6", "f"], ["nat", "f"], ["transp_proxy", "f"], ["wired", "f"], ["wpa2_aes", "t"], ["wpa2_tkip", "f"], ["wpa_tkip", "f"], ["wpa_aes", "f"], ["created_at", "2017-04-12 04:44:33.941603"], ["updated_at", "2017-04-12 04:44:33.941603"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "locations" ("institution_id", "address", "city", "longitude", "latitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["institution_id", 1], ["address", "Taidetehtaankatu 1"], ["city", "Porvoo"], ["longitude", "25°39'26.00\"E"], ["latitude", "60°23'13.00\"N"], ["created_at", "2017-04-12 04:44:33.943167"], ["updated_at", "2017-04-12 04:44:33.943167"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Haaga-Helia University of Applied Sciences, Porvoo"], ["lang", "en"], ["location_id", 4], ["created_at", "2017-04-12 04:44:33.944071"], ["updated_at", "2017-04-12 04:44:33.944071"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Haaga-Helia ammattikorkeakoulu, Porvoo"], ["lang", "fi"], ["location_id", 4], ["created_at", "2017-04-12 04:44:33.945002"], ["updated_at", "2017-04-12 04:44:33.945002"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInstitution Exists (0.1ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."id" != 1 AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entries" ("institution_id", "location_id", "orgssid_id", "ap_count", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["institution_id", 1], ["location_id", 4], ["orgssid_id", 4], ["ap_count", 28], ["created_at", "2017-04-12 04:44:33.952874"], ["updated_at", "2017-04-12 04:44:33.952874"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInstitution Exists (0.1ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."id" != 1 AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "orgssids" ("institution_id", "name", "port_restrict", "ipv6", "nat", "transp_proxy", "wired", "wpa2_aes", "wpa2_tkip", "wpa_tkip", "wpa_aes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["institution_id", 1], ["name", "eduroam"], ["port_restrict", "f"], ["ipv6", "f"], ["nat", "f"], ["transp_proxy", "f"], ["wired", "f"], ["wpa2_aes", "t"], ["wpa2_tkip", "f"], ["wpa_tkip", "f"], ["wpa_aes", "f"], ["created_at", "2017-04-12 04:44:33.959800"], ["updated_at", "2017-04-12 04:44:33.959800"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "locations" ("institution_id", "address", "city", "longitude", "latitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["institution_id", 1], ["address", "Hattulantie 2"], ["city", "Helsinki"], ["longitude", "24°57'25.00\"E"], ["latitude", "60°11'46.00\"N"], ["created_at", "2017-04-12 04:44:33.961390"], ["updated_at", "2017-04-12 04:44:33.961390"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Haaga-Helia University of Applied Sciences, Vallila"], ["lang", "en"], ["location_id", 5], ["created_at", "2017-04-12 04:44:33.962252"], ["updated_at", "2017-04-12 04:44:33.962252"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Haaga-Helia ammattikorkeakoulu, Vallila"], ["lang", "en"], ["location_id", 5], ["created_at", "2017-04-12 04:44:33.963422"], ["updated_at", "2017-04-12 04:44:33.963422"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'haaga-helia.fi' AND "institutions"."id" != 1 AND "institutions"."inst_realm" = 'haaga-helia.fi') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entries" ("institution_id", "location_id", "orgssid_id", "ap_count", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["institution_id", 1], ["location_id", 5], ["orgssid_id", 5], ["ap_count", 19], ["created_at", "2017-04-12 04:44:33.973996"], ["updated_at", "2017-04-12 04:44:33.973996"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'lauttasaari.fi' AND "institutions"."inst_realm" = 'lauttasaari.fi') LIMIT 1[0m
+  [1m[35mInstitution Exists (0.1ms)[0m  SELECT  1 AS one FROM "institutions" WHERE "institutions"."apikey" = ? LIMIT 1  [["apikey", "qZcZ8r4baPzzYH4PoYQeVAtt"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "institutions" ("country", "inst_realm", "contact_email", "institution_type", "address", "city", "created_at", "updated_at", "apikey") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["country", "fi"], ["inst_realm", "lauttasaari.fi"], ["contact_email", "raul.becker@iki.fi"], ["institution_type", 3], ["address", "Lauttasaarentie 10"], ["city", "Helsinki"], ["created_at", "2017-04-12 04:44:33.985485"], ["updated_at", "2017-04-12 04:44:33.985485"], ["apikey", "qZcZ8r4baPzzYH4PoYQeVAtt"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "orgnames" ("name", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Lauttasaari University"], ["lang", "fi"], ["institution_id", 2], ["created_at", "2017-04-12 04:44:33.990268"], ["updated_at", "2017-04-12 04:44:33.990268"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "orgnames" ("name", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lauttasaaren yliopisto"], ["lang", "en"], ["institution_id", 2], ["created_at", "2017-04-12 04:44:33.991176"], ["updated_at", "2017-04-12 04:44:33.991176"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "orginfos" ("url", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["url", "http://joopajoo.en"], ["lang", "en"], ["institution_id", 2], ["created_at", "2017-04-12 04:44:33.992071"], ["updated_at", "2017-04-12 04:44:33.992071"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "orginfos" ("url", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["url", "http://joopajoo.fi"], ["lang", "en"], ["institution_id", 2], ["created_at", "2017-04-12 04:44:33.992926"], ["updated_at", "2017-04-12 04:44:33.992926"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "orgpolicies" ("url", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["url", "{\"lang\"=>\"en\"}"], ["lang", "en"], ["institution_id", 2], ["created_at", "2017-04-12 04:44:33.993813"], ["updated_at", "2017-04-12 04:44:33.993813"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "orgpolicies" ("url", "lang", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["url", "{\"lang\"=>\"fi\"}"], ["lang", "fi"], ["institution_id", 2], ["created_at", "2017-04-12 04:44:33.994704"], ["updated_at", "2017-04-12 04:44:33.994704"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "orgssids" ("name", "port_restrict", "ipv6", "nat", "transp_proxy", "wired", "wpa2_aes", "wpa2_tkip", "wpa_tkip", "wpa_aes", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "eduroam"], ["port_restrict", "f"], ["ipv6", "f"], ["nat", "f"], ["transp_proxy", "f"], ["wired", "f"], ["wpa2_aes", "t"], ["wpa2_tkip", "f"], ["wpa_tkip", "f"], ["wpa_aes", "f"], ["institution_id", 2], ["created_at", "2017-04-12 04:44:33.995591"], ["updated_at", "2017-04-12 04:44:33.995591"]]
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "locations" ("address", "city", "longitude", "latitude", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["address", "Lauttasaarentie 10"], ["city", "Helsinki"], ["longitude", "24°56'02.00\"E"], ["latitude", "60°12'04.00\"N"], ["institution_id", 2], ["created_at", "2017-04-12 04:44:33.996804"], ["updated_at", "2017-04-12 04:44:33.996804"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Lauttasaari University, main building"], ["lang", "fi"], ["location_id", 6], ["created_at", "2017-04-12 04:44:34.000568"], ["updated_at", "2017-04-12 04:44:34.000568"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lauttasaaren yliopisto, päärakennus"], ["lang", "en"], ["location_id", 6], ["created_at", "2017-04-12 04:44:34.003998"], ["updated_at", "2017-04-12 04:44:34.003998"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEntry Load (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."institution_id" = ?[0m  [["institution_id", 2]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'lauttasaari.fi' AND "institutions"."id" != 2 AND "institutions"."inst_realm" = 'lauttasaari.fi') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entries" ("institution_id", "location_id", "orgssid_id", "ap_count", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["institution_id", 2], ["location_id", 6], ["orgssid_id", 6], ["ap_count", 146], ["created_at", "2017-04-12 04:44:34.010123"], ["updated_at", "2017-04-12 04:44:34.010123"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'lauttasaari.fi' AND "institutions"."id" != 2 AND "institutions"."inst_realm" = 'lauttasaari.fi') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "orgssids" ("institution_id", "name", "port_restrict", "ipv6", "nat", "transp_proxy", "wired", "wpa2_aes", "wpa2_tkip", "wpa_tkip", "wpa_aes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["institution_id", 2], ["name", "eduroam"], ["port_restrict", "f"], ["ipv6", "f"], ["nat", "f"], ["transp_proxy", "f"], ["wired", "f"], ["wpa2_aes", "t"], ["wpa2_tkip", "f"], ["wpa_tkip", "f"], ["wpa_aes", "t"], ["created_at", "2017-04-12 04:44:34.019815"], ["updated_at", "2017-04-12 04:44:34.019815"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "locations" ("institution_id", "address", "city", "longitude", "latitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["institution_id", 2], ["address", "Lauttasaarentie 10"], ["city", "Helsinki"], ["longitude", "24°56'02.00\"E"], ["latitude", "60°12'04.00\"N"], ["created_at", "2017-04-12 04:44:34.021321"], ["updated_at", "2017-04-12 04:44:34.021321"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Lauttasaari University, main building"], ["lang", "fi"], ["location_id", 7], ["created_at", "2017-04-12 04:44:34.022910"], ["updated_at", "2017-04-12 04:44:34.022910"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "loc_names" ("name", "lang", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lauttasaaren yliopisto, päärakennus"], ["lang", "en"], ["location_id", 7], ["created_at", "2017-04-12 04:44:34.025433"], ["updated_at", "2017-04-12 04:44:34.025433"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInstitution Exists (0.1ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'lauttasaari.fi' AND "institutions"."id" != 2 AND "institutions"."inst_realm" = 'lauttasaari.fi') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entries" ("institution_id", "location_id", "orgssid_id", "ap_count", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["institution_id", 2], ["location_id", 7], ["orgssid_id", 7], ["ap_count", 146], ["created_at", "2017-04-12 04:44:34.029419"], ["updated_at", "2017-04-12 04:44:34.029419"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries"[0m
+  [1m[35mOrgssid Load (0.8ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrgssid Load (0.2ms)[0m  SELECT  orgssids.id,orgssids.institution_id FROM "orgssids" WHERE "orgssids"."institution_id" = ? GROUP BY "orgssids"."institution_id", "orgssids"."name", "orgssids"."port_restrict", "orgssids"."transp_proxy", "orgssids"."ipv6", "orgssids"."nat", "orgssids"."wpa_tkip", "orgssids"."wpa_aes", "orgssids"."wpa2_tkip", "orgssids"."wpa2_aes", "orgssids"."wired"  ORDER BY "orgssids"."id" DESC LIMIT 1  [["institution_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "entries" SET "orgssid_id" = ?, "updated_at" = ? WHERE "entries"."id" = ?  [["orgssid_id", 5], ["updated_at", "2017-04-12 04:44:34.037996"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrgssid Load (0.0ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEntry Load (0.0ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mOrgssid Load (0.1ms)[0m  SELECT  orgssids.id,orgssids.institution_id FROM "orgssids" WHERE "orgssids"."institution_id" = ? GROUP BY "orgssids"."institution_id", "orgssids"."name", "orgssids"."port_restrict", "orgssids"."transp_proxy", "orgssids"."ipv6", "orgssids"."nat", "orgssids"."wpa_tkip", "orgssids"."wpa_aes", "orgssids"."wpa2_tkip", "orgssids"."wpa2_aes", "orgssids"."wired"  ORDER BY "orgssids"."id" DESC LIMIT 1  [["institution_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "entries" SET "orgssid_id" = ?, "updated_at" = ? WHERE "entries"."id" = ?  [["orgssid_id", 5], ["updated_at", "2017-04-12 04:44:34.044194"], ["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrgssid Load (0.0ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mOrgssid Load (0.1ms)[0m  SELECT  orgssids.id,orgssids.institution_id FROM "orgssids" WHERE "orgssids"."institution_id" = ? GROUP BY "orgssids"."institution_id", "orgssids"."name", "orgssids"."port_restrict", "orgssids"."transp_proxy", "orgssids"."ipv6", "orgssids"."nat", "orgssids"."wpa_tkip", "orgssids"."wpa_aes", "orgssids"."wpa2_tkip", "orgssids"."wpa2_aes", "orgssids"."wired"  ORDER BY "orgssids"."id" DESC LIMIT 1  [["institution_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "entries" SET "orgssid_id" = ?, "updated_at" = ? WHERE "entries"."id" = ?  [["orgssid_id", 5], ["updated_at", "2017-04-12 04:44:34.049624"], ["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrgssid Load (0.0ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mEntry Load (0.0ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mOrgssid Load (0.1ms)[0m  SELECT  orgssids.id,orgssids.institution_id FROM "orgssids" WHERE "orgssids"."institution_id" = ? GROUP BY "orgssids"."institution_id", "orgssids"."name", "orgssids"."port_restrict", "orgssids"."transp_proxy", "orgssids"."ipv6", "orgssids"."nat", "orgssids"."wpa_tkip", "orgssids"."wpa_aes", "orgssids"."wpa2_tkip", "orgssids"."wpa2_aes", "orgssids"."wired"  ORDER BY "orgssids"."id" DESC LIMIT 1  [["institution_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  UPDATE "entries" SET "orgssid_id" = ?, "updated_at" = ? WHERE "entries"."id" = ?  [["orgssid_id", 5], ["updated_at", "2017-04-12 04:44:34.052289"], ["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mOrgssid Load (0.0ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEntry Load (0.0ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mOrgssid Load (0.1ms)[0m  SELECT  orgssids.id,orgssids.institution_id FROM "orgssids" WHERE "orgssids"."institution_id" = ? GROUP BY "orgssids"."institution_id", "orgssids"."name", "orgssids"."port_restrict", "orgssids"."transp_proxy", "orgssids"."ipv6", "orgssids"."nat", "orgssids"."wpa_tkip", "orgssids"."wpa_aes", "orgssids"."wpa2_tkip", "orgssids"."wpa2_aes", "orgssids"."wired"  ORDER BY "orgssids"."id" DESC LIMIT 1  [["institution_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrgssid Load (0.0ms)[0m  [1mSELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mEntry Load (0.0ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mOrgssid Load (0.1ms)[0m  [1mSELECT  orgssids.id,orgssids.institution_id FROM "orgssids" WHERE "orgssids"."institution_id" = ? GROUP BY "orgssids"."institution_id", "orgssids"."name", "orgssids"."port_restrict", "orgssids"."transp_proxy", "orgssids"."ipv6", "orgssids"."nat", "orgssids"."wpa_tkip", "orgssids"."wpa_aes", "orgssids"."wpa2_tkip", "orgssids"."wpa2_aes", "orgssids"."wired"  ORDER BY "orgssids"."id" DESC LIMIT 1[0m  [["institution_id", 2]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mUPDATE "entries" SET "orgssid_id" = ?, "updated_at" = ? WHERE "entries"."id" = ?[0m  [["orgssid_id", 7], ["updated_at", "2017-04-12 04:44:34.056421"], ["id", 6]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrgssid Load (0.0ms)[0m  [1mSELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mEntry Load (0.0ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mOrgssid Load (0.1ms)[0m  [1mSELECT  orgssids.id,orgssids.institution_id FROM "orgssids" WHERE "orgssids"."institution_id" = ? GROUP BY "orgssids"."institution_id", "orgssids"."name", "orgssids"."port_restrict", "orgssids"."transp_proxy", "orgssids"."ipv6", "orgssids"."nat", "orgssids"."wpa_tkip", "orgssids"."wpa_aes", "orgssids"."wpa2_tkip", "orgssids"."wpa2_aes", "orgssids"."wired"  ORDER BY "orgssids"."id" DESC LIMIT 1[0m  [["institution_id", 2]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT "entries"."orgssid_id" FROM "entries"
+  [1m[36mOrgssid Load (0.3ms)[0m  [1mSELECT "orgssids".* FROM "orgssids" WHERE (id NOT IN (5,5,5,5,5,7,7))[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "orgssids" WHERE "orgssids"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "orgssids" WHERE "orgssids"."id" = ?  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "orgssids" WHERE "orgssids"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "orgssids" WHERE "orgssids"."id" = ?  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "orgssids" WHERE "orgssids"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "institutions"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/institutions" for 127.0.0.1 at 2017-04-12 07:44:34 +0300
+Processing by InstitutionsController#index as HTML
+  [1m[35mInstitution Load (0.7ms)[0m  SELECT "institutions".* FROM "institutions"
+  Rendered institutions/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 345ms (Views: 330.6ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInstitution Exists (0.1ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'MyString' AND "institutions"."inst_realm" = 'MyString') LIMIT 1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE "institutions"."apikey" = ? LIMIT 1[0m  [["apikey", "M2e2qy1N28UL0h4aMyaCRgtt"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "institutions" ("country", "institution_type", "inst_realm", "address", "city", "contact_name", "contact_email", "contact_phone", "created_at", "updated_at", "apikey") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["country", "fi"], ["institution_type", 1], ["inst_realm", "MyString"], ["address", "MyString"], ["city", "MyString"], ["contact_name", "MyString"], ["contact_email", "MyString"], ["contact_phone", "MyString"], ["created_at", "2017-04-12 04:44:34.471374"], ["updated_at", "2017-04-12 04:44:34.471374"], ["apikey", "M2e2qy1N28UL0h4aMyaCRgtt"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered institutions/_form.html.erb (51.4ms)
+  Rendered institutions/edit.html.erb (68.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'Inst Realm' AND "institutions"."inst_realm" = 'Inst Realm') LIMIT 1[0m
+  [1m[35mInstitution Exists (0.0ms)[0m  SELECT  1 AS one FROM "institutions" WHERE "institutions"."apikey" = ? LIMIT 1  [["apikey", "hlZmDgpA25g5IQIzkMRqagtt"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "institutions" ("country", "institution_type", "inst_realm", "address", "city", "contact_name", "contact_email", "contact_phone", "created_at", "updated_at", "apikey") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["country", "fi"], ["institution_type", 2], ["inst_realm", "Inst Realm"], ["address", "Address"], ["city", "City"], ["contact_name", "Contact Name"], ["contact_email", "Contact Email"], ["contact_phone", "Contact Phone"], ["created_at", "2017-04-12 04:44:34.561737"], ["updated_at", "2017-04-12 04:44:34.561737"], ["apikey", "hlZmDgpA25g5IQIzkMRqagtt"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInstitution Exists (0.1ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'Inst Realm' AND "institutions"."inst_realm" = 'Inst Realm') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered institutions/_form.html.erb (18.2ms)
+  Rendered institutions/new.html.erb (19.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'Inst Realm' AND "institutions"."inst_realm" = 'Inst Realm') LIMIT 1[0m
+  [1m[35mInstitution Exists (0.0ms)[0m  SELECT  1 AS one FROM "institutions" WHERE "institutions"."apikey" = ? LIMIT 1  [["apikey", "LA311UK6B9QHT3dBalrW0Qtt"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "institutions" ("country", "institution_type", "inst_realm", "address", "city", "contact_name", "contact_email", "contact_phone", "created_at", "updated_at", "apikey") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["country", "fi"], ["institution_type", 2], ["inst_realm", "Inst Realm"], ["address", "Address"], ["city", "City"], ["contact_name", "Contact Name"], ["contact_email", "Contact Email"], ["contact_phone", "Contact Phone"], ["created_at", "2017-04-12 04:44:34.625593"], ["updated_at", "2017-04-12 04:44:34.625593"], ["apikey", "LA311UK6B9QHT3dBalrW0Qtt"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mOrgname Load (0.2ms)[0m  [1mSELECT  "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = ?  ORDER BY "orgnames"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  Rendered institutions/show.html.erb (13.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
