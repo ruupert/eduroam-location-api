@@ -11,6 +11,7 @@ class GMapHandler
     lng = split[1].match(/[+-]?([0-9]*[.])?[0-9]+/)[0]
     lat = split[0].match(/[+-]?([0-9]*[.])?[0-9]+/)[0]
 
+
     # and now we can convert coordinates to Degrees-Minutes-Seconds:
     dmslng = deg2dms(lng,'lng')
     dmslat = deg2dms(lat,'lat')
@@ -50,13 +51,14 @@ class GMapHandler
     end
     minutes = intval.to_s
     coord = remainder * 60
+    remainder = coord % 1
     intval = coord.to_i
     if (intval<0)
       intval = intval * -1
     end
-    seconds = intval.to_s
+    seconds = intval + remainder
 
-    return "#{degrees}°#{minutes}′#{seconds}″#{sign}"
+    return "#{degrees}° #{minutes}' #{seconds.round(2)}\" #{sign}"
 
 
   end
