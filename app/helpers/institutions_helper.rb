@@ -75,10 +75,13 @@ module InstitutionsHelper
 
           clean_address = tmp_str.to_s.match(/[A-z ]+[0-9]+/).to_s
           puts clean_address
-          puts building_identifier
+          if building_identifier.nil?
+            building_identifier = "0"
+          end
 
           n.locations.last.address = clean_address
-          n.locations.last.identifier = building_identifier
+          n.locations.last.identifier= building_identifier
+
 
           n.locations.last.city = item['address']['city']
           n.locations.last.country = item['address']['country']
