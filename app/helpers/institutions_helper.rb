@@ -20,13 +20,13 @@ module InstitutionsHelper
     #    to point to one of the distinct ssids and then remove all orphaned ssids.
 
 
-    doc = Nokogiri::XML(File.read(import_file)) do |config|
+    doc = Nokogiri::XML( import_file ) do |config|
       config.options = Nokogiri::XML::ParseOptions::STRICT | Nokogiri::XML::ParseOptions::NOBLANKS
     end
     xsd = Nokogiri::XML::Schema(File.read("lib/assets/institution.xsd"))
     if xsd.valid?(doc)
       q = Queue.new
-      o = OpenStruct.new(Hash.from_xml(File.read(import_file)))
+      o = OpenStruct.new(Hash.from_xml(import_file))
 
       # OpenStruct doesn't map attributes, so given that the lang-attributes
       # are found in the document in same order, they can be queued and then dequeued appropriately
@@ -67,8 +67,19 @@ module InstitutionsHelper
 
         end
         x['location'].each do |item|
+
           n.locations.build
-          n.locations.last.address = item['address']['street']
+          tmp_str = item['address']['street']
+          building_identifier = tmp_str.to_s.match(/[0-9]+(.*)/).to_s.match(/[A-z]/).to_s.upcase
+          tmp_str = item['address']['street']
+
+          clean_address = tmp_str.to_s.match(/[A-z ]+[0-9]+/).to_s
+          puts clean_address
+          puts building_identifier
+
+          n.locations.last.address = clean_address
+          n.locations.last.identifier = building_identifier
+
           n.locations.last.city = item['address']['city']
           n.locations.last.country = item['address']['country']
           n.locations.last.longitude = item['longitude']

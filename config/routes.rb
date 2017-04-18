@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
   get '/api/v1/:apikey/list/ssids' => 'api/v1/ssids#list'
   get '/api/v1/:apikey/list/locations' => 'api/v1/locations#list'
-  get '/api/v1/:apikey/set/:address/:city/:ap' => 'api/v1/entries#set'
+  get '/api/v1/:apikey/set/:address/:identifier/:city/:ap' => 'api/v1/entries#set'
+  get '/api/v1/:apikey/set/:address/:identifier/:city/:ap/:ssid' => 'api/v1/entries#set'
 
 
 # The priority is based upon order of creation: first created -> highest priority.

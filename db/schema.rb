@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410214459) do
+ActiveRecord::Schema.define(version: 20170417212813) do
 
   create_table "entries", force: :cascade do |t|
     t.integer  "institution_id"
@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 20170410214459) do
 
   create_table "locations", force: :cascade do |t|
     t.string   "address"
-    t.integer  "street_nr"
     t.string   "city"
     t.string   "country"
     t.string   "longitude"
@@ -54,6 +53,7 @@ ActiveRecord::Schema.define(version: 20170410214459) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "institution_id"
+    t.string   "identifier"
   end
 
   create_table "orginfos", force: :cascade do |t|

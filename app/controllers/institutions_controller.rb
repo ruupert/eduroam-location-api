@@ -12,6 +12,8 @@ include InstitutionsHelper
   # GET /institutions/1
   # GET /institutions/1.json
   def show
+    @locations = Location.where(institution_id: params[:id])
+    @latest_entries = Entry.where(institution_id: params[:id]).order(:location_id => :desc).group(:location_id)
   end
 
   # GET /institutions/new

@@ -4,7 +4,7 @@ class Api::V1::SsidsController < Api::V1::BaseController
   end
   def list
     render(
-        json: Orgssid.where(:institution_id => apikeyToInstitutionId(params[:apikey])).as_json
+        json: Orgssid.where(:institution_id => apikeyToInstitutionId(params[:apikey])).select(:id,:name,:port_restrict,:transp_proxy,:ipv6,:nat,:wpa_tkip,:wpa_aes,:wpa2_tkip,:wpa2_aes,:wired).as_json
 
     )
 

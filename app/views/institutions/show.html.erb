@@ -60,6 +60,21 @@
   <strong>APIKEY:</strong>
   <%= @institution.apikey %>
 </p>
+<hr>
+<table style="text-align: left;">
+  <tr>
+    <th>Address</th>
+    <th>AP Count</th>
+    <th>Last updated</th>
+  </tr><% @locations.each do |location| %>
+
+    <% e = Entry.getEntry(location.id) %>
+      <tr><td><%= location.address %> <%= location.identifier %></td>
+        <td><%= e.first.ap_count %></td>
+        <td><%= e.first.updated_at %></td>
+      </tr>
+<% end %>
+</table>
 
 <%= link_to 'Edit', edit_institution_path(@institution) %> |
 <%= link_to 'Back', institutions_path %>
