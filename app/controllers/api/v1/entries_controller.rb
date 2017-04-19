@@ -3,7 +3,8 @@ class Api::V1::EntriesController < Api::V1::BaseController
   include Api::V1::EntriesHelper
 
   def set
-
+    # Move this cargo culture to MODELS! 
+    #
     valid_location = valid_location?(params[:address], params[:identifier], params[:city], get_institution_id)
     valid_ssid = valid_ssid?(get_institution_id, params[:ssid])
     has_ssid = has_ssid?(get_institution_id)

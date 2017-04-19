@@ -10,6 +10,8 @@
     <envs>
       <env name="NRO_COUNTRY" value="fi" />
       <env name="GMAPKEY" value="AIzaSyAMc-uEOKtzea3_OkDirMKHH3WtEVM2Qts" />
+      <env name="EDUROAM_API_ADMIN_PW" value="salainen" />
+      <env name="EDUROAM_API_ADMIN_USERNAME" value="admin" />
     </envs>
     <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
     <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />

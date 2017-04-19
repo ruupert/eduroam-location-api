@@ -1,7 +1,7 @@
 class InstitutionsController < ApplicationController
-include InstitutionsHelper
+  include InstitutionsHelper
   before_action :set_institution, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate
 
   # GET /institutions
   # GET /institutions.json
@@ -42,30 +42,16 @@ include InstitutionsHelper
   # POST /institutions
   # POST /institutions.json
 
-  #  Parameters: {"utf8"=>"✓",
-  # "authenticity_token"=>"QrmsUkCUesfW7OWpr3al5nmKBwywyzGIfqKW
-  # prkqoopGKTpUkBwEihJw4PODVtPOrXcSjQAfYdBLTBhmH0Bi5g==",
-  # "institution"=>{"institution_type"=>"3",
-  # "orgname"=>{"name"=>"HelloUniversity"},
-  # "inst_realm"=>"lauttasaari.fi",
-  # "address"=>"Lauttasaarentie 10",
-  # "city"=>"Helsinki", "contact_name"=>"Raul Becker",
-  # "contact_email"=>"raul.becker@iki.fi",
-  # "contact_phone"=>"050505050",
-  # "orginfo"=>{"url"=>"lauttasaari.fi/info_english"},
-  # "orgpolicy"=>{"url"=>"http://lauttasaari.fi/policy_english"}},
-  # "commit"=>"Create Institution"}
-
   def create
     @institution = Institution.new(institution_params)
 
     respond_to do |format|
       if @institution.save
-        format.html { redirect_to @institution, notice: 'Institution was successfully created.' }
-        format.json { render :show, status: :created, location: @institution }
+        format.html {redirect_to @institution, notice: 'Institution was successfully created.'}
+        format.json {render :show, status: :created, location: @institution}
       else
-        format.html { render :new }
-        format.json { render json: @institution.errors, status: :unprocessable_entity }
+        format.html {render :new}
+        format.json {render json: @institution.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -75,11 +61,11 @@ include InstitutionsHelper
   def update
     respond_to do |format|
       if @institution.update(institution_params)
-        format.html { redirect_to @institution, notice: 'Institution was successfully updated.' }
-        format.json { render :show, status: :ok, location: @institution }
+        format.html {redirect_to @institution, notice: 'Institution was successfully updated.'}
+        format.json {render :show, status: :ok, location: @institution}
       else
-        format.html { render :edit }
-        format.json { render json: @institution.errors, status: :unprocessable_entity }
+        format.html {render :edit}
+        format.json {render json: @institution.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -89,8 +75,8 @@ include InstitutionsHelper
   def destroy
     @institution.destroy
     respond_to do |format|
-      format.html { redirect_to institutions_url, notice: 'Institution was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html {redirect_to institutions_url, notice: 'Institution was successfully destroyed.'}
+      format.json {head :no_content}
     end
   end
 
@@ -131,6 +117,12 @@ include InstitutionsHelper
   # Use callbacks to share common setup or constraints between actions.
   def set_institution
     @institution = Institution.find(params[:id])
+  end
+
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == ENV['EDUROAM_API_ADMIN_USERNAME'] and password == ENV['EDUROAM_API_ADMIN_PW']
+    end
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
