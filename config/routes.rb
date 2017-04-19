@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  namespace :api do
+  namespace :v1 do
+    root 'welcome#index'
+    get 'doc' => 'welcome#doc'
+    end
+  end
+
+  root 'welcome#index'
+  get 'apidoc' => 'welcome#apidoc'
+
   get 'exporter/institutions'
 
   get ':apikey/get/locations' => 'exporter#locations'

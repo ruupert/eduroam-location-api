@@ -1,0 +1,103 @@
+<div id="h1">
+  <h1>APIv1 docs</h1>
+  <p>Currently supported interaction medium(s) and its(their) methods.</p>
+
+  <p>Institutions can update/add their locations and set various information properties for each including location
+    names
+    in different languages,
+    location addresses, location access point counts and more. Get methods include methods such as listing locations,
+    SSIDs, location names.</p>
+</div>
+<div id="h2">
+  <h2>REST-medium</h2>
+  <div id="h3">
+    <h3>Locations</h3>
+    <div id="h4">
+
+      <h4>Get</h4>
+      <code>/api/v1/:apikey/get/locations</code>
+      <p>Returns a list of locations with address information and id-numbers that are associated to the location.</p>
+      <h4>Set</h4>
+      <code>/api/v1/:apikey/set/location/:address/:identifier/:city/:apcount[/:ssid]</code>
+      <p>This "cronjob"-friendly method wraps three different functions into one. Cronjob = Best job.
+      <ul>
+        <li>Creating new locations along with default values.</li>
+        <li>Updating existing location access point count and optionally changing SSID</li>
+        <li>Removing a location alike behaviour</li>
+      </ul>
+      </p>
+      <p><strong>Creating locations</strong></p>
+      <p>
+        An unique location consists of three components: Address with street number, identifier and city.
+        The address and the city must be known to Google Maps API in order for it to be successfully created.
+        Google Maps API is used to get the required coordinates and simultaneously acting as a location
+        validator. If the address+city is unknown to Google Maps API service, then it is reasonably safe to assume that
+        the
+        given location is invalid and therefore should not be added. The identifier must be supplied and it accepts
+        either
+        single character letter or a numeric zero. Single character letter stands for the building identifier that
+        is at least used in Finnish address format. Zero means that the building has no additional letters assigned.
+        The :apcount stands for access point count and can be any positive value including zero. The :ssid value
+        is optional and it is set automatically to the first available SSID (todo: which is created when the institution
+        itself is created. Default location names in different languages are generated using organization names
+        supplemented by location address).
+      </p>
+      <p><strong>Updating locations</strong></p>
+      <p>If a location has already been created the application merely finds the latest entry for the location and
+        creates
+        a new entry (todo: only if any of the input values have changed).
+      </p>
+      <p><strong>Removing locations</strong></p>
+      <p>This method acts also as a removal function. If the location :apcount is set to 0 (numeric zero), then the
+        location
+        acts as having been deleted. Locations are never removed from the application. This ensures that data is not
+        lost
+        in case of misuse and allows for rollback to some point in the past.
+      </p></div>
+  </div>
+  <div id="h3">
+    <h3>Location names</h3>
+    <div id="h4">
+      <h4>Get</h4>
+      <code>/api/v1/:apikey/get/loc_names/:location_id</code>
+      <p>Returns a list of location names for a location.</p>
+      <h4>Set</h4>
+      <code>/api/v1/:apikey/set/loc_name/:location_id/:lang/:name</code>
+      <p>This method allows customization of existing location names.</p>
+    </div>
+  </div>
+  <div id="h3">
+    <h3>SSIDs</h3>
+    <div id="h4">
+      <h4>Get</h4>
+      <code>/api/v1/:apikey/get/ssids</code>
+      <p>This method can be used to fetch current SSID's and their configurations along with the SSID id which is
+        required if
+        the user wishes to change some SSID configuration</p>
+      <h4>Set</h4>
+      <code>/api/v1/:apikey/set/ssid/:id/{:name, }</code>
+    </div>
+  </div>
+  <div id="h3">
+    <h3>Policy URL</h3>
+    <p>Policy URL is the location where roaming guests can read Service Providers eduroam network rules and
+      policies.</p>
+    <div id="h4">
+      <h4>Get</h4>
+      <code>/api/v1/:apikey/get/policies</code>
+      <h4>Set</h4>
+      <code>/api/v1/:apikey/set/policies/:lang/:url</code>
+    </div>
+  </div>
+  <div id="h3">
+    <h3>Info URL</h3>
+    <p>Information URL is the location where roaming guests can find guidance on accessing Service Providers eduroam
+      network. The eduroam database specifications requires that english URL ?is mandatory?.</p>
+    <div id="h4">
+      <h4>Get</h4>
+      <code>/api/v1/:apikey/get/infos</code>
+      <h4>Set</h4>
+      <code>/api/v1/:apikey/set/infos/:lang/:url</code>
+    </div>
+  </div>
+</div>
