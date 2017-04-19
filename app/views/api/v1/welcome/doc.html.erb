@@ -26,7 +26,8 @@
         <li>Removing a location alike behaviour</li>
       </ul>
       </p>
-      <p><strong>Creating locations</strong></p>
+      <h5>Creating locations</h5>
+      <div class="h5">
       <p>
         An unique location consists of three components: Address with street number, identifier and city.
         The address and the city must be known to Google Maps API in order for it to be successfully created.
@@ -42,18 +43,26 @@
         itself is created. Default location names in different languages are generated using organization names
         supplemented by location address).
       </p>
-      <p><strong>Updating locations</strong></p>
+    </div>
+      <h5>Updating locations</h5>
+      <div class="h5">
+
       <p>If a location has already been created the application merely finds the latest entry for the location and
         creates
         a new entry (todo: only if any of the input values have changed).
       </p>
-      <p><strong>Removing locations</strong></p>
+      </div>
+      <h5>Removing locations</h5>
+      <div class="h5">
+
       <p>This method acts also as a removal function. If the location :apcount is set to 0 (numeric zero), then the
         location
         acts as having been deleted. Locations are never removed from the application. This ensures that data is not
         lost
         in case of misuse and allows for rollback to some point in the past.
-      </p></div>
+      </p>
+      </div>
+      </div>
   </div>
   <div id="h3">
     <h3>Location names</h3>
