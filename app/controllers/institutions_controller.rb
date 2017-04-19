@@ -119,12 +119,6 @@ class InstitutionsController < ApplicationController
     @institution = Institution.find(params[:id])
   end
 
-  def authenticate
-    authenticate_or_request_with_http_basic do |username, password|
-      username == ENV['EDUROAM_API_ADMIN_USERNAME'] and password == ENV['EDUROAM_API_ADMIN_PW']
-    end
-  end
-
   # Never trust parameters from the scary internet, only allow the white list through.
   def institution_params
     params.require(:institution).permit(:country,

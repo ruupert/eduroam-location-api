@@ -6,6 +6,7 @@ class Entry < ActiveRecord::Base
     return self.where(location_id: id).order(:id => :desc).limit(1)
   end
 
+
   def self.create_entry(institution_id,location_id, orgssid_id,ap_count)
     e = Entry.new
     e.institution_id=institution_id
