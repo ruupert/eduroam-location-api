@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "exporter/institutions.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should have some xml" do
+    expect(request).to have_content("xml")
+  end
 end

@@ -1,5 +1,7 @@
 require 'rails_helper'
-
-RSpec.describe "welcome/index.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe "welcome/index.html.erb" do
+  it "displays APIv1" do
+    visit root_path
+    expect(page).to have_content("Eduroam Location API")
+  end
 end

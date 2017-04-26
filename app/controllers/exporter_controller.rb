@@ -76,6 +76,8 @@ class ExporterController < ApplicationController
         end
       }
 
+      render(xml: xml)
+
     end
   end
 

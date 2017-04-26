@@ -44,6 +44,7 @@ class InstitutionsController < ApplicationController
 
   def create
     @institution = Institution.new(institution_params)
+    puts institution_params
 
     respond_to do |format|
       if @institution.save

@@ -52,6 +52,8 @@ group :development, :test do
   gem 'railroady'
   gem 'coveralls', require: false
   gem 'simplecov', '0.12.0'
+  gem 'capybara'
+  gem 'webmock'
 end
 
 group :development do
