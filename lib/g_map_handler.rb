@@ -75,9 +75,13 @@ class GMapHandler
     end
     seconds = intval + remainder
 
-    return "#{degrees}° #{minutes}' #{seconds.round(2)}\" #{sign}"
+    return "#{degrees}°#{minutes}'#{seconds.round(2)}\"#{sign}"
 
 
+  end
+
+  def to_string
+    return "#{self.address}#{self.city}#{self.lng}#{self.lat}#{self.country}"
   end
 
   def gkey

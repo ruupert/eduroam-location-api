@@ -81,6 +81,4 @@ class ExporterController < ApplicationController
     end
   end
 
-  def locations
-  end
 end
