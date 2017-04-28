@@ -36,7 +36,6 @@ class Institution < ActiveRecord::Base
     self.orgpolicies.first.url
   end
 
-
   private
   def new_apikey
     self.apikey = generate_api_key()

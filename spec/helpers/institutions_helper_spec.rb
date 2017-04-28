@@ -12,7 +12,7 @@ require 'rails_helper'
 RSpec.describe InstitutionsHelper, type: :helper do
   #pending "add some examples to (or delete) #{__FILE__}"
   it "successfully imports" do
-    self.import_data("lib/assets/haagahelia2.xml")
+    import_data(File.read("lib/assets/haagahelia2.xml"))
     expect(Institution.count).to eql(2)
   end
 end

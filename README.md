@@ -5,3 +5,5 @@ An attempt on creating an api for eduroam access point placement onto the 'Where
 [Wiki](https://github.com/ruupert/eduroam-location-api/wiki)
 
 [Latest build @ heroku](https://eduroam-api.herokuapp.com/)
+
+Testing a new delivery method: Pushing to private GitLab repo and post-receive push to GitHub..

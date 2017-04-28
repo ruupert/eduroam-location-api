@@ -1,18 +1,25 @@
 Rails.application.routes.draw do
-  get 'exporter/institutions'
+  namespace :api do
+    namespace :v1 do
+      root 'welcome#index'
+      get 'doc' => 'welcome#doc'
+      get ':apikey/get/ssids' => 'ssids#get'
+      get ':apikey/get/locations' => 'locations#get'
+      get ':apikey/set/:address/:identifier/:city/:ap' => 'entries#set'
+      get ':apikey/set/:address/:identifier/:city/:ap/:ssid' => 'entries#set'
+    end
+  end
 
-  get ':apikey/get/locations' => 'exporter#locations'
+  root 'welcome#index'
+  get 'apidoc' => 'welcome#apidoc'
+  get 'exporter/institutions'
   get 'import' => 'institutions#new_import'
   post '/institution/import' => 'institutions#import'
-
-  #get 'institutions/:id/edit' => 'institution#edit'
   resources :institutions
 
+  # get ':apikey/get/locations' => 'exporter#locations'
 
-
-  get '/api/v1/:apikey/list/ssids' => 'api/v1/ssids#list'
-  get '/api/v1/:apikey/list/locations' => 'api/v1/locations#list'
-  get '/api/v1/:apikey/set/:address/:city/:ap' => 'api/v1/entries#set'
+  #get 'institutions/:id/edit' => 'institution#edit'
 
 
 # The priority is based upon order of creation: first created -> highest priority.

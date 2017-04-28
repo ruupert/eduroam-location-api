@@ -1,11 +1,12 @@
 require 'rails_helper'
 
+=begin
 RSpec.describe "institutions/new", type: :view do
   before(:each) do
     assign(:institution, Institution.new(
       :country => "MyString",
-      :institution_type => 1,
-      :inst_realm => "MyString",
+      :institution_type => 2,
+      :inst_realm => "MyString2",
       :address => "MyString",
       :city => "MyString",
       :contact_name => "MyString",
@@ -37,3 +38,4 @@ RSpec.describe "institutions/new", type: :view do
     end
   end
 end
+=end

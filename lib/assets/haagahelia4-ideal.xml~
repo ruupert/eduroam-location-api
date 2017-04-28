@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<institutions>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>haaga-helia.fi</inst_realm>
+    <org_name lang="en">Haaga-Helia University of Applied Sciences</org_name>
+    <org_name lang="fi">Haaga-Helia ammattikorkeakoulu</org_name>
+    <address>
+      <street>Ratapihantie 13</street>
+      <city>Helsinki</city>
+    </address>
+    <contact>
+      <name />
+      <email>helpdesk@haaga-helia.fi</email>
+      <phone></phone>
+    </contact>
+    <info_URL lang="en" />
+    <info_URL lang="fi" />
+    <policy_URL lang="en" />
+    <policy_URL lang="fi" />
+    <ts>2015-01-23T14:00:00.0Z</ts>
+    <location>
+      <longitude>24°56'02.00"E</longitude>
+      <latitude>60°12'04.00"N</latitude>
+      <loc_name lang="en">Haaga-Helia University of Applied Sciences, Päsila</loc_name>
+      <loc_name lang="fi">Haaga-Helia ammattikorkeakoulu, Pasila</loc_name>
+      <address>
+        <street>Ratapihantie 13</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>46</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" />
+    </location>
+    <location>
+      <longitude>25°00'55.00"E</longitude>
+      <latitude>60°14'50.00"N</latitude>
+      <loc_name lang="en">Haaga-Helia University of Applied Sciences, Malmi</loc_name>
+      <loc_name lang="fi">Haaga-Helia ammattikorkeakoulu, Malmi</loc_name>
+      <address>
+        <street>Hietakummuntie 1 A</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>28</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" />
+    </location>
+    <location>
+      <longitude>24°54'22.00"E</longitude>
+      <latitude>60°13'06.00"N</latitude>
+      <loc_name lang="en">Haaga-Helia University of Applied Sciences, Haaga</loc_name>
+      <loc_name lang="fi">Haaga-Helia ammattikorkeakoulu, Haaga</loc_name>
+      <address>
+        <street>Pajuniityntie 11</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>26</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" />
+    </location>
+    <location>
+      <longitude>25°39'26.00"E</longitude>
+      <latitude>60°23'13.00"N</latitude>
+      <loc_name lang="en">Haaga-Helia University of Applied Sciences, Porvoo</loc_name>
+      <loc_name lang="fi">Haaga-Helia ammattikorkeakoulu, Porvoo</loc_name>
+      <address>
+        <street>Taidetehtaankatu 1</street>
+        <city>Porvoo</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>28</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" />
+    </location>
+    <location>
+      <longitude>24°57'25.00"E</longitude>
+      <latitude>60°11'46.00"N</latitude>
+      <loc_name lang="en">Haaga-Helia University of Applied Sciences, Vallila</loc_name>
+      <loc_name lang="fi">Haaga-Helia ammattikorkeakoulu, Vallila</loc_name>
+      <address>
+        <street>Hattulantie 2</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>19</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" />
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>lauttasaari.fi</inst_realm>
+    <org_name lang="en">Lauttasaari University</org_name>
+    <org_name lang="fi">Lauttasaaren yliopisto</org_name>
+    <address>
+      <street>Lauttasaarentie 10</street>
+      <city>Helsinki</city>
+    </address>
+    <contact>
+      <name />
+      <email>raul.becker@iki.fi</email>
+      <phone></phone>
+    </contact>
+    <info_URL lang="en">http://joopajoo.en</info_URL>
+    <info_URL lang="fi">http://joopajoo.fi</info_URL>
+    <policy_URL lang="en" />
+    <policy_URL lang="fi" />
+    <ts>2015-01-23T14:00:00.0Z</ts>
+    <location>
+      <longitude>24°56'02.00"E</longitude>
+      <latitude>60°12'04.00"N</latitude>
+      <loc_name lang="en">Lauttasaari University, main building</loc_name>
+      <loc_name lang="fi">Lauttasaaren yliopisto, päärakennus</loc_name>
+      <address>
+        <street>Lauttasaarentie 10</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>146</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" />
+    </location>
+    <location>
+      <longitude>24°56'02.00"E</longitude>
+      <latitude>60°12'04.00"N</latitude>
+      <loc_name lang="en">Lauttasaari University, main building</loc_name>
+      <loc_name lang="fi">Lauttasaaren yliopisto, päärakennus</loc_name>
+      <address>
+        <street>Lauttasaarentie 10B</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES, WPA/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>146</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" />
+    </location>
+    <location>
+      <longitude>24°56'02.00"E</longitude>
+      <latitude>60°12'04.00"N</latitude>
+      <loc_name lang="en">Lauttasaari University, secondary duplicate</loc_name>
+      <loc_name lang="fi">Lauttasaaren yliopisto, toinen sama sijainti</loc_name>
+      <address>
+        <street>Lauttasaarentie 10C</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES, WPA/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>126</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" />
+    </location>
+  </institution>
+</institutions>

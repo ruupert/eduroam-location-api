@@ -2,15 +2,24 @@ require 'rails_helper'
 
 RSpec.describe "institutions/edit", type: :view do
   before(:each) do
+    @institution_types = {'IdP&SP' => 3, 'SP' => 2}
+
     @institution = assign(:institution, Institution.create!(
-      :country => "MyString",
-      :institution_type => 1,
-      :inst_realm => "MyString",
-      :address => "MyString",
-      :city => "MyString",
-      :contact_name => "MyString",
-      :contact_email => "MyString",
-      :contact_phone => "MyString"
+        :id => 1,
+        :country => "fi",
+        :institution_type => 2,
+        :inst_realm => "MyString",
+        :address => "MyString",
+        :city => "MyString",
+        :contact_name => "MyString",
+        :contact_email => "MyString",
+        :contact_phone => "MyString"
+    ))
+    @orgnames = assign(:orgname, Orgname.create!(
+        :id => 1,
+        :name => "myname",
+        :lang => "en",
+        :institution_id => 1
     ))
   end
 
@@ -18,10 +27,10 @@ RSpec.describe "institutions/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", institution_path(@institution), "post" do
-
-      assert_select "input#institution_country[name=?]", "institution[country]"
-
-      assert_select "input#institution_institution_type[name=?]", "institution[institution_type]"
+# country not selectable
+#      assert_select "input#institution_country[name=?]", "institution[country]"
+# not editable
+     # assert_select "input#institution_institution_type[name=?]", "institution[institution_type]"
 
       assert_select "input#institution_inst_realm[name=?]", "institution[inst_realm]"
 
