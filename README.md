@@ -6,4 +6,4 @@ An attempt on creating an api for eduroam access point placement onto the 'Where
 
 [Latest build @ heroku](https://eduroam-api.herokuapp.com/)
 
-Testing a new delivery method: Pushing to private GitLab repo and post-receive push to GitHub.
+Testing a new delivery method: Pushing to private GitLab repo and post-receive push to GitHub
