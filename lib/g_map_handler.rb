@@ -2,7 +2,15 @@ require 'google_maps_service'
 class GMapHandler
   def initialize(address, city)
     @@results = GoogleMapsService::Client.new(key: gkey).geocode("#{address}, #{city}")
-    coordinates
+    if @@results.first.nil?
+      @@valid = false
+    else
+      @@valid = true
+      coordinates
+    end
+  end
+  def valid?
+    return @@valid
   end
 
   def address
