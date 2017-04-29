@@ -8,6 +8,7 @@ An attempt on creating an api for eduroam access point placement onto the 'Where
 
 - Testing a new delivery method: Pushing to private GitLab repo and post-receive push to GitHub..
 
-- Updating gems... test....testtest 
+so now this is behind???
+
 
 
