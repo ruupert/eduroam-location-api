@@ -41,6 +41,10 @@ class Api::V1::EntriesController < Api::V1::BaseController
 
   end
 
+  def get
+
+  end
+
   private
   def get_institution_id
     return apikeyToInstitutionId(params[:apikey])
