@@ -6,12 +6,3 @@ An attempt on creating an api for eduroam access point placement onto the 'Where
 
 [Latest build @ heroku](https://eduroam-api.herokuapp.com/)
 
-- Testing a new delivery method: Pushing to private GitLab repo and post-receive push to GitHub..
-
-so now this is behind???
-
-crap git.. so how about now... let me guess. crap still.crapcrapcraps
-
-
-
-
