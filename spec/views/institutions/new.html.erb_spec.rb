@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-=begin
 RSpec.describe "institutions/new", type: :view do
   before(:each) do
     assign(:institution, Institution.new(
@@ -13,16 +12,17 @@ RSpec.describe "institutions/new", type: :view do
       :contact_email => "MyString",
       :contact_phone => "MyString"
     ))
+    @countries = ISO3166::Country.codes
+    @institution_types = {'IdP&SP' => 3, 'SP' => 2}
+
   end
 
   it "renders new institution form" do
     render
 
     assert_select "form[action=?][method=?]", institutions_path, "post" do
-
-      assert_select "input#institution_country[name=?]", "institution[country]"
-
-      assert_select "input#institution_institution_type[name=?]", "institution[institution_type]"
+  #    puts response.body
+  #    assert_select "input#institution_institution_type[name=?]", "institution[institution_type]"
 
       assert_select "input#institution_inst_realm[name=?]", "institution[inst_realm]"
 
@@ -38,4 +38,3 @@ RSpec.describe "institutions/new", type: :view do
     end
   end
 end
-=end

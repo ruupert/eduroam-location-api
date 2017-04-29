@@ -22,7 +22,6 @@ class InstitutionsController < ApplicationController
     @institution.orgnames.build
     @institution.orgpolicies.build
     @institution.orginfos.build
-    @institution.orgssids.build
     @countries = ISO3166::Country.codes
     @institution_types = {'IdP&SP' => 3, 'SP' => 2}
   end

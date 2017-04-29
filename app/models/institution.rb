@@ -14,7 +14,7 @@ class Institution < ActiveRecord::Base
 
   validates :inst_realm, presence: true, length: {minimum: 3}, uniqueness: {scope: [:inst_realm], message: "Given realm already exists!"}
   before_create :new_apikey, :default_country
-
+  after_create :create_default_ssid
 
   def generate_api_key
     loop do
@@ -34,6 +34,10 @@ class Institution < ActiveRecord::Base
 
   def primary_policy_url
     self.orgpolicies.first.url
+  end
+
+  def create_default_ssid
+     Orgssid.create_default(self.id)
   end
 
   private
