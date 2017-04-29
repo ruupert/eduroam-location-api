@@ -39,8 +39,6 @@ rspec:
   - rspec spec
 
 rails:
-  variables:
-    DATABASE_URL: "postgresql://runner1:Si3nimetsa@dump.laru.net:5432/$POSTGRES_DB"
   script:
   - bundle exec rake db:migrate
   - bundle exec rake db:seed
