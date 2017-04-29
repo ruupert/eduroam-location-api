@@ -10,5 +10,7 @@ An attempt on creating an api for eduroam access point placement onto the 'Where
 
 so now this is behind???
 
+crap git..
+
 
 
