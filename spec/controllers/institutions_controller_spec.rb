@@ -40,9 +40,26 @@ RSpec.describe InstitutionsController, type: :controller do
     }
 
   }
+  let(:valid_new_attributes) {
+
+    {"id"=>"2",
+     "institution_type"=>"3",
+     "country"=>"fi",
+     "inst_realm"=>"testrere.fe",
+     "address"=>"Lauttasaarentie 3",
+     "city"=>"Helsinki",
+     "contact_name"=>"Elämäm Mestari",
+     "contact_email"=>"elämäm@mestari.fi",
+     "contact_phone"=>"050505050",
+     "orgnames_attributes"=>[{"lang"=>"en", "name"=>"TestUni"}],
+     "orgpolicies_attributes"=>[{"lang"=>"en", "url"=>"lauttasaari.fi/rules_eng"}],
+     "orginfos_attributes"=>[{"lang"=>"en", "url"=>"lauttasaari.fi/howtosetup_eng"}]
+    }
+
+  }
 
   let(:invalid_attributes) {
-     {:inst_realm => 'joo.fe',  :institution_type => 1, :address => 'laru 21', :city => 'helsinki', :contact_name => 'jees', :contact_email => 'rasdsdf.fi', :contact_phone => '4302432'}
+     {:inst_realm => 'j.fe',  :institution_type => 1, :address => 'laru 21', :city => 'helsinki', :contact_name => 'jees', :contact_email => 'rasdsdf.fi', :contact_phone => '4302432'}
 
   }
 
@@ -92,30 +109,30 @@ RSpec.describe InstitutionsController, type: :controller do
     context "with valid params" do
       it "creates a new Institution" do
         expect {
-          post :create, params: {institution: valid_attributes, format: json}, session: valid_session
+          post :create, institution: valid_new_attributes, session: valid_session
         }.to change(Institution, :count).by(1)
       end
 
       it "assigns a newly created institution as @institution" do
-        post :create, params: {institution: valid_attributes}, session: valid_session
+        post :create, institution: valid_new_attributes, session: valid_session
         expect(assigns(:institution)).to be_a(Institution)
         expect(assigns(:institution)).to be_persisted
       end
 
       it "redirects to the created institution" do
-        post :create, params: {institution: valid_attributes}, session: valid_session
+        post :create, institution: valid_attributes, session: valid_session
         expect(response).to redirect_to(Institution.last)
       end
     end
 
     context "with invalid params" do
       it "assigns a newly created but unsaved institution as @institution" do
-        post :create, params: {institution: invalid_attributes}, session: valid_session
+        post :create, institution: invalid_attributes, session: valid_session
         expect(assigns(:institution)).to be_a_new(Institution)
       end
 
       it "re-renders the 'new' template" do
-        post :create, params: {institution: invalid_attributes}, session: valid_session
+        post :create, institution: invalid_attributes, session: valid_session
         expect(response).to render_template("new")
       end
     end
@@ -124,25 +141,40 @@ RSpec.describe InstitutionsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {"id"=>"1",
+         "institution_type"=>"2",
+         "country"=>"fi",
+         "inst_realm"=>"test.fe",
+         "address"=>"Lauttasaarentie 10",
+         "city"=>"Helsinki",
+         "contact_name"=>"Elämäm Mestari",
+         "contact_email"=>"elämäm@mestari.fi",
+         "contact_phone"=>"050505050",
+         "orgnames_attributes"=>[{"lang"=>"en", "name"=>"TestUni"}],
+         "orgpolicies_attributes"=>[{"lang"=>"en", "url"=>"lauttasaari.fi/rules_eng"}],
+         "orginfos_attributes"=>[{"lang"=>"en", "url"=>"lauttasaari.fi/howtosetup_eng"}]
+        }
       }
 
       it "updates the requested institution" do
         institution = Institution.create! valid_attributes
-        put :update, params: {id: institution.to_param, institution: new_attributes}, session: valid_session
+        put :update, id: institution.to_param, institution: new_attributes, session: valid_session
         institution.reload
-        skip("Add assertions for updated state")
+        expect(assigns(:institution).institution_type).to eq(2)
+        expect(assigns(:institution).address).to eq("Lauttasaarentie 10")
+
+
       end
 
       it "assigns the requested institution as @institution" do
         institution = Institution.create! valid_attributes
-        put :update, params: {id: institution.to_param, institution: valid_attributes}, session: valid_session
+        put :update, id: institution.to_param, institution: valid_attributes, session: valid_session
         expect(assigns(:institution)).to eq(institution)
       end
 
       it "redirects to the institution" do
         institution = Institution.create! valid_attributes
-        put :update, params: {id: institution.to_param, institution: valid_attributes}, session: valid_session
+        put :update, id: institution.to_param, institution: valid_attributes, session: valid_session
         expect(response).to redirect_to(institution)
       end
     end
@@ -150,13 +182,13 @@ RSpec.describe InstitutionsController, type: :controller do
     context "with invalid params" do
       it "assigns the institution as @institution" do
         institution = Institution.create! valid_attributes
-        put :update, params: {id: institution.to_param, institution: invalid_attributes}, session: valid_session
+        put :update, id: institution.to_param, institution: invalid_attributes, session: valid_session
         expect(assigns(:institution)).to eq(institution)
       end
 
       it "re-renders the 'edit' template" do
         institution = Institution.create! valid_attributes
-        put :update, params: {id: institution.to_param, institution: invalid_attributes}, session: valid_session
+        put :update, id: institution.to_param, institution: invalid_attributes, session: valid_session
         expect(response).to render_template("edit")
       end
     end
@@ -166,13 +198,13 @@ RSpec.describe InstitutionsController, type: :controller do
     it "destroys the requested institution" do
       institution = Institution.create! valid_attributes
       expect {
-        delete :destroy, params: {id: institution.to_param}, session: valid_session
+        delete :destroy, id: institution.to_param, session: valid_session
       }.to change(Institution, :count).by(-1)
     end
 
     it "redirects to the institutions list" do
       institution = Institution.create! valid_attributes
-      delete :destroy, params: {id: institution.to_param}, session: valid_session
+      delete :destroy, id: institution.to_param, session: valid_session
       expect(response).to redirect_to(institutions_url)
     end
   end
