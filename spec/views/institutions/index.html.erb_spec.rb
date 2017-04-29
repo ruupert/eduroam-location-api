@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-=begin
 RSpec.describe "institutions/index", type: :view do
   before(:each) do
     assign(:institutions, [
@@ -10,6 +9,9 @@ RSpec.describe "institutions/index", type: :view do
         :inst_realm => "stadi.fi",
         :address => "Address",
         :city => "City",
+        orgnames_attributes: [:lang => "en", :name => "TestName"],
+        orgpolicies_attributes: [:lang => "en", :url => "http://testurl.en/policy"],
+        orginfos_attributes: [:lang => "en", :url => "http://testurl.en/info"],
         :contact_name => "Contact Name",
         :contact_email => "Contact Email",
         :contact_phone => "Contact Phone"
@@ -20,12 +22,16 @@ RSpec.describe "institutions/index", type: :view do
         :inst_realm => "laru.fi",
         :address => "Address",
         :city => "City",
+        orgnames_attributes: [:lang => "en", :name => "TestName"],
+        orgpolicies_attributes: [:lang => "en", :url => "http://testurl.en/policy"],
+        orginfos_attributes: [:lang => "en", :url => "http://testurl.en/info"],
         :contact_name => "Contact Name",
         :contact_email => "Contact Email",
         :contact_phone => "Contact Phone"
       )
 
     ])
+
     assign(:locations, [Location.create!(
         :address => "jee",
         :city => "joo",
@@ -38,9 +44,9 @@ RSpec.describe "institutions/index", type: :view do
 
   it "renders a list of institutions" do
     render
-    assert_select "tr>td", :text => "Country".to_s, :count => 2
-    assert_select "tr>td", :text => 2.to_s, :count => 2
-    assert_select "tr>td", :text => "Inst Realm".to_s, :count => 2
+    assert_select "tr>td", :text => 2.to_s, :count => 1
+    assert_select "tr>td", :text => "stadi.fi".to_s, :count => 1
+    assert_select "tr>td", :text => "laru.fi".to_s, :count => 1
     assert_select "tr>td", :text => "Address".to_s, :count => 2
     assert_select "tr>td", :text => "City".to_s, :count => 2
     assert_select "tr>td", :text => "Contact Name".to_s, :count => 2
@@ -48,4 +54,3 @@ RSpec.describe "institutions/index", type: :view do
     assert_select "tr>td", :text => "Contact Phone".to_s, :count => 2
   end
 end
-=end

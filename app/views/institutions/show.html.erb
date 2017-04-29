@@ -67,11 +67,9 @@
     <th>AP Count</th>
     <th>Last updated</th>
   </tr><% @locations.each do |location| %>
-
-    <% e = Entry.getEntry(location.id) %>
       <tr><td><%= location.address %> <%= location.identifier %></td>
-        <td><%= e.first.ap_count %></td>
-        <td><%= e.first.updated_at %></td>
+        <td><%= location.location_ap_count %></td>
+        <td><%= location.location_updated_At %></td>
       </tr>
 <% end %>
 </table>

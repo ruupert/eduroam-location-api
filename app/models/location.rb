@@ -23,6 +23,16 @@ class Location < ActiveRecord::Base
       return n.id
     end
   end
+  def location_entry
+    self.entries.getEntry(self.id)
+  end
+
+  def location_ap_count
+    self.location_entry.first.ap_count
+  end
+  def location_updated_At
+    self.location_entry.first.updated_at
+  end
 
   def self.get_location_id(institution_id, address, identifier, city)
     return Location.where(institution_id: institution_id, address: address, identifier: identifier, city: city).first.id
