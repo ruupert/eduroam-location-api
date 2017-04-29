@@ -17,7 +17,7 @@ RSpec.describe Api::V1::SsidsController, type: :controller do
     }
     Institution.create(valid_params)
     @apikey = Institution.first.apikey
-    Orgssid.create_default(1)
+  #  Orgssid.create_default(1)
   end
   describe "GET #set" do
     it "it sets correctly ssid" do

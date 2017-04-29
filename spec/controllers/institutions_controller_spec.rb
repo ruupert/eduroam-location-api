@@ -67,10 +67,9 @@ RSpec.describe InstitutionsController, type: :controller do
 
   describe "GET #show" do
     it "assigns the requested institution as @institution" do
-      institution = Institution.create! valid_attributes
-      puts institution.inspect
-      #get :show, params: {id: institution}, session: valid_session
-      assigns(:institution).to eq(institution)
+       institution = Institution.create! valid_attributes
+      get :show, :id => 1, session: valid_session
+      expect(assigns(:institution).country).to eq('fi')
     end
   end
 
@@ -84,7 +83,7 @@ RSpec.describe InstitutionsController, type: :controller do
   describe "GET #edit" do
     it "assigns the requested institution as @institution" do
       institution = Institution.create! valid_attributes
-      get :edit, params: {id: institution.to_param}, session: valid_session
+      get :edit, id: 1, session: valid_session
       expect(assigns(:institution)).to eq(institution)
     end
   end
