@@ -215,23 +215,23 @@ RSpec.describe InstitutionsController, type: :controller do
   end
   describe "importer" do
     before(:each) do
+          expect(controller).to receive(:authenticate)
         # JUMALAUTA SAATANAN HTTP SIMPLE AUTH.
     end
 
     it "renders page correctly" do
-
-        true #  A BILLION DIFFERENT WAYS TO DO IT BUT NONE APPLY.
-             #  LIKE HOW RETARDED IS IT TO MAKE A SIMPLE AUTH ( http://USERNAME:PASSWORD@MYCRAPHOST.TLD/PATH )
-             #  SO COMPLICATED.
-             #
-             # This shit is considered to be working.
-
-
-
+      # piece of shit authentication.
+      get :new_import, :session => {}
+      assert_response :success
 
 
     end
     it "imports correctly" do
+      @file = fixture_file_upload("haagahelia3.xml", 'text/xml')
+
+      post :import, :file => @file, session: {}
+
+      expect(Institution.all.count).to eq(2)
 
     end
 
