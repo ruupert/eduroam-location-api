@@ -4,9 +4,17 @@ class GMapHandler
     @@results = GoogleMapsService::Client.new(key: gkey).geocode("#{address}, #{city}")
     if @@results.first.nil?
       @@valid = false
+      @@address = ''
+      @@city = ''
+      @@country = ''
+      @@lat = ''
+      @@lng = ''
     else
       @@valid = true
       coordinates
+      @@address = "#{@@results.first.first.second.second.first.second} #{@@results.first.first.second.first.first.second}"
+      @@city = @@results.first.first.second.third.first.second.to_s
+      @@country = @@results.first.first.second.fourth[:short_name]
     end
   end
   def valid?
@@ -14,13 +22,13 @@ class GMapHandler
   end
 
   def address
-    return "#{@@results.first.first.second.second.first.second} #{@@results.first.first.second.first.first.second}"
+    return @@address
   end
   def city
-    return @@results.first.first.second.third.first.second.to_s
+    return @@city
   end
   def country
-    return @@results.first.first.second.fourth[:short_name]
+    return @@country
   end
 
   def lng
@@ -50,7 +58,7 @@ class GMapHandler
     case type
       when 'lng'
         if coord.to_f < 0
-          coord = coord.abs
+          coord = coord.to_f.abs
           sign = 'W'
         else
           sign = 'E'
@@ -58,7 +66,7 @@ class GMapHandler
 
       when 'lat'
         if coord.to_f < 0
-          coord = coord.abs
+          coord = coord.to_f.abs
           sign = 'S'
         else
           sign = 'N'
@@ -85,7 +93,7 @@ class GMapHandler
   end
 
   def to_string
-    return "#{self.address}#{self.city}#{self.lng}#{self.lat}#{self.country}"
+    return "#{self.address}#{self.city}#{self.lng}#{self.lat}#{self.country}#{self.valid?}"
   end
 
   def gkey
