@@ -36,7 +36,6 @@ class ExporterController < ApplicationController
     }
 
   end
-
   def add_locations_for(xml, entry)
     entry.each do |e|
       xml.location {

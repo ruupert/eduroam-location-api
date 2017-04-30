@@ -182,6 +182,8 @@ RSpec.describe InstitutionsController, type: :controller do
 
       end
 
+
+
       it "assigns the requested institution as @institution" do
         institution = Institution.create! valid_attributes
         put :update, id: institution.to_param, institution: valid_attributes, session: valid_session
@@ -248,5 +250,7 @@ RSpec.describe InstitutionsController, type: :controller do
     end
 
   end
+
+
 
 end
