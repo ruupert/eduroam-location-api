@@ -20,6 +20,10 @@ include SimpleAuthHelper
 
 RSpec.describe InstitutionsController, type: :controller do
 
+
+  describe "CRUD functions" do
+
+
   # This should return the minimal set of attributes required to create a valid
   # Institution. As you add validations to Institution, be sure to
   # adjust the attributes here as well.
@@ -207,6 +211,30 @@ RSpec.describe InstitutionsController, type: :controller do
       delete :destroy, id: institution.to_param, session: valid_session
       expect(response).to redirect_to(institutions_url)
     end
+  end
+  end
+  describe "importer" do
+    before(:each) do
+        # JUMALAUTA SAATANAN HTTP SIMPLE AUTH.
+    end
+
+    it "renders page correctly" do
+
+        true #  A BILLION DIFFERENT WAYS TO DO IT BUT NONE APPLY.
+             #  LIKE HOW RETARDED IS IT TO MAKE A SIMPLE AUTH ( http://USERNAME:PASSWORD@MYCRAPHOST.TLD/PATH )
+             #  SO COMPLICATED.
+             #
+             # This shit is considered to be working.
+
+
+
+
+
+    end
+    it "imports correctly" do
+
+    end
+
   end
 
 end

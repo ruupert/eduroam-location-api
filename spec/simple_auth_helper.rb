@@ -13,9 +13,21 @@ module SimpleAuthHelper
     end
 
   end
+  def basic_auth!
+    encoded_login = "#{ENV['EDUROAM_API_ADMIN_USERNAME']}:#{ENV['EDUROAM_API_ADMIN_PW']}"
+    page.driver.header 'Authorization', "Basic #{encoded_login}"
+  end
+
   def get_with_auth(path, username, password)
     get path, {}, env_with_auth(username, password)
   end
+
+    def testauthenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == ENV['EDUROAM_API_ADMIN_USERNAME'] and password == ENV['EDUROAM_API_ADMIN_PW']
+    end
+  end
+
   def visit_basic_auth(name, password)
     if page.driver.respond_to?(:basic_auth)
       page.driver.basic_auth(name, password)

@@ -64,27 +64,23 @@ class GMapHandler
           sign = 'N'
         end
     end
-    remainder = coord.to_f % 1
     intval = coord.to_i
     degrees = intval.to_s
 
-    coord = remainder * 60;
-    remainder = coord % 1
+    coord = (coord.to_f % 1) * 60;
     intval = coord.to_i
     if (intval < 0)
       intval = intval * -1
     end
     minutes = intval.to_s
-    coord = remainder * 60
-    remainder = coord % 1
+    coord = (coord % 1) * 60
     intval = coord.to_i
     if (intval<0)
       intval = intval * -1
     end
-    seconds = intval + remainder
+    seconds = intval + ( coord % 1 )
 
     return "#{degrees}°#{minutes}'#{seconds.round(2)}\"#{sign}"
-
 
   end
 
