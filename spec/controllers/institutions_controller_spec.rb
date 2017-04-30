@@ -159,7 +159,19 @@ RSpec.describe InstitutionsController, type: :controller do
          "orginfos_attributes"=>[{"lang"=>"en", "url"=>"lauttasaari.fi/howtosetup_eng"}]
         }
       }
+      let(:invalid_attributes) {
+            {"id"=>"1",
+             "institution_type"=>"1",
+             "country"=>"fi",
+             "inst_realm"=>"test.fe",
+             "address"=>"Lauttasaarentie 10",
+             "city"=>"Helsinki",
+             "contact_name"=>"Elämäm Mestari",
+             "contact_email"=>"elämäm@mestari.fi",
+             "contact_phone"=>"050505050"
+        }
 
+      }
       it "updates the requested institution" do
         institution = Institution.create! valid_attributes
         put :update, id: institution.to_param, institution: new_attributes, session: valid_session

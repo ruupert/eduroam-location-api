@@ -5,8 +5,8 @@ Rails.application.routes.draw do
       get 'doc' => 'welcome#doc'
       get ':apikey/get/ssids' => 'ssids#get'
       get ':apikey/get/locations' => 'locations#get', :as => 'get_locations'
-      get ':apikey/set/:address/:identifier/:city/:ap' => 'entries#set', :as => 'set_location'
-      get ':apikey/set/:address/:identifier/:city/:ap/:ssid' => 'entries#set', :as => 'set_location_with_ssid'
+      get ':apikey/set/location/:address/:identifier/:city/:ap' => 'entries#set', :as => 'set_location'
+      get ':apikey/set/location/:address/:identifier/:city/:ap/:ssid' => 'entries#set', :as => 'set_location_with_ssid'
     end
   end
 

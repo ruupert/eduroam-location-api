@@ -21,7 +21,6 @@ RSpec.describe Api::V1::SsidsController, type: :controller do
   end
   describe "GET #set" do
     it "it sets correctly ssid" do
-     pending "set method implementation required"
 
     end
   end

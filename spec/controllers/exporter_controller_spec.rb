@@ -8,7 +8,8 @@ RSpec.describe ExporterController, type: :controller do
         basic_auth('admin','foo')
       end
       it "requires an http_autorization_token" do
-        ## Implement me.
+        visit exporter_institutions_url
+        expect(page).to have_content("HTTP Basic: Access denied.")
       end
 
     end
@@ -91,12 +92,5 @@ RSpec.describe ExporterController, type: :controller do
 
     end
   end
-
-#  describe "GET #locations" do
-#    it "returns http success" do
-#      get :locations
-#      expect(response).to have_http_status(:success)
-#    end
-#  end
 
 end

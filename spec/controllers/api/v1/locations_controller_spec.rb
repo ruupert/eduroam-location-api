@@ -37,8 +37,9 @@ RSpec.describe Api::V1::LocationsController, type: :controller do
   end
   describe "GET #set" do
     it "it sets correctly location" do
-     pending "set method implementation required"
-
+      visit "/api/v1/#{@apikey}/set/location/Ratapihantie%2013/0/Helsinki/5/1"
+      puts page.body
+      expect(Entry.find(1).ap_count).to eq(5)
     end
   end
 

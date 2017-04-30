@@ -13,6 +13,7 @@ class Institution < ActiveRecord::Base
   accepts_nested_attributes_for :entries
 
   validates :inst_realm, presence: true, length: {minimum: 3}, uniqueness: {scope: [:inst_realm], message: "Given realm already exists!"}
+  validates :institution_type, presence: true, :inclusion => {:in => [2,3]}
   before_create :new_apikey, :default_country
   after_create :create_default_ssid
 
