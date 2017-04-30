@@ -1,5 +1,7 @@
 require 'coveralls'
 Coveralls.wear!
+require 'webmock'
+WebMock.allow_net_connect!
 #require 'simplecov'
 #SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 #WebMock.disable_net_connect!(allow: 'maps.googleapis.com')

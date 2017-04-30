@@ -63,41 +63,7 @@ RSpec.describe Location, type: :model do
 
   end
     it "can add a google maps api verifiable location" do
-      class GMapHandler
-        def initialize(address, city)
-          if address == "Lauttasaarentie 10"
-            @@address = address
-            @@city = city
-            @@valid = true
-            @@lng = "24°53'19.28\"E"
-            @@lat = "60°9'39.33\"N"
-            @@country = "FI"
-          else
-            @@valid = false
-          end
-          def valid?
-            return @@valid
-          end
 
-          def address
-            return @@address
-          end
-          def city
-            return @@city
-          end
-          def country
-            return @@country
-          end
-
-          def lng
-            return @@lng
-          end
-          def lat
-            return @@lat
-          end
-        end
-
-      end
       Institution.create(address: "Lauttasaarentie 10B",
                             inst_realm: "laru.fi",
                             institution_type: 2,
@@ -107,7 +73,7 @@ RSpec.describe Location, type: :model do
                             id: 5)
       Location.create_location(5,"Ratapihantie 13", "B","Helsinki")
 
-      # expect(Location.get_location_id(1,"Ratapihantie 13","B", "Helsinki")).to eq(1)
+      expect(Location.get_location_id(5,"Ratapihantie 13","B", "Helsinki")).to eq(2)
     end
 
 
