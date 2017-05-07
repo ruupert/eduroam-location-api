@@ -18,9 +18,11 @@
     </div>
     <div class="field">
       <%= f.fields_for :orgnames do |oname| %>
-          <%= oname.hidden_field :lang, value: "en" %>
-              Institution (english) <%= oname.label :name %><br>
-          <%= oname.text_field :name %>
+
+          <%= oname.label :lang %>
+          "<%= oname.text_field :lang, :readonly => true, class: "lang_field" %>"
+            <%= :name %><br>
+          <%= oname.text_field :name, class: "name_field" %><br>
       <% end %>
 
     </div>
@@ -52,9 +54,10 @@
     </div>
     <div class="field">
       <%= f.fields_for :orginfos do |oinf| %>
-          <%= oinf.hidden_field :lang, value: "en" %>
-          Info (english) <%= oinf.label :url %><br>
-          <%= oinf.text_field :url %>
+          <%= oinf.label :lang %>
+          "<%= oinf.text_field :lang, :readonly => true, class: "lang_field" %>"
+          <%= :url %><br>
+          <%= oinf.text_field :url %><br>
       <% end %>
 
     </div>
@@ -62,9 +65,10 @@
     <div class="field">
 
       <%= f.fields_for :orgpolicies do |policy| %>
-          <%= policy.hidden_field :lang, value: "en" %>
-          Policy (english) <%= policy.label :url %><br>
-          <%= policy.text_field :url %>
+          <%= policy.label :policy %>
+          "<%= policy.text_field :lang, :readonly => true, class: "lang_field" %>"
+          <%= :url %><br>
+          <%= policy.text_field :url %><br>
       <% end %>
     </div>
 

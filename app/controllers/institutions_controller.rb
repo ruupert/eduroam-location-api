@@ -29,10 +29,6 @@ class InstitutionsController < ApplicationController
   # GET /institutions/1/edit
   def edit
     @institution = Institution.find(params[:id])
-    @institution.orgnames.build
-    @institution.orgpolicies.build
-    @institution.orginfos.build
-    @institution.orgssids.build
 
     @countries = ISO3166::Country.codes
     @institution_types = {'IdP&SP' => 3, 'SP' => 2}

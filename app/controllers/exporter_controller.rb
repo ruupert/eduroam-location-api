@@ -33,7 +33,7 @@ class ExporterController < ApplicationController
     xml.ts var["updated_at"]
 
     xml.locations {
-      add_locations_for(xml, Entry.where(institution_id: 2).where(ap_count: 1..Float::INFINITY))
+      add_locations_for(xml, Entry.where(institution_id: var["id"]).where(ap_count: 1..Float::INFINITY))
     }
 
   end
@@ -59,7 +59,7 @@ class ExporterController < ApplicationController
         xml.NAT orgssid.nat
         xml.AP_no e["ap_count"]
         xml.wired orgssid.wired
-        xml.info_URL orgssid.institution.primary_info_url
+        xml.info_URL(:lang => "en", :class => nil) < orgssid.institution.primary_info_url
       }
     end
   end

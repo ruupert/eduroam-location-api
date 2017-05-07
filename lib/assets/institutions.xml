@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<institutions>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>haaga-helia.fi</inst_realm>
+    <org_name lang="en">Haaga-Helia University of Applied Sciences</org_name>
+    <org_name lang="fi">Haaga-Helia ammattikorkeakoulu</org_name>
+    <address>
+      <street>Ratapihantie 13</street>
+      <city>Helsinki</city>
+    </address>
+    <contact>
+      <name/>
+      <email>helpdesk@haaga-helia.fi</email>
+      <phone/>
+    </contact>
+    <info_URL lang="en">{"lang"=&gt;"en"}</info_URL>
+    <info_URL lang="fi">{"lang"=&gt;"fi"}</info_URL>
+    <policy_URL lang="en">{"lang"=&gt;"en"}</policy_URL>
+    <policy_URL lang="fi">{"lang"=&gt;"fi"}</policy_URL>
+    <ts>2017-04-18 04:54:11 UTC</ts>
+    <locations>
+      <location>
+        <longitude>24°56'02.00"E</longitude>
+        <latitude>60°12'04.00"N</latitude>
+        <loc_name lang="fi">Lauttasaari University, main building</loc_name>
+        <loc_name lang="en">Lauttasaaren yliopisto, päärakennus</loc_name>
+        <address>
+          <street>Lauttasaarentie 10</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°56'02.00"E</longitude>
+        <latitude>60°12'04.00"N</latitude>
+        <loc_name lang="fi">Lauttasaari University, main building</loc_name>
+        <loc_name lang="en">Lauttasaaren yliopisto, päärakennus</loc_name>
+        <address>
+          <street>Lauttasaarentie 10</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°56'02.00"E</longitude>
+        <latitude>60°12'04.00"N</latitude>
+        <loc_name lang="fi">Lauttasaari University, secondary duplicate</loc_name>
+        <loc_name lang="en">Lauttasaaren yliopisto, toinen sama sijainti</loc_name>
+        <address>
+          <street>Lauttasaarentie 10</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24° 56' 29.01" E</longitude>
+        <latitude>60° 10' 3.55" N</latitude>
+        <loc_name lang="en">Mannerheimintie 10</loc_name>
+        <address>
+          <street>Mannerheimintie 10 B</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>33</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°53'19.28"E</longitude>
+        <latitude>60°9'39.33"N</latitude>
+        <loc_name lang="en">Lauttasaarentie 10</loc_name>
+        <address>
+          <street>Lauttasaarentie 10 0</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°53'19.28"E</longitude>
+        <latitude>60°9'39.33"N</latitude>
+        <loc_name lang="en">Lauttasaarentie 10</loc_name>
+        <address>
+          <street>Lauttasaarentie 10 0</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+    </locations>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>lauttasaari.fi</inst_realm>
+    <org_name lang="fi">Lauttasaari University</org_name>
+    <org_name lang="en">Lauttasaaren yliopisto</org_name>
+    <address>
+      <street>Lauttasaarentie 10</street>
+      <city>Helsinki</city>
+    </address>
+    <contact>
+      <name/>
+      <email>raul.becker@iki.fi</email>
+      <phone/>
+    </contact>
+    <info_URL lang="en">http://joopajoo.en</info_URL>
+    <info_URL lang="en">http://joopajoo.fi</info_URL>
+    <policy_URL lang="en">{"lang"=&gt;"en"}</policy_URL>
+    <policy_URL lang="fi">{"lang"=&gt;"fi"}</policy_URL>
+    <ts>2017-04-18 04:54:11 UTC</ts>
+    <locations>
+      <location>
+        <longitude>24°56'02.00"E</longitude>
+        <latitude>60°12'04.00"N</latitude>
+        <loc_name lang="fi">Lauttasaari University, main building</loc_name>
+        <loc_name lang="en">Lauttasaaren yliopisto, päärakennus</loc_name>
+        <address>
+          <street>Lauttasaarentie 10</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°56'02.00"E</longitude>
+        <latitude>60°12'04.00"N</latitude>
+        <loc_name lang="fi">Lauttasaari University, main building</loc_name>
+        <loc_name lang="en">Lauttasaaren yliopisto, päärakennus</loc_name>
+        <address>
+          <street>Lauttasaarentie 10</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°56'02.00"E</longitude>
+        <latitude>60°12'04.00"N</latitude>
+        <loc_name lang="fi">Lauttasaari University, secondary duplicate</loc_name>
+        <loc_name lang="en">Lauttasaaren yliopisto, toinen sama sijainti</loc_name>
+        <address>
+          <street>Lauttasaarentie 10</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24° 56' 29.01" E</longitude>
+        <latitude>60° 10' 3.55" N</latitude>
+        <loc_name lang="en">Mannerheimintie 10</loc_name>
+        <address>
+          <street>Mannerheimintie 10 B</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>33</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°53'19.28"E</longitude>
+        <latitude>60°9'39.33"N</latitude>
+        <loc_name lang="en">Lauttasaarentie 10</loc_name>
+        <address>
+          <street>Lauttasaarentie 10 0</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°53'19.28"E</longitude>
+        <latitude>60°9'39.33"N</latitude>
+        <loc_name lang="en">Lauttasaarentie 10</loc_name>
+        <address>
+          <street>Lauttasaarentie 10 0</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+    </locations>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>laru.fi</inst_realm>
+    <org_name lang="en">HelloUniversity</org_name>
+    <address>
+      <street>wfae</street>
+      <city>Helsinki</city>
+    </address>
+    <contact>
+      <name>wafeaw</name>
+      <email>feweaa</email>
+      <phone>04040404</phone>
+    </contact>
+    <info_URL lang="en">lauttasaari.fi/howtosetup_eng</info_URL>
+    <policy_URL lang="en">lauttasaari.fi/rules_eng</policy_URL>
+    <ts>2017-04-18 05:36:58 UTC</ts>
+    <locations>
+      <location>
+        <longitude>24°56'02.00"E</longitude>
+        <latitude>60°12'04.00"N</latitude>
+        <loc_name lang="fi">Lauttasaari University, main building</loc_name>
+        <loc_name lang="en">Lauttasaaren yliopisto, päärakennus</loc_name>
+        <address>
+          <street>Lauttasaarentie 10</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°56'02.00"E</longitude>
+        <latitude>60°12'04.00"N</latitude>
+        <loc_name lang="fi">Lauttasaari University, main building</loc_name>
+        <loc_name lang="en">Lauttasaaren yliopisto, päärakennus</loc_name>
+        <address>
+          <street>Lauttasaarentie 10</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°56'02.00"E</longitude>
+        <latitude>60°12'04.00"N</latitude>
+        <loc_name lang="fi">Lauttasaari University, secondary duplicate</loc_name>
+        <loc_name lang="en">Lauttasaaren yliopisto, toinen sama sijainti</loc_name>
+        <address>
+          <street>Lauttasaarentie 10</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24° 56' 29.01" E</longitude>
+        <latitude>60° 10' 3.55" N</latitude>
+        <loc_name lang="en">Mannerheimintie 10</loc_name>
+        <address>
+          <street>Mannerheimintie 10 B</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>33</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°53'19.28"E</longitude>
+        <latitude>60°9'39.33"N</latitude>
+        <loc_name lang="en">Lauttasaarentie 10</loc_name>
+        <address>
+          <street>Lauttasaarentie 10 0</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°53'19.28"E</longitude>
+        <latitude>60°9'39.33"N</latitude>
+        <loc_name lang="en">Lauttasaarentie 10</loc_name>
+        <address>
+          <street>Lauttasaarentie 10 0</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+    </locations>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>test.fe</inst_realm>
+    <org_name lang="en">TestUni</org_name>
+    <address>
+      <street>Lauttasaarentie 3</street>
+      <city>Helsinki</city>
+    </address>
+    <contact>
+      <name>Elämäm Mestari</name>
+      <email>elämäm@mestari.fi</email>
+      <phone>050505050</phone>
+    </contact>
+    <info_URL lang="en">lauttasaari.fi/howtosetup_eng</info_URL>
+    <policy_URL lang="en">lauttasaari.fi/rules_eng</policy_URL>
+    <ts>2017-04-26 00:26:10 UTC</ts>
+    <locations>
+      <location>
+        <longitude>24°56'02.00"E</longitude>
+        <latitude>60°12'04.00"N</latitude>
+        <loc_name lang="fi">Lauttasaari University, main building</loc_name>
+        <loc_name lang="en">Lauttasaaren yliopisto, päärakennus</loc_name>
+        <address>
+          <street>Lauttasaarentie 10</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°56'02.00"E</longitude>
+        <latitude>60°12'04.00"N</latitude>
+        <loc_name lang="fi">Lauttasaari University, main building</loc_name>
+        <loc_name lang="en">Lauttasaaren yliopisto, päärakennus</loc_name>
+        <address>
+          <street>Lauttasaarentie 10</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°56'02.00"E</longitude>
+        <latitude>60°12'04.00"N</latitude>
+        <loc_name lang="fi">Lauttasaari University, secondary duplicate</loc_name>
+        <loc_name lang="en">Lauttasaaren yliopisto, toinen sama sijainti</loc_name>
+        <address>
+          <street>Lauttasaarentie 10</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24° 56' 29.01" E</longitude>
+        <latitude>60° 10' 3.55" N</latitude>
+        <loc_name lang="en">Mannerheimintie 10</loc_name>
+        <address>
+          <street>Mannerheimintie 10 B</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>33</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°53'19.28"E</longitude>
+        <latitude>60°9'39.33"N</latitude>
+        <loc_name lang="en">Lauttasaarentie 10</loc_name>
+        <address>
+          <street>Lauttasaarentie 10 0</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°53'19.28"E</longitude>
+        <latitude>60°9'39.33"N</latitude>
+        <loc_name lang="en">Lauttasaarentie 10</loc_name>
+        <address>
+          <street>Lauttasaarentie 10 0</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+    </locations>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>wesaas</inst_realm>
+    <org_name lang="en">gewg</org_name>
+    <address>
+      <street>Lauttasaarentie 3</street>
+      <city>asfdasd</city>
+    </address>
+    <contact>
+      <name>fs</name>
+      <email>sfda</email>
+      <phone>asdfasdf</phone>
+    </contact>
+    <info_URL lang="en">asdfasdf</info_URL>
+    <policy_URL lang="en">asdfasdf</policy_URL>
+    <ts>2017-04-29 21:13:32 UTC</ts>
+    <locations>
+      <location>
+        <longitude>24°56'02.00"E</longitude>
+        <latitude>60°12'04.00"N</latitude>
+        <loc_name lang="fi">Lauttasaari University, main building</loc_name>
+        <loc_name lang="en">Lauttasaaren yliopisto, päärakennus</loc_name>
+        <address>
+          <street>Lauttasaarentie 10</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°56'02.00"E</longitude>
+        <latitude>60°12'04.00"N</latitude>
+        <loc_name lang="fi">Lauttasaari University, main building</loc_name>
+        <loc_name lang="en">Lauttasaaren yliopisto, päärakennus</loc_name>
+        <address>
+          <street>Lauttasaarentie 10</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°56'02.00"E</longitude>
+        <latitude>60°12'04.00"N</latitude>
+        <loc_name lang="fi">Lauttasaari University, secondary duplicate</loc_name>
+        <loc_name lang="en">Lauttasaaren yliopisto, toinen sama sijainti</loc_name>
+        <address>
+          <street>Lauttasaarentie 10</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24° 56' 29.01" E</longitude>
+        <latitude>60° 10' 3.55" N</latitude>
+        <loc_name lang="en">Mannerheimintie 10</loc_name>
+        <address>
+          <street>Mannerheimintie 10 B</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>33</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°53'19.28"E</longitude>
+        <latitude>60°9'39.33"N</latitude>
+        <loc_name lang="en">Lauttasaarentie 10</loc_name>
+        <address>
+          <street>Lauttasaarentie 10 0</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+      <location>
+        <longitude>24°53'19.28"E</longitude>
+        <latitude>60°9'39.33"N</latitude>
+        <loc_name lang="en">Lauttasaarentie 10</loc_name>
+        <address>
+          <street>Lauttasaarentie 10 0</street>
+          <city>Helsinki</city>
+        </address>
+        <SSID>eduroam</SSID>
+        <enc_level>WPA/AES, WPA2/AES</enc_level>
+        <port_restrict>false</port_restrict>
+        <transp_proxy>false</transp_proxy>
+        <IPv6>false</IPv6>
+        <NAT>false</NAT>
+        <AP_no>146</AP_no>
+        <wired>false</wired>
+        <info_URL lang="en">http://joopajoo.en</info_URL>
+      </location>
+    </locations>
+  </institution>
+</institutions>

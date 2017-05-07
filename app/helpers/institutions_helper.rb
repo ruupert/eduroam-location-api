@@ -20,7 +20,7 @@ module InstitutionsHelper
     #    to point to one of the distinct ssids and then remove all orphaned ssids.
 
 
-    doc = Nokogiri::XML( import_file ) do |config|
+    doc = Nokogiri::XML(import_file) do |config|
       config.options = Nokogiri::XML::ParseOptions::STRICT | Nokogiri::XML::ParseOptions::NOBLANKS
     end
     xsd = Nokogiri::XML::Schema(File.read("lib/assets/institution.xsd"))
@@ -33,7 +33,7 @@ module InstitutionsHelper
       doc.search("[lang]").each do |s|
         q.push(s['lang'])
       end
-      o['institutions']['institution'].each do |x|
+      Array.wrap(o['institutions']['institution']).each do |x|
         n = Institution.new
         n.country = x['country']
         n.inst_realm = x['inst_realm']
@@ -51,14 +51,32 @@ module InstitutionsHelper
 
         x['policy_URL'].each do |org|
           n.orgpolicies.build
-          n.orgpolicies.last.url = org
+          puts org
+          puts org
+          puts org
+          puts org
+          if org.to_s.include?('{"lang"=>"')
+            n.orgpolicies.last.url = ""
+          else
+            n.orgpolicies.last.url = org
+
+          end
+
           n.orgpolicies.last.lang = q.pop
         end
 
         x['info_URL'].each do |org|
           n.orginfos.build
-          n.orginfos.last.url = org
+          if org.to_s.include?('{"lang"=>"')
+            n.orginfos.last.url = ""
+          else
+
+            n.orginfos.last.url = org
+          end
+
           n.orginfos.last.lang = q.pop
+
+
         end
         x['location'].first do |ssid| # Purkkaa
           n.orgssids.build
@@ -66,7 +84,9 @@ module InstitutionsHelper
 
 
         end
-        x['location'].each do |item|
+        pp x['location'].inspect
+
+        Array.wrap(x['location']).each do |item|
 
           n.locations.build
           tmp_str = item['address']['street']
