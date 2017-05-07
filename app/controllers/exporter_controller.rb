@@ -26,7 +26,8 @@ class ExporterController < ApplicationController
 
     end
     Orgpolicy.where(institution_id: var["id"]).each do |o|
-      xml.policy_URL(:lang => o["lang"], :class => nil) < o["url"]
+      xml.policy_URL(:lang => o["lang"], :class => nil) > o["url"]
+
 
     end
     xml.ts var["updated_at"]
@@ -49,15 +50,16 @@ class ExporterController < ApplicationController
           xml.street "#{loc.first.address} #{loc.first.identifier}".chomp(" ")
           xml.city loc.first.city
         }
-        xml.SSID "joo"
-        xml.enc_level "jees"
-        xml.port_restrict "alkaa"
-        xml.transp_proxy "luonnistumaan"
-        xml.IPv6 "pikku"
-        xml.NAT "hiljaa"
-        xml.AP_no e["apcount"]
-        xml.wired "juuei"
-        xml.info_URL "jeh"
+        orgssid = Orgssid.find(e.orgssid_id)
+        xml.SSID orgssid.name
+        xml.enc_level orgssid.enc_levels
+        xml.port_restrict orgssid.port_restrict
+        xml.transp_proxy orgssid.transp_proxy
+        xml.IPv6 orgssid.ipv6
+        xml.NAT orgssid.nat
+        xml.AP_no e["ap_count"]
+        xml.wired orgssid.wired
+        xml.info_URL orgssid.institution.primary_info_url
       }
     end
   end
@@ -75,9 +77,32 @@ class ExporterController < ApplicationController
         end
       }
 
-      render(xml: xml)
+
+      file = File.new("lib/assets/xml_out.xml", "wb")
+      file.write(xml.to_xml)
+      file.close
 
     end
+
+    xsd = Nokogiri::XML::Schema(File.read("lib/assets/institution.xsd"))
+    doc = Nokogiri::XML( File.read("lib/assets/xml_out.xml") ) do |config|
+      config.options = Nokogiri::XML::ParseOptions::STRICT | Nokogiri::XML::ParseOptions::NOBLANKS
+    end
+    doc.xpath('//@class').remove
+
+    if xsd.valid?(doc)
+
+      render(xml: doc)
+    else
+      render(xml: doc)
+
+#      render(xml: xsd.errors)
+    end
+
+
+
+
+
   end
 
 end

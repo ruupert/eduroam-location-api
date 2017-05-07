@@ -9,13 +9,21 @@ class Api::V1::EntriesController < Api::V1::BaseController
     valid_ssid = valid_ssid?(get_institution_id, params[:ssid])
     has_ssid = has_ssid?(get_institution_id)
 
-    unless has_ssid
+    if !has_ssid
       params[:error] = "No SSID"
       # create default ssid
       nssid_id = Orgssid.create_default(institution_id:get_institution_id)
+    else
+      if params[:ssid] == nil
+        nssid_id = nil
+      else
+        nssid_id = params[:ssid]
+      end
+
     end
 
     if valid_ssid
+
       unless valid_location
         #create location
         nloc_id = Location.create_location(get_institution_id,params[:address], params[:identifier],params[:city])

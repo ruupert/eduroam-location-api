@@ -10,6 +10,22 @@ class Orgssid < ActiveRecord::Base
   def self.getDefaultSsid ins_id
     self.where(:institution_id => ins_id).first
   end
+  def enc_levels
+    res = ""
+    if self.wpa_aes
+      res += "WPA/AES, "
+    end
+    if self.wpa_tkip
+      res += "WPA/TKIP, "
+    end
+    if self.wpa2_aes
+      res += "WPA2/AES, "
+    end
+    if self.wpa2_tkip
+      res += "WPA2/TKIP, "
+    end
+    return res.chomp(", ")
+  end
 
   def self.create_default(institution_id)
     nssid = Orgssid.new
