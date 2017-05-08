@@ -19,10 +19,24 @@ class InstitutionsController < ApplicationController
   # GET /institutions/new
   def new
     @institution = Institution.new
-    @institution.orgnames.build
-    @institution.orgpolicies.build
-    @institution.orginfos.build
     @countries = ISO3166::Country.codes
+    @default_langs = ENV['EDUROAM_API_DEFAULT_LANGS'].split(',')
+    @institution.orgnames.build
+    @institution.orgnames.last.lang = 'en'
+    @institution.orgpolicies.build
+    @institution.orgpolicies.last.lang = 'en'
+    @institution.orginfos.build
+    @institution.orginfos.last.lang = 'en'
+    i = 0
+    (@default_langs.count).times do
+      @institution.orgnames.build
+      @institution.orgnames.last.lang = @default_langs[i]
+      @institution.orgpolicies.build
+      @institution.orgpolicies.last.lang = @default_langs[i]
+      @institution.orginfos.build
+      @institution.orginfos.last.lang = @default_langs[i]
+      i += 1
+    end
     @institution_types = {'IdP&SP' => 3, 'SP' => 2}
   end
 

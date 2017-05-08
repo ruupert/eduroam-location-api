@@ -18,11 +18,10 @@
     </div>
     <div class="field">
       <%= f.fields_for :orgnames do |oname| %>
-
           <%= oname.label :lang %>
-          "<%= oname.text_field :lang, :readonly => true, class: "lang_field" %>"
-            <%= :name %><br>
-          <%= oname.text_field :name, class: "name_field" %><br>
+              "<%= oname.text_field :lang, :readonly => true, class: "lang_field" %>"
+              <%= :name %><br>
+              <%= oname.text_field :name, class: "name_field" %><br>
       <% end %>
 
     </div>
@@ -54,7 +53,7 @@
     </div>
     <div class="field">
       <%= f.fields_for :orginfos do |oinf| %>
-          <%= oinf.label :lang %>
+          <%= oinf.label :info %>
           "<%= oinf.text_field :lang, :readonly => true, class: "lang_field" %>"
           <%= :url %><br>
           <%= oinf.text_field :url %><br>

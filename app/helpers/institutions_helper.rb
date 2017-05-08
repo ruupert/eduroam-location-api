@@ -193,29 +193,6 @@ module InstitutionsHelper
         end
 
       end
-      # check each entry orgssid_id from orgssid and change the orgssid_it to the last orgssid.id that
-      # is identical to the current orgssid.
-=begin      Entry.all.each do |e|
-        b = Orgssid.find(e['id'])
-        distinctSSIDs = Orgssid.where(institution_id: b['institution_id']).group(:institution_id,
-                                                                                 :name,
-                                                                                 :port_restrict,
-                                                                                 :transp_proxy,
-                                                                                 :ipv6,
-                                                                                 :nat,
-                                                                                 :wpa_tkip,
-                                                                                 :wpa_aes,
-                                                                                 :wpa2_tkip,
-                                                                                 :wpa2_aes,
-                                                                                 :wired).select('orgssids.id,orgssids.institution_id')
-        u = Entry.find(e['id'])
-        u.orgssid_id = distinctSSIDs.last.id
-        u.save
-
-      end
-      # Delete orphaned records
-      Orgssid.where(["id NOT IN (?)", Entry.pluck("orgssid_id")]).destroy_all
-=end
     end
 
   end
