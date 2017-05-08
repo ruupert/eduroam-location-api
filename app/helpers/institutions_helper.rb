@@ -107,39 +107,83 @@ module InstitutionsHelper
             n.locations.last.loc_names.last.lang = q.pop
           end
 
-          n.orgssids.build
-          n.orgssids.last.name = item['SSID']
-          n.orgssids.last.port_restrict = item['port_restrict']
-          n.orgssids.last.ipv6 = item['IPv6']
-          n.orgssids.last.nat = item['NAT']
-          n.orgssids.last.transp_proxy = item['transp_proxy']
-          n.orgssids.last.wired = item['wired']
-          n.orgssids.last.port_restrict = false
-          n.orgssids.last.transp_proxy = false
-          n.orgssids.last.ipv6 = false
-          n.orgssids.last.nat = false
-          n.orgssids.last.wpa2_aes = false
-          n.orgssids.last.wpa2_tkip = false
-          n.orgssids.last.wpa_tkip = false
-          n.orgssids.last.wpa_aes = false
           enc_str = item['enc_level'].to_s
           if enc_str.include? "WPA2/AES"
-            n.orgssids.last.wpa2_aes = true
+            tmp_wpa2_aes = true
+          else
+            tmp_wpa2_aes = false
           end
           if enc_str.include? "WPA2/TKIP"
-            n.orgssids.last.wpa2_tkip = true
+            tmp_wpa2_tkip = true
+          else
+            tmp_wpa2_tkip = false
           end
           if enc_str.include? "WPA/TKIP"
-            n.orgssids.last.wpa_tkip = true
+            tmp_wpa_tkip = true
+          else
+            tmp_wpa_tkip = false
           end
           if enc_str.include? "WPA/AES"
-            n.orgssids.last.wpa_aes = true
+            tmp_wpa_aes = true
+          else
+            tmp_wpa_aes = false
           end
 
-          n.save
+
+          res = Orgssid.where(institution_id: n.id,
+                        name: item['SSID'],
+                        port_restrict: item['port_restrict'],
+                        transp_proxy: item['transp_proxy'],
+                        ipv6: item['IPv6'],
+                        nat: item['NAT'],
+                        wpa_tkip: tmp_wpa_tkip,
+                        wpa_aes: tmp_wpa_aes,
+                        wpa2_tkip: tmp_wpa2_tkip,
+                        wpa2_aes: tmp_wpa2_aes,
+                        wired: item['wired'])
+          if res.count > 0
+              entry_ssid_id = res.first.id
+          else
+            n.orgssids.build
+
+            # some defaults probably not needed
+            n.orgssids.last.port_restrict = false
+            n.orgssids.last.transp_proxy = false
+            n.orgssids.last.ipv6 = false
+            n.orgssids.last.nat = false
+            n.orgssids.last.wpa2_aes = false
+            n.orgssids.last.wpa2_tkip = false
+            n.orgssids.last.wpa_tkip = false
+            n.orgssids.last.wpa_aes = false
+
+            n.orgssids.last.name = item['SSID']
+            n.orgssids.last.port_restrict = item['port_restrict']
+            n.orgssids.last.ipv6 = item['IPv6']
+            n.orgssids.last.nat = item['NAT']
+            n.orgssids.last.transp_proxy = item['transp_proxy']
+            n.orgssids.last.wired = item['wired']
+            enc_str = item['enc_level'].to_s
+            if enc_str.include? "WPA2/AES"
+              n.orgssids.last.wpa2_aes = tmp_wpa2_aes
+            end
+            if enc_str.include? "WPA2/TKIP"
+              n.orgssids.last.wpa2_tkip = tmp_wpa2_tkip
+            end
+            if enc_str.include? "WPA/TKIP"
+              n.orgssids.last.wpa_tkip = tmp_wpa_tkip
+            end
+            if enc_str.include? "WPA/AES"
+              n.orgssids.last.wpa_aes = tmp_wpa_aes
+            end
+
+            n.save
+            entry_ssid_id = n.id
+          end
+
+
           n.entries.build
           n.entries.last.location_id = n.locations.last.id
-          n.entries.last.orgssid_id = n.orgssids.last.id
+          n.entries.last.orgssid_id = entry_ssid_id
           n.entries.last.institution_id = n.id
 
           n.entries.last.ap_count = item['AP_no']
@@ -150,7 +194,7 @@ module InstitutionsHelper
       end
       # check each entry orgssid_id from orgssid and change the orgssid_it to the last orgssid.id that
       # is identical to the current orgssid.
-      Entry.all.each do |e|
+=begin      Entry.all.each do |e|
         b = Orgssid.find(e['id'])
         distinctSSIDs = Orgssid.where(institution_id: b['institution_id']).group(:institution_id,
                                                                                  :name,
@@ -170,6 +214,7 @@ module InstitutionsHelper
       end
       # Delete orphaned records
       Orgssid.where(["id NOT IN (?)", Entry.pluck("orgssid_id")]).destroy_all
+=end
     end
 
   end

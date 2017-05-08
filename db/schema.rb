@@ -13,6 +13,10 @@
 
 ActiveRecord::Schema.define(version: 20170417212813) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+  enable_extension "pg_trgm"
+
   create_table "entries", force: :cascade do |t|
     t.integer  "institution_id"
     t.integer  "location_id"
@@ -96,7 +100,5 @@ ActiveRecord::Schema.define(version: 20170417212813) do
     t.boolean  "wpa2_aes"
     t.boolean  "wired"
   end
-
-  add_index "orgssids", ["id", "institution_id"], name: "index_orgssids_on_id_and_institution_id"
 
 end
