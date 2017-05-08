@@ -10,9 +10,10 @@ Rails.application.routes.draw do
       get ':apikey/get/policies' => 'orgpolicies#get'
       match ':apikey/set/policy/lang/:lang/*url' => 'orgpolicies#set', :via => :get, :format => false, constraints: { url: /\D*/ }
       get ':apikey/get/infos' => 'orginfos#get'
-      match ':apikey/set/info/lang/:lang/*url' => 'orgpinfos#set', :via => :get, :format => false, constraints: { url: /\D*/ }
+      match ':apikey/set/info/lang/:lang/*url' => 'orginfos#set', :via => :get, :format => false, constraints: { url: /\D*/ }
       get ':apikey/get/loc_names' => 'loc_names#get'
       match ':apikey/set/loc_name/:location_id/lang/:lang/*name' => 'loc_names#set', :via => :get, :format => false, constraints: { url: /\D*/ }
+      get ':apikey/set/ssid/:id/:key/:value' => 'ssids#set'
 
     end
   end
