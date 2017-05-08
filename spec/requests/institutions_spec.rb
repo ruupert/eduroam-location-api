@@ -13,8 +13,7 @@ RSpec.describe "Institutions", type: :request do
 
     describe "authenticated" do
       it "should have http status 200" do
-      # piece of shit...
-       get_with_auth '/institutions', ENV['EDUROAM_API_ADMIN_USERNAME'], ENV['EDUROAM_API_ADMIN_PW']
+        get_with_auth '/institutions', ENV['EDUROAM_API_ADMIN_USERNAME'], ENV['EDUROAM_API_ADMIN_PW']
         expect(response).to have_http_status(200)
       end
 

@@ -21,7 +21,6 @@ RSpec.describe "institutions/new", type: :view do
     render
 
     assert_select "form[action=?][method=?]", institutions_path, "post" do
-  #    puts response.body
   #    assert_select "input#institution_institution_type[name=?]", "institution[institution_type]"
 
       assert_select "input#institution_inst_realm[name=?]", "institution[inst_realm]"

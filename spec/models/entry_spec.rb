@@ -8,11 +8,6 @@ RSpec.describe Entry, type: :model do
     end
     it "creates a new entry" do
       e = Entry.find(1)
-      puts e.inspect
-      puts e.institution_id
-      puts e.location_id
-      puts e.orgssid_id
-      puts e.ap_count
       expect(e.institution_id).to eq(1)
       expect(e.location_id).to eq(1)
       expect(e.orgssid_id).to eq(1)
