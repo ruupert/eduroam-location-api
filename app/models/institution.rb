@@ -11,9 +11,12 @@ class Institution < ActiveRecord::Base
   accepts_nested_attributes_for :orgssids
   accepts_nested_attributes_for :locations
   accepts_nested_attributes_for :entries
+  # minimum length of a realm would be four letters: "a.fi". this spot could house some custom validation which checks if
+  # realm exists by telneting to target radius port (or something)...
+  validates :inst_realm, presence: true, length: {minimum: 4}, uniqueness: {scope: [:inst_realm], message: "Given realm already exists!"}
+  validates :institution_type, presence: true, :inclusion => {:in => [2,3]}  # institution type can be either 2 or 3. type 1 is the NRO
+  validates_uniqueness_of :inst_realm, :scope => [:country, :institution_type, :inst_realm ], message: "Institution already exists"
 
-  validates :inst_realm, presence: true, length: {minimum: 3}, uniqueness: {scope: [:inst_realm], message: "Given realm already exists!"}
-  validates :institution_type, presence: true, :inclusion => {:in => [2,3]}
   before_create :new_apikey, :default_country
   after_create :create_default_ssid
 

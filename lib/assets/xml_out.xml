@@ -19,103 +19,101 @@
     <info_URL lang="fi" class="&lt;"/>
     <policy_URL lang="en" class="&gt;"/>
     <policy_URL lang="fi" class="&gt;"/>
-    <ts>2017-05-07 05:15:50 UTC</ts>
-    <locations>
-      <location>
-        <longitude>24°56'02.00"E</longitude>
-        <latitude>60°12'04.00"N</latitude>
-        <loc_name lang="en" class="&lt;">Haaga-Helia University of Applied Sciences, Pasila</loc_name>
-        <loc_name lang="fi" class="&lt;">Haaga-Helia ammattikorkeakoulu, Pasila</loc_name>
-        <address>
-          <street>Ratapihantie 13</street>
-          <city>Helsinki</city>
-        </address>
-        <SSID>eduroam</SSID>
-        <enc_level>WPA2/AES</enc_level>
-        <port_restrict>false</port_restrict>
-        <transp_proxy>false</transp_proxy>
-        <IPv6>false</IPv6>
-        <NAT>false</NAT>
-        <AP_no>46</AP_no>
-        <wired>false</wired>
-        <info_URL lang="en" class="&lt;"/>
-      </location>
-      <location>
-        <longitude>25°00'55.00"E</longitude>
-        <latitude>60°14'50.00"N</latitude>
-        <loc_name lang="en" class="&lt;">Haaga-Helia University of Applied Sciences, Malmi</loc_name>
-        <loc_name lang="en" class="&lt;">Haaga-Helia ammattikorkeakoulu, Malmi</loc_name>
-        <address>
-          <street>Hietakummuntie 1 A</street>
-          <city>Helsinki</city>
-        </address>
-        <SSID>eduroam</SSID>
-        <enc_level>WPA2/AES</enc_level>
-        <port_restrict>false</port_restrict>
-        <transp_proxy>false</transp_proxy>
-        <IPv6>false</IPv6>
-        <NAT>false</NAT>
-        <AP_no>28</AP_no>
-        <wired>false</wired>
-        <info_URL lang="en" class="&lt;"/>
-      </location>
-      <location>
-        <longitude>24°54'22.00"E</longitude>
-        <latitude>60°13'06.00"N</latitude>
-        <loc_name lang="fi" class="&lt;">Haaga-Helia University of Applied Sciences, Haaga</loc_name>
-        <loc_name lang="en" class="&lt;">Haaga-Helia ammattikorkeakoulu, Haaga</loc_name>
-        <address>
-          <street>Pajuniityntie 11</street>
-          <city>Helsinki</city>
-        </address>
-        <SSID>eduroam</SSID>
-        <enc_level>WPA2/AES</enc_level>
-        <port_restrict>false</port_restrict>
-        <transp_proxy>false</transp_proxy>
-        <IPv6>false</IPv6>
-        <NAT>false</NAT>
-        <AP_no>26</AP_no>
-        <wired>false</wired>
-        <info_URL lang="en" class="&lt;"/>
-      </location>
-      <location>
-        <longitude>25°39'26.00"E</longitude>
-        <latitude>60°23'13.00"N</latitude>
-        <loc_name lang="en" class="&lt;">Haaga-Helia University of Applied Sciences, Porvoo</loc_name>
-        <loc_name lang="fi" class="&lt;">Haaga-Helia ammattikorkeakoulu, Porvoo</loc_name>
-        <address>
-          <street>Taidetehtaankatu 1</street>
-          <city>Porvoo</city>
-        </address>
-        <SSID>eduroam</SSID>
-        <enc_level>WPA2/AES</enc_level>
-        <port_restrict>false</port_restrict>
-        <transp_proxy>false</transp_proxy>
-        <IPv6>false</IPv6>
-        <NAT>false</NAT>
-        <AP_no>28</AP_no>
-        <wired>false</wired>
-        <info_URL lang="en" class="&lt;"/>
-      </location>
-      <location>
-        <longitude>24°57'25.00"E</longitude>
-        <latitude>60°11'46.00"N</latitude>
-        <loc_name lang="en" class="&lt;">Haaga-Helia University of Applied Sciences, Vallila</loc_name>
-        <loc_name lang="en" class="&lt;">Haaga-Helia ammattikorkeakoulu, Vallila</loc_name>
-        <address>
-          <street>Hattulantie 2</street>
-          <city>Helsinki</city>
-        </address>
-        <SSID>eduroam</SSID>
-        <enc_level>WPA2/AES</enc_level>
-        <port_restrict>false</port_restrict>
-        <transp_proxy>false</transp_proxy>
-        <IPv6>false</IPv6>
-        <NAT>false</NAT>
-        <AP_no>19</AP_no>
-        <wired>false</wired>
-        <info_URL lang="en" class="&lt;"/>
-      </location>
-    </locations>
+    <ts>2017-05-07T23:33:03</ts>
+    <location>
+      <longitude>24°56'02.00"E</longitude>
+      <latitude>60°12'04.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Haaga-Helia University of Applied Sciences, Pasila</loc_name>
+      <loc_name lang="fi" class="&lt;">Haaga-Helia ammattikorkeakoulu, Pasila</loc_name>
+      <address>
+        <street>Ratapihantie 13</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>46</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+    <location>
+      <longitude>25°00'55.00"E</longitude>
+      <latitude>60°14'50.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Haaga-Helia University of Applied Sciences, Malmi</loc_name>
+      <loc_name lang="en" class="&lt;">Haaga-Helia ammattikorkeakoulu, Malmi</loc_name>
+      <address>
+        <street>Hietakummuntie 1 A</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>28</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+    <location>
+      <longitude>24°54'22.00"E</longitude>
+      <latitude>60°13'06.00"N</latitude>
+      <loc_name lang="fi" class="&lt;">Haaga-Helia University of Applied Sciences, Haaga</loc_name>
+      <loc_name lang="en" class="&lt;">Haaga-Helia ammattikorkeakoulu, Haaga</loc_name>
+      <address>
+        <street>Pajuniityntie 11</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>26</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+    <location>
+      <longitude>25°39'26.00"E</longitude>
+      <latitude>60°23'13.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Haaga-Helia University of Applied Sciences, Porvoo</loc_name>
+      <loc_name lang="fi" class="&lt;">Haaga-Helia ammattikorkeakoulu, Porvoo</loc_name>
+      <address>
+        <street>Taidetehtaankatu 1</street>
+        <city>Porvoo</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>28</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+    <location>
+      <longitude>24°57'25.00"E</longitude>
+      <latitude>60°11'46.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Haaga-Helia University of Applied Sciences, Vallila</loc_name>
+      <loc_name lang="en" class="&lt;">Haaga-Helia ammattikorkeakoulu, Vallila</loc_name>
+      <address>
+        <street>Hattulantie 2</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>19</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
   </institution>
 </institutions>

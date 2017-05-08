@@ -29,7 +29,6 @@ class InstitutionsController < ApplicationController
   # GET /institutions/1/edit
   def edit
     @institution = Institution.find(params[:id])
-
     @countries = ISO3166::Country.codes
     @institution_types = {'IdP&SP' => 3, 'SP' => 2}
   end
@@ -125,10 +124,10 @@ class InstitutionsController < ApplicationController
                                         :contact_name,
                                         :contact_email,
                                         :contact_phone,
-                                        orgnames_attributes: [:lang, :name],
-                                        orgpolicies_attributes: [:lang, :url],
-                                        orginfos_attributes: [:lang, :url],
-                                        orgssids_attributes: [:number, :wpa_tkip, :wpa_aes, :wpa2_tkip, :wpa2_aes, :port_restrict, :transp_proxy, :ipv6, :nat])
+                                        orgnames_attributes: [:id, :lang, :name],
+                                        orgpolicies_attributes: [:id, :lang, :url],
+                                        orginfos_attributes: [:id, :lang, :url],
+                                        orgssids_attributes: [:id, :number, :wpa_tkip, :wpa_aes, :wpa2_tkip, :wpa2_aes, :port_restrict, :transp_proxy, :ipv6, :nat])
 
   end
 end

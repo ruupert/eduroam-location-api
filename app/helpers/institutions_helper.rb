@@ -51,10 +51,6 @@ module InstitutionsHelper
 
         x['policy_URL'].each do |org|
           n.orgpolicies.build
-          puts org
-          puts org
-          puts org
-          puts org
           if org.to_s.include?('{"lang"=>"')
             n.orgpolicies.last.url = ""
           else
@@ -84,7 +80,6 @@ module InstitutionsHelper
 
 
         end
-        pp x['location'].inspect
 
         Array.wrap(x['location']).each do |item|
 
@@ -94,7 +89,6 @@ module InstitutionsHelper
           tmp_str = item['address']['street']
 
           clean_address = tmp_str.to_s.match(/[A-z ]+[0-9]+/).to_s
-          puts clean_address
           if building_identifier.nil?
             building_identifier = "0"
           end

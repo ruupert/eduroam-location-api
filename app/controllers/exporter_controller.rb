@@ -30,13 +30,14 @@ class ExporterController < ApplicationController
 
 
     end
-    xml.ts var["updated_at"]
+    #xml.ts var["updated_at"]
+    xml.ts Time.parse(var["updated_at"].to_s).strftime("%Y-%m-%dT%H:%M:%S")
+    #<ts>2015-01-23T14:00:00.0Z</ts>
 
-    xml.locations {
-      add_locations_for(xml, Entry.where(institution_id: var["id"]).where(ap_count: 1..Float::INFINITY))
-    }
+    add_locations_for(xml, Entry.where(institution_id: var["id"]).where(ap_count: 1..Float::INFINITY))
 
   end
+
   def add_locations_for(xml, entry)
     entry.each do |e|
       xml.location {
@@ -85,7 +86,7 @@ class ExporterController < ApplicationController
     end
 
     xsd = Nokogiri::XML::Schema(File.read("lib/assets/institution.xsd"))
-    doc = Nokogiri::XML( File.read("lib/assets/xml_out.xml") ) do |config|
+    doc = Nokogiri::XML(File.read("lib/assets/xml_out.xml")) do |config|
       config.options = Nokogiri::XML::ParseOptions::STRICT | Nokogiri::XML::ParseOptions::NOBLANKS
     end
     doc.xpath('//@class').remove
@@ -94,13 +95,9 @@ class ExporterController < ApplicationController
 
       render(xml: doc)
     else
-      render(xml: doc)
 
-#      render(xml: xsd.errors)
+      render(xml: xsd.errors)
     end
-
-
-
 
 
   end
