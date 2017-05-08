@@ -141,8 +141,9 @@ module InstitutionsHelper
                         wpa2_tkip: tmp_wpa2_tkip,
                         wpa2_aes: tmp_wpa2_aes,
                         wired: item['wired'])
-          if res.count > 0
+          if res.count == 1
               entry_ssid_id = res.first.id
+              n.save
           else
             n.orgssids.build
 
