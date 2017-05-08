@@ -10,18 +10,18 @@ class Entry < ActiveRecord::Base
 
   def self.create_entry(institution_id,loc_id, orgssid_id,ap_count)
 
-    puts orgssid_id
-    puts orgssid_id
-    puts orgssid_id
-    puts orgssid_id
-    puts orgssid_id
-    last = Entry.where(location_id: loc_id, institution_id: institution_id).last
+    last = Entry.where(location_id: loc_id, institution_id: institution_id).order("created_at desc").limit(1)
     if last == nil
       new_entry_for_create_entryy(institution_id,loc_id, orgssid_id,ap_count)
     else
+      if  last.last.nil?
+        tmp_apcount = 0
+      else
+        tmp_apcount = last.last.ap_count.to_i
+      end
 
-      if !last.ap_count == ap_count
-        new_entry_for_create_entryy(institution_id,loc_id, last.orgssid_id,ap_count)
+      if !tmp_apcount.eql?ap_count.to_i
+        new_entry_for_create_entryy(institution_id,loc_id, orgssid_id,ap_count)
       end
 
     end

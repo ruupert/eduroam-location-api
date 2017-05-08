@@ -3,44 +3,35 @@ class Api::V1::EntriesController < Api::V1::BaseController
   include Api::V1::EntriesHelper
 
   def set
-    # Move this cargo culture to MODELS! 
-    #
-    valid_location = valid_location?(params[:address], params[:identifier], params[:city], get_institution_id)
-    valid_ssid = valid_ssid?(get_institution_id, params[:ssid])
-    has_ssid = has_ssid?(get_institution_id)
 
-    if !has_ssid
-      params[:error] = "No SSID"
-      # create default ssid
-      nssid_id = Orgssid.create_default(institution_id:get_institution_id)
+    if params[:ssid] == nil
+      nssid_id = Orgssid.where(institution_id: get_institution_id).first.id
     else
-      if params[:ssid] == nil
-        nssid_id = nil
-      else
-        nssid_id = params[:ssid]
-      end
-
+      nssid_id = params[:ssid]
     end
+
+
+    valid_existing_location = valid_location?(params[:address], params[:identifier], params[:city], get_institution_id)
+    valid_ssid = valid_ssid?(get_institution_id, nssid_id)
 
     if valid_ssid
 
-      unless valid_location
+      if !valid_existing_location
         #create location
-        nloc_id = Location.create_location(get_institution_id,params[:address], params[:identifier],params[:city])
+        nloc_id = Location.create_location(get_institution_id, params[:address], params[:identifier], params[:city])
 
       else
         #get location_id
-        nloc_id = Location.get_location_id(get_institution_id, params[:address], params[:identifier],params[:city])
+        nloc_id = Location.get_location_id(get_institution_id, params[:address], params[:identifier], params[:city])
       end
       #create new entry
-      Entry.create_entry(get_institution_id, nloc_id , nssid_id, params[:ap])
+      Entry.create_entry(get_institution_id, nloc_id, nssid_id, params[:ap])
     else
       params[:error] = "Invalid SSID"
     end
 
 
-
-    msg = {:valid_location => valid_location, :valid_ssid => valid_ssid, :has_ssid => has_ssid}
+    msg = {:valid_location => valid_existing_location, :valid_ssid => valid_ssid}
     params[:msg] = msg
     render(
 

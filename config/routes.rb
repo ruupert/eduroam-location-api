@@ -7,6 +7,13 @@ Rails.application.routes.draw do
       get ':apikey/get/locations' => 'locations#get', :as => 'get_locations'
       get ':apikey/set/location/:address/:identifier/:city/:ap' => 'entries#set', :as => 'set_location'
       get ':apikey/set/location/:address/:identifier/:city/:ap/:ssid' => 'entries#set', :as => 'set_location_with_ssid'
+      get ':apikey/get/policies' => 'orgpolicies#get'
+      match ':apikey/set/policy/lang/:lang/*url' => 'orgpolicies#set', :via => :get, :format => false, constraints: { url: /\D*/ }
+      get ':apikey/get/infos' => 'orginfos#get'
+      match ':apikey/set/info/lang/:lang/*url' => 'orgpinfos#set', :via => :get, :format => false, constraints: { url: /\D*/ }
+      get ':apikey/get/loc_names' => 'loc_names#get'
+      match ':apikey/set/loc_name/:location_id/lang/:lang/*name' => 'loc_names#set', :via => :get, :format => false, constraints: { url: /\D*/ }
+
     end
   end
 
