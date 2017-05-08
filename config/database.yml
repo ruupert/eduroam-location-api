@@ -9,15 +9,15 @@ default: &default
   pool: 5
   timeout: 5000
 
-#development:
-#  <<: *default
-#  database: db/development.sqlite3
 development:
   <<: *default
-  adapter: postgresql
-  host: dump
-  username: eduroamapi
-  database: eduroamapi
+  database: db/development.sqlite3
+#development:
+#  <<: *default
+#  adapter: postgresql
+#  host: dump
+#  username: eduroamapi
+#  database: eduroamapi
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
