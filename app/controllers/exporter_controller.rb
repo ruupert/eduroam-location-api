@@ -48,7 +48,11 @@ class ExporterController < ApplicationController
           xml.loc_name(:lang => lname["lang"], :class => nil) < lname["name"]
         end
         xml.address {
-          xml.street "#{loc.first.address} #{loc.first.identifier}".chomp(" ")
+          identifier_str = ""
+          if loc.first.identifier != "0"
+            identifier_str = loc.first.identifier
+          end
+          xml.street "#{loc.first.address} #{identifier_str}".chomp(" ")
           xml.city loc.first.city
         }
         orgssid = Orgssid.find(e.orgssid_id)

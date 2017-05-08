@@ -148,10 +148,10 @@
         <city>Helsinki</city>
       </address>
       <SSID>eduroam</SSID>
-      <enc_level>WPA2/AES</enc_level>
-      <port_restrict>false</port_restrict>
+      <enc_level>WPA/AES, WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
       <transp_proxy>false</transp_proxy>
-      <IPv6>false</IPv6>
+      <IPv6>true</IPv6>
       <NAT>true</NAT>
       <AP_no>22</AP_no>
       <wired>false</wired>
@@ -166,10 +166,10 @@
         <city>Helsinki</city>
       </address>
       <SSID>eduroam</SSID>
-      <enc_level>WPA2/AES</enc_level>
-      <port_restrict>false</port_restrict>
+      <enc_level>WPA/AES, WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
       <transp_proxy>false</transp_proxy>
-      <IPv6>false</IPv6>
+      <IPv6>true</IPv6>
       <NAT>true</NAT>
       <AP_no>24</AP_no>
       <wired>false</wired>
@@ -180,16 +180,34 @@
       <latitude>60°9'39.33"N</latitude>
       <loc_name lang="en" class="&lt;">Lauttasaarentie 10</loc_name>
       <address>
-        <street>Lauttasaarentie 10 0</street>
+        <street>Lauttasaarentie 10</street>
         <city>Helsinki</city>
       </address>
       <SSID>eduroam</SSID>
-      <enc_level>WPA2/AES</enc_level>
-      <port_restrict>false</port_restrict>
+      <enc_level>WPA/AES, WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
       <transp_proxy>false</transp_proxy>
-      <IPv6>false</IPv6>
+      <IPv6>true</IPv6>
       <NAT>true</NAT>
       <AP_no>24</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http:/lauttasaari.fi/kameli</info_URL>
+    </location>
+    <location>
+      <longitude>24°53'19.28"E</longitude>
+      <latitude>60°9'39.33"N</latitude>
+      <loc_name lang="en" class="&lt;">Lauttasaarentie 10</loc_name>
+      <address>
+        <street>Lauttasaarentie 10 C</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA/AES, WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>true</IPv6>
+      <NAT>true</NAT>
+      <AP_no>124</AP_no>
       <wired>false</wired>
       <info_URL lang="en" class="&lt;">http:/lauttasaari.fi/kameli</info_URL>
     </location>
