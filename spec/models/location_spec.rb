@@ -54,10 +54,14 @@ RSpec.describe Location, type: :model do
                          "ap_count"=>"34",
                          "orgssid_id"=>"1"
                      })
+        @apikey = Institution.find(1).apikey
+
     end
 
 
-  it "gets the right location_id" do
+
+
+    it "gets the right location_id" do
 
     expect(Location.get_location_id(1,"Ratapihantie 13",nil, "Helsinki")).to eq(1)
 
@@ -75,5 +79,49 @@ RSpec.describe Location, type: :model do
       expect(Location.get_location_id(5,"Lauttasaarentie 10","B", "Helsinki")).to eq(2)
     end
 
+  it "can change name" do
+      visit "/api/v1/#{@apikey}/set/ssid/1/name/testname"
+      expect(Orgssid.find(1).name).to eq("testname")
+
+
+  end
+    it "can change port_restrict" do
+      visit "/api/v1/#{@apikey}/set/ssid/1/port_restrict/true"
+      expect(Orgssid.find(1).port_restrict).to eq(true)
+
+    end
+    it "can change transp_proxy" do
+      visit "/api/v1/#{@apikey}/set/ssid/1/transp_proxy/true"
+      expect(Orgssid.find(1).transp_proxy).to eq(true)
+
+    end
+    it "can change ipv6" do
+      visit "/api/v1/#{@apikey}/set/ssid/1/ipv6/true"
+      expect(Orgssid.find(1).ipv6).to eq(true)
+    end
+    it "can change nat" do
+      visit "/api/v1/#{@apikey}/set/ssid/1/nat/true"
+      expect(Orgssid.find(1).nat).to eq(true)
+    end
+    it "can change wpa_tkip" do
+      visit "/api/v1/#{@apikey}/set/ssid/1/wpa_tkip/true"
+      expect(Orgssid.find(1).wpa_tkip).to eq(true)
+    end
+    it "can change wpa_aes" do
+      visit "/api/v1/#{@apikey}/set/ssid/1/wpa_aes/true"
+      expect(Orgssid.find(1).wpa_aes).to eq(true)
+    end
+    it "can change wpa2_tkip" do
+      visit "/api/v1/#{@apikey}/set/ssid/1/wpa2_tkip/true"
+      expect(Orgssid.find(1).wpa2_tkip).to eq(true)
+    end
+    it "can change wpa2_aes" do
+      visit "/api/v1/#{@apikey}/set/ssid/1/wpa2_aes/false"
+      expect(Orgssid.find(1).wpa2_aes).to eq(false)
+    end
+    it "can change port_restrict" do
+      visit "/api/v1/#{@apikey}/set/ssid/1/wired/true"
+      expect(Orgssid.find(1).wired).to eq(true)
+    end
 
 end
