@@ -49,9 +49,9 @@ class Api::V1::SsidsController < Api::V1::BaseController
 
     def get_boolean(value)
       if value == "true" or "1"
-        !!value
+        true
       else
-        !value
+        false
       end
     end
 

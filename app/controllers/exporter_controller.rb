@@ -60,12 +60,16 @@ class ExporterController < ApplicationController
     xml.ts Time.parse(var["updated_at"].to_s).strftime("%Y-%m-%dT%H:%M:%S")
     #<ts>2015-01-23T14:00:00.0Z</ts>
 
-    add_locations_for(xml, Entry.where(institution_id: var["id"], ap_count: 1..Float::INFINITY))
+  #  add_locations_for(xml, Entry.where(institution_id: var["id"], ap_count: 1..Float::INFINITY))
+    #add_locations_for(xml, Institution.find(var["id"]).entries.order("id,location_id desc").limit(Location.where(:institution_id => 37).count))
+    add_locations_for(xml, Institution.find(var["id"]).entries.order("location_id, id desc").limit(Location.where(:institution_id => 37).count))
 
   end
 
   def add_locations_for(xml, entry)
     entry.each do |e|
+      if e["ap_count"] > 0
+
       xml.location {
         loc = Location.where(:id => e["location_id"])
         xml.longitude loc.first.longitude
@@ -92,6 +96,8 @@ class ExporterController < ApplicationController
         xml.wired orgssid.wired
         xml.info_URL(:lang => "en", :class => nil) < orgssid.institution.primary_info_url
       }
+      end
+
     end
   end
 

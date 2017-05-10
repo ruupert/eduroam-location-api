@@ -29,10 +29,10 @@ class Api::V1::LocationsController < Api::V1::BaseController
   end
 
   def get_boolean(value)
-    if value == "true" or "1"
-      !!value
+    if value == "true" or value == "1"
+      return true
     else
-      !value
+      return false
     end
   end
 
@@ -42,8 +42,7 @@ class Api::V1::LocationsController < Api::V1::BaseController
   end
 
   def entry_params
-    params.require(:apikey).permit(:id, :key, :value)
-
+    params.require(:apikey).permit(:address, :city, :identifier, :ssid, :ap)
   end
 
 

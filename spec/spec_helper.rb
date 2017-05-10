@@ -1,5 +1,3 @@
-require 'coveralls'
-Coveralls.wear!
 require 'webmock'
 WebMock.allow_net_connect!
 #require 'simplecov'

@@ -3,27 +3,584 @@
   <institution>
     <country>fi</country>
     <type>3</type>
-    <inst_realm>tesjjjjt.fe</inst_realm>
-    <org_name lang="en" class="&lt;">TestUni</org_name>
+    <inst_realm>aalto.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Aalto University</org_name>
+    <org_name lang="fi" class="&lt;">Aalto-yliopisto</org_name>
     <address>
-      <street>Lauttasaarentie 3</street>
+      <street>Otakaari 1</street>
+      <city>Espoo</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    <policy_URL lang="fi" class="&gt;">http://www.eduroam.org/</policy_URL>
+    <ts>2017-05-10T02:06:14</ts>
+    <location>
+      <longitude>24º49'53.00"E</longitude>
+      <latitude>60º10'50.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Aalto University</loc_name>
+      <loc_name lang="fi" class="&lt;">Aalto-yliopisto</loc_name>
+      <address>
+        <street>Betonimiehenkuja 3</street>
+        <city>Espoo</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>3</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+    <location>
+      <longitude>24º49'55.00"E</longitude>
+      <latitude>60º10'52.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Aalto University</loc_name>
+      <loc_name lang="en" class="&lt;">Aalto-yliopisto</loc_name>
+      <address>
+        <street>Betonimiehenkuja 5</street>
+        <city>Espoo</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>4</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>abo.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Åbo Akademi University</org_name>
+    <org_name lang="en" class="&lt;">Åbo Akademi</org_name>
+    <address>
+      <street>Tuomiokirkontori 3</street>
+      <city>Turku</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="en" class="&lt;">http://www.abo.fi</info_URL>
+    <info_URL lang="en" class="&lt;">https://www.abo.fi/stodenhet/eduroam</info_URL>
+    <policy_URL lang="fi" class="&gt;">-</policy_URL>
+    <ts>2017-05-10T02:06:18</ts>
+    <location>
+      <longitude>22º16'47.00"E</longitude>
+      <latitude>60º27'23.00"N</latitude>
+      <address>
+        <street>Tehtaankatu 2</street>
+        <city>Turku</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level/>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>26</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.abo.fi</info_URL>
+    </location>
+    <location>
+      <longitude>22º16'46.00"E</longitude>
+      <latitude>60º27'14.00"N</latitude>
+      <address>
+        <street>Porthaninkatu 3</street>
+        <city>Turku</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level/>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>26</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.abo.fi</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>hanken.fi</inst_realm>
+    <org_name lang="fi" class="&lt;">Hanken Svenska handelshögskolan</org_name>
+    <org_name lang="en" class="&lt;">Hanken School of Economics</org_name>
+    <address>
+      <street>Arkadiankatu 22</street>
       <city>Helsinki</city>
     </address>
     <contact>
-      <name>Elämäm Mestari</name>
-      <email>elämäm@mestari.fi</email>
-      <phone>050505050</phone>
+      <name/>
+      <email/>
+      <phone/>
     </contact>
-    <info_URL lang="en" class="&lt;">lauttasaari.fi/howtosetup_eng</info_URL>
-    <policy_URL lang="en" class="&gt;">lauttasaari.fi/rules_eng</policy_URL>
-    <ts>2017-05-10T05:47:43</ts>
+    <info_URL lang="fi" class="&lt;"/>
+    <policy_URL lang="en" class="&gt;"/>
+    <ts>2017-05-10T02:06:19</ts>
     <location>
-      <longitude>24°56'02.00"E</longitude>
-      <latitude>60°12'04.00"N</latitude>
-      <loc_name lang="en" class="&lt;">Haaga-Helia University of Applied Sciences, Päsila</loc_name>
-      <loc_name lang="fi" class="&lt;">Haaga-Helia ammattikorkeakoulu, Pasila</loc_name>
+      <longitude>24°55'27.00"E</longitude>
+      <latitude>60°10'14.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Hanken School of Economics</loc_name>
+      <loc_name lang="en" class="&lt;">Hanken Svenska handelshögskolan</loc_name>
       <address>
-        <street>Ratapihantie 13</street>
+        <street>Arkadiankatu 22</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>26</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+    <location>
+      <longitude>24°55'22.00"E</longitude>
+      <latitude>60°10'12.00"N</latitude>
+      <loc_name lang="fi" class="&lt;">Casa Academica</loc_name>
+      <address>
+        <street>Hietaniemenkatu 7 P</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>8</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>helsinki.fi</inst_realm>
+    <org_name lang="fi" class="&lt;">University of Helsinki</org_name>
+    <org_name lang="en" class="&lt;">Helsingin yliopisto</org_name>
+    <address>
+      <street>Yliopistonkatu 4</street>
+      <city>Helsinki</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="fi" class="&lt;">http://www.eduroam.org/</info_URL>
+    <policy_URL lang="en" class="&gt;">http://www.eduroam.org/</policy_URL>
+    <ts>2017-05-10T02:06:19</ts>
+    <location>
+      <longitude>24º56'54.00"E</longitude>
+      <latitude>60º10'09.00"N</latitude>
+      <loc_name lang="en" class="&lt;">University of Helsinki</loc_name>
+      <loc_name lang="en" class="&lt;">Helsingin yliopisto</loc_name>
+      <address>
+        <street>Aleksanterinkatu 7 K</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level/>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>10</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+    <location>
+      <longitude>24º56'55.00"E</longitude>
+      <latitude>60º10'16.00"N</latitude>
+      <loc_name lang="fi" class="&lt;">University of Helsinki</loc_name>
+      <loc_name lang="en" class="&lt;">Helsingin yliopisto</loc_name>
+      <address>
+        <street>Fabianinkatu 26</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level/>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>10</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>jyu.fi</inst_realm>
+    <inst_realm>student.jyu.fi</inst_realm>
+    <org_name lang="en" class="&lt;">University of Jyväskylä</org_name>
+    <org_name lang="fi" class="&lt;">Jyväskylän yliopisto</org_name>
+    <address>
+      <street>Seminaarinkatu 15</street>
+      <city>Jyväskylä</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="fi" class="&lt;">http://s.jyu.fi/eduroam</info_URL>
+    <info_URL lang="en" class="&lt;">http://s.jyu.fi/eduroam</info_URL>
+    <policy_URL lang="en" class="&gt;">http://s.jyu.fi/eduroam</policy_URL>
+    <policy_URL lang="en" class="&gt;">http://s.jyu.fi/eduroam</policy_URL>
+    <ts>2017-05-10T02:06:21</ts>
+    <location>
+      <longitude>25º44'8.959"E</longitude>
+      <latitude>62º14'9.679"N</latitude>
+      <loc_name lang="en" class="&lt;">University's campus, Seminaarinmäki, Main building</loc_name>
+      <loc_name lang="fi" class="&lt;">Yliopiston kampus, Seminaarinmäki, Päärekennus</loc_name>
+      <address>
+        <street>Seminaarinkatu 15</street>
+        <city>Jyväskylä</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
+      <AP_no>38</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://s.jyu.fi/eduroam</info_URL>
+    </location>
+    <location>
+      <longitude>25º44'08.57"E</longitude>
+      <latitude>62º14'15.10"N</latitude>
+      <loc_name lang="en" class="&lt;">University's campus, Main Library</loc_name>
+      <loc_name lang="en" class="&lt;">Yliopiston kampus, Pääkirjasto</loc_name>
+      <address>
+        <street>Seminaarinkatu 15</street>
+        <city>Jyväskylä</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
+      <AP_no>19</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://s.jyu.fi/eduroam</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>luc.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Lapland University Consortium</org_name>
+    <org_name lang="fi" class="&lt;">Lapin korkeakoulukonserni</org_name>
+    <address>
+      <street>Viirinkankaantie 1</street>
+      <city>Rovaniemi</city>
+    </address>
+    <contact>
+      <name>eka</name>
+      <email>eka@eka</email>
+      <phone>1111</phone>
+    </contact>
+    <contact>
+      <name> toka</name>
+      <email> toka@toka</email>
+      <phone> 22222</phone>
+    </contact>
+    <info_URL lang="en" class="&lt;"/>
+    <policy_URL lang="en" class="&gt;"/>
+    <ts>2017-05-10T02:06:22</ts>
+    <location>
+      <longitude>25º46'09.00"E</longitude>
+      <latitude>66º29'50.00"N</latitude>
+      <loc_name lang="fi" class="&lt;">Lapland University of Applied Sciences</loc_name>
+      <loc_name lang="en" class="&lt;">Lapin ammattikorkeakoulu</loc_name>
+      <address>
+        <street>Hiihtomajantie 2</street>
+        <city>Rovaniemi</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>20</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+    <location>
+      <longitude>25º43'27.00"E</longitude>
+      <latitude>66º28'52.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Lapland University of Applied Sciences</loc_name>
+      <loc_name lang="fi" class="&lt;">Lapin ammattikorkeakoulu</loc_name>
+      <address>
+        <street>Jokiväylä 11</street>
+        <city>Rovaniemi</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>20</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>lut.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Lappeenranta University of Technology</org_name>
+    <org_name lang="fi" class="&lt;">Lappeenrannan teknillinen yliopisto</org_name>
+    <address>
+      <street>Skinnarilankatu 34</street>
+      <city>Lappeenranta</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="fi" class="&lt;">http://www.eduroam.org/</info_URL>
+    <policy_URL lang="en" class="&gt;">http://www.eduroam.org/</policy_URL>
+    <ts>2017-05-10T02:06:25</ts>
+    <location>
+      <longitude>28º05'35.00"E</longitude>
+      <latitude>61º03'57.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Lappeenranta university of technology</loc_name>
+      <loc_name lang="fi" class="&lt;">Lappeenrannan teknillinen yliopisto</loc_name>
+      <address>
+        <street>Skinnarilankatu 34</street>
+        <city>Lappeenranta</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>15</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>cc.oulu.fi</inst_realm>
+    <inst_realm> student.oulu.fi</inst_realm>
+    <org_name lang="en" class="&lt;">University of Oulu</org_name>
+    <org_name lang="fi" class="&lt;">Oulun yliopisto</org_name>
+    <address>
+      <street>Pentti Kaiteran katu 1</street>
+      <city>Oulu</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="fi" class="&lt;">-</info_URL>
+    <policy_URL lang="en" class="&gt;">-</policy_URL>
+    <ts>2017-05-10T02:06:25</ts>
+    <location>
+      <longitude>25º28'58.85"E</longitude>
+      <latitude>65º03'33.49"N</latitude>
+      <loc_name lang="en" class="&lt;">University of Oulu, Linnanmaa</loc_name>
+      <loc_name lang="fi" class="&lt;">Oulun yliopisto, Linnanmaa</loc_name>
+      <address>
+        <street>Pentti Kaiteran katu 1</street>
+        <city>Oulu</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>109</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">-</info_URL>
+    </location>
+    <location>
+      <longitude>29º18'46.24"E</longitude>
+      <latitude>66º22'05.96"N</latitude>
+      <loc_name lang="en" class="&lt;">University of Oulu, Oulanka Research Station</loc_name>
+      <loc_name lang="fi" class="&lt;">Oulun yliopisto, Oulangan tutkimusasema</loc_name>
+      <address>
+        <street>Liikasenvaarantie 134</street>
+        <city>Kuusamo</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>5</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">-</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>tut.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Tampere University of Technology</org_name>
+    <org_name lang="en" class="&lt;">Tampereen teknillinen yliopisto</org_name>
+    <address>
+      <street>Korkeakoulunkatu 10</street>
+      <city>Tampere</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="fi" class="&lt;">http://www.eduroam.org/</info_URL>
+    <policy_URL lang="en" class="&gt;">http://www.eduroam.org/</policy_URL>
+    <ts>2017-05-10T02:06:25</ts>
+    <location>
+      <longitude>23º51'37.00"E</longitude>
+      <latitude>61º27'00.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Tampere University of Technology, Päärakennus</loc_name>
+      <loc_name lang="en" class="&lt;">Tampereen teknillinen yliopisto, Päärakennus</loc_name>
+      <address>
+        <street>Korkeakoulunkatu 10</street>
+        <city>Tampere</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA/AES, WPA/TKIP, WPA2/AES, WPA2/TKIP</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>20</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+    <location>
+      <longitude>23º51'24.00"E</longitude>
+      <latitude>61º26'59.00"N</latitude>
+      <loc_name lang="fi" class="&lt;">Tampere University of Technology, Tietotalo</loc_name>
+      <loc_name lang="en" class="&lt;">Tampereen teknillinen yliopisto, Tietotalo</loc_name>
+      <address>
+        <street>Korkeakoulunkatu 1</street>
+        <city>Tampere</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA/AES, WPA/TKIP, WPA2/AES, WPA2/TKIP</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>40</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>uef.fi</inst_realm>
+    <org_name lang="fi" class="&lt;">University of Eastern Finland</org_name>
+    <org_name lang="en" class="&lt;">Itä-Suomen yliopisto</org_name>
+    <address>
+      <street>Yliopistonranta 1</street>
+      <city>Kuopio</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="fi" class="&lt;">http://www.eduroam.org/</info_URL>
+    <policy_URL lang="en" class="&gt;">http://www.eduroam.org/</policy_URL>
+    <ts>2017-05-10T02:06:26</ts>
+    <location>
+      <longitude>27º38'22.81"E</longitude>
+      <latitude>62º53'36.43"N</latitude>
+      <loc_name lang="en" class="&lt;">University of Eastern Finland, Kuopio Campus</loc_name>
+      <loc_name lang="en" class="&lt;">Itä-Suomen yliopisto, Kuopion kampus</loc_name>
+      <address>
+        <street>Yliopistonranta 1</street>
+        <city>Kuopio</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA/TKIP, WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
+      <AP_no>120</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+    <location>
+      <longitude>29º44'40.96"E</longitude>
+      <latitude>62º36'18.65"N</latitude>
+      <loc_name lang="fi" class="&lt;">University of Eastern Finland, Joensuu Campus</loc_name>
+      <loc_name lang="en" class="&lt;">Itä-Suomen yliopisto, Joensuun kampus</loc_name>
+      <address>
+        <street>Yliopistokatu</street>
+        <city>Joensuu</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA/AES, WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
+      <AP_no>60</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>uniarts.fi</inst_realm>
+    <org_name lang="fi" class="&lt;">University of the Arts</org_name>
+    <org_name lang="en" class="&lt;">Taideyliopisto</org_name>
+    <address>
+      <street>00097</street>
+      <city>Helsinki</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="fi" class="&lt;">http://www.eduroam.org/</info_URL>
+    <policy_URL lang="en" class="&gt;">http://www.eduroam.org/</policy_URL>
+    <ts>2017-05-10T02:06:26</ts>
+    <location>
+      <longitude>24º57'31.00"E</longitude>
+      <latitude>60º10'52.00"N</latitude>
+      <loc_name lang="en" class="&lt;">University of the Arts, Theater Academy, Kookos</loc_name>
+      <loc_name lang="en" class="&lt;">Taideyliopisto, Teatterikorkeakoulu, Kookos</loc_name>
+      <address>
+        <street>Haapaniemenkatu 6</street>
         <city>Helsinki</city>
       </address>
       <SSID>eduroam</SSID>
@@ -32,9 +589,1451 @@
       <transp_proxy>false</transp_proxy>
       <IPv6>false</IPv6>
       <NAT>false</NAT>
+      <AP_no>30</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+    <location>
+      <longitude>24º57'38.00"E</longitude>
+      <latitude>60º11'03.00"N</latitude>
+      <loc_name lang="fi" class="&lt;">University of the Arts, Theater Academy</loc_name>
+      <loc_name lang="en" class="&lt;">Taideyliopisto, Teatterikorkeakoulu</loc_name>
+      <address>
+        <street>Lintulahdenkatu 3</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>10</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>uta.fi</inst_realm>
+    <org_name lang="fi" class="&lt;">University of Tampere</org_name>
+    <org_name lang="en" class="&lt;">Tampereen yliopisto</org_name>
+    <address>
+      <street>Kalevantie 4</street>
+      <city>Tampere</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="fi" class="&lt;">http://www.uta.fi/hallinto/yliopistopalvelut/tietohallinto/ohjeet/wlan/index.html</info_URL>
+    <policy_URL lang="en" class="&gt;">http://www.eduroam.org/</policy_URL>
+    <ts>2017-05-10T02:06:27</ts>
+    <location>
+      <longitude>23º46'50.00"E</longitude>
+      <latitude>61º29'40.00"N</latitude>
+      <loc_name lang="en" class="&lt;">University of Tampere, Main Campus</loc_name>
+      <loc_name lang="en" class="&lt;">Tampereen yliopisto, Päätalo</loc_name>
+      <address>
+        <street>Kalevantie 4</street>
+        <city>Tampere</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA/TKIP</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>20</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.uta.fi/hallinto/yliopistopalvelut/tietohallinto/ohjeet/wlan/index.html</info_URL>
+    </location>
+    <location>
+      <longitude>23º46'37.00"E</longitude>
+      <latitude>61º29'39.00"N</latitude>
+      <loc_name lang="fi" class="&lt;">University of Tampere, Pinni A+B</loc_name>
+      <loc_name lang="en" class="&lt;">Tampereen yliopisto, Pinni A+B</loc_name>
+      <address>
+        <street>Kanslerinrinne 1</street>
+        <city>Tampere</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA/TKIP</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>25</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.uta.fi/hallinto/yliopistopalvelut/tietohallinto/ohjeet/wlan/index.html</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>utu.fi</inst_realm>
+    <org_name lang="en" class="&lt;">University of Turku</org_name>
+    <org_name lang="en" class="&lt;">Turun yliopisto</org_name>
+    <address>
+      <street>Rehtorinpellonkatu 3</street>
+      <city>Turku</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="en" class="&lt;">-</info_URL>
+    <policy_URL lang="fi" class="&gt;">-</policy_URL>
+    <ts>2017-05-10T02:06:27</ts>
+    <location>
+      <longitude>22º17'08.47"E</longitude>
+      <latitude>60º27'30.002"N</latitude>
+      <loc_name lang="en" class="&lt;">Univerity of Turku - Educarium</loc_name>
+      <loc_name lang="fi" class="&lt;">Turun yliopisto - Educarium</loc_name>
+      <address>
+        <street>Assistentinkatu 5</street>
+        <city>Turku</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>40</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">-</info_URL>
+    </location>
+    <location>
+      <longitude>22º17'19.00"E</longitude>
+      <latitude>60º27'17.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Turku School of Economics</loc_name>
+      <loc_name lang="en" class="&lt;">Turun kauppakorkeakoulu</loc_name>
+      <address>
+        <street>Rehtorinpellonkatu 6</street>
+        <city>Turku</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>36</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">-</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>arcada.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Arcada</org_name>
+    <org_name lang="en" class="&lt;">Arcada</org_name>
+    <address>
+      <street>Jan-Magnus Janssons plats 1</street>
+      <city>Helsingfors</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="en" class="&lt;">http://www.arcada.fi/</info_URL>
+    <policy_URL lang="fi" class="&gt;">-</policy_URL>
+    <ts>2017-05-10T02:06:30</ts>
+    <location>
+      <longitude>24º57'56.00"E</longitude>
+      <latitude>60º12'06.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Arcada</loc_name>
+      <loc_name lang="fi" class="&lt;">Arcada</loc_name>
+      <address>
+        <street>Magnus Janssonin aukio 1</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>true</IPv6>
+      <NAT>false</NAT>
+      <AP_no>25</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.arcada.fi/</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>uwasa.fi</inst_realm>
+    <inst_realm> student.uwasa.fi</inst_realm>
+    <org_name lang="en" class="&lt;">University of Vaasa</org_name>
+    <org_name lang="en" class="&lt;">Vaasan yliopisto</org_name>
+    <address>
+      <street>Wolffintie 34</street>
+      <city>Vaasa</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="fi" class="&lt;">http://www.eduroam.org/</info_URL>
+    <policy_URL lang="fi" class="&gt;">http://www.eduroam.org/</policy_URL>
+    <ts>2017-05-10T02:06:30</ts>
+    <location>
+      <longitude>21º35'38.75"E</longitude>
+      <latitude>63º06'20.45"N</latitude>
+      <loc_name lang="en" class="&lt;">Vaasa University Tervahovi</loc_name>
+      <loc_name lang="en" class="&lt;">Vaasan yliopisto Tervahovi</loc_name>
+      <address>
+        <street>Wolffintie 34</street>
+        <city>Vaasa</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>25</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+    <location>
+      <longitude>21º35'36.02"E</longitude>
+      <latitude>63º06'10.50"N</latitude>
+      <loc_name lang="fi" class="&lt;">Vaasa University Fabriikki</loc_name>
+      <loc_name lang="en" class="&lt;">Vaasan yliopisto Fabriikki</loc_name>
+      <address>
+        <street>Yliopistonranta 10</street>
+        <city>Vaasa</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>30</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>diak.fi</inst_realm>
+    <org_name lang="fi" class="&lt;">Diaconia University of Applied Sciences</org_name>
+    <org_name lang="en" class="&lt;">Diakonia-ammattikorkeakoulu</org_name>
+    <address>
+      <street>Sturenkatu 2</street>
+      <city>Helsinki</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="en" class="&lt;"/>
+    <info_URL lang="en" class="&lt;"/>
+    <policy_URL lang="en" class="&gt;"/>
+    <policy_URL lang="fi" class="&gt;"/>
+    <ts>2017-05-10T02:06:30</ts>
+    <location>
+      <longitude>24º56'35.00"E</longitude>
+      <latitude>60º11'14.00"N</latitude>
+      <loc_name lang="fi" class="&lt;">Diakonia-ammattikorkeakoulu</loc_name>
+      <loc_name lang="en" class="&lt;">Diaconia University of Applied Sciences</loc_name>
+      <address>
+        <street>Sturenkatu 2</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
+      <AP_no>10</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+    <location>
+      <longitude>22º17'58.00"E</longitude>
+      <latitude>60º27'08.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Diakonia-ammattikorkeakoulu</loc_name>
+      <loc_name lang="fi" class="&lt;">Diaconia University of Applied Sciences</loc_name>
+      <address>
+        <street>Ruukinkatu 2</street>
+        <city>Turku</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
+      <AP_no>10</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>haaga-helia.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Haaga-Helia University of Applied Sciences</org_name>
+    <org_name lang="fi" class="&lt;">Haaga-Helia ammattikorkeakoulu</org_name>
+    <address>
+      <street>Ratapihantie 13</street>
+      <city>Helsinki</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="fi" class="&lt;"/>
+    <info_URL lang="en" class="&lt;"/>
+    <policy_URL lang="en" class="&gt;"/>
+    <policy_URL lang="en" class="&gt;"/>
+    <ts>2017-05-10T02:06:31</ts>
+    <location>
+      <longitude>24°56'02.00"E</longitude>
+      <latitude>60°12'04.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Haaga-Helia University of Applied Sciences, Pasila</loc_name>
+      <loc_name lang="fi" class="&lt;">Haaga-Helia ammattikorkeakoulu, Pasila</loc_name>
+      <address>
+        <street>Ratapihantie 13</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>46</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+    <location>
+      <longitude>25°00'55.00"E</longitude>
+      <latitude>60°14'50.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Haaga-Helia University of Applied Sciences, Malmi</loc_name>
+      <loc_name lang="en" class="&lt;">Haaga-Helia ammattikorkeakoulu, Malmi</loc_name>
+      <address>
+        <street>Hietakummuntie 1 A</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>28</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>hamk.fi</inst_realm>
+    <inst_realm>student.hamk.fi</inst_realm>
+    <org_name lang="en" class="&lt;">HAMK University of Applied Sciences</org_name>
+    <org_name lang="en" class="&lt;">Hämeen ammattikorkeakoulu</org_name>
+    <address>
+      <street>Visamäentie 35 A</street>
+      <city>Hämeenlinna</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="fi" class="&lt;"/>
+    <policy_URL lang="en" class="&gt;"/>
+    <ts>2017-05-10T02:06:31</ts>
+    <location>
+      <longitude>24°28'36.14"E</longitude>
+      <latitude>60°58'37.81"N</latitude>
+      <loc_name lang="en" class="&lt;">Visamaki, HAMK University of Applied Sciences</loc_name>
+      <loc_name lang="en" class="&lt;">Visamäki, Hämeen ammattikorkeakoulu</loc_name>
+      <address>
+        <street>Visamäentie 35</street>
+        <city>Hämeenlinna</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
+      <AP_no>78</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+    <location>
+      <longitude>24°27'25.23"E</longitude>
+      <latitude>60°59'13.36"N</latitude>
+      <loc_name lang="fi" class="&lt;">Lahdensivu, HAMK University of Applied Sciences</loc_name>
+      <loc_name lang="en" class="&lt;">Lahdensivu, Hämeen ammattikorkeakoulu</loc_name>
+      <address>
+        <street>Korkeakoulunkatu 3</street>
+        <city>Hämeenlinna</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
+      <AP_no>11</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>humak.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Humak University of Applied Sciences</org_name>
+    <org_name lang="en" class="&lt;">Humanistinen ammattikorkeakoulu</org_name>
+    <address>
+      <street>Ilkantie 4</street>
+      <city>Helsinki</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="fi" class="&lt;">https://wiki.humak.fi/display/OTUKI/Eduroam+ohjeet</info_URL>
+    <info_URL lang="en" class="&lt;">https://wiki.humak.fi/display/OTUKI/Eduroam+ohjeet</info_URL>
+    <policy_URL lang="fi" class="&gt;"/>
+    <ts>2017-05-10T02:06:32</ts>
+    <location>
+      <longitude>24º54'09.00"E</longitude>
+      <latitude>60º13'16.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Humak Helsingin TKI-keskus, Rehtorin toimisto</loc_name>
+      <loc_name lang="fi" class="&lt;">HUMAK Rector´s Office</loc_name>
+      <address>
+        <street>Ilkantie 4</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>1</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">https://wiki.humak.fi/display/OTUKI/Eduroam+ohjeet</info_URL>
+    </location>
+    <location>
+      <longitude>25º33'10.00"E</longitude>
+      <latitude>62º00'37.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Humak Jyväskylän kampus</loc_name>
+      <loc_name lang="en" class="&lt;">HUMAK Jyväskylä campus</loc_name>
+      <address>
+        <street>Tähtiniementie 26</street>
+        <city>Jyväskylä</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>1</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">https://wiki.humak.fi/display/OTUKI/Eduroam+ohjeet</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>lamk.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Lahti University of Applied Sciences</org_name>
+    <org_name lang="fi" class="&lt;">Lahden ammattikorkeakoulu</org_name>
+    <address>
+      <street>Teinintie 4</street>
+      <city>Lahti</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    <policy_URL lang="en" class="&gt;">http://www.eduroam.org/</policy_URL>
+    <ts>2017-05-10T02:06:32</ts>
+    <location>
+      <longitude>25º40'53.00"E</longitude>
+      <latitude>60º59'22.00"N</latitude>
+      <loc_name lang="fi" class="&lt;">Lahti University of Applied Sciences</loc_name>
+      <loc_name lang="en" class="&lt;">Lahden ammattikorkeakoulu</loc_name>
+      <address>
+        <street>Teinintie 4</street>
+        <city>Lahti</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level/>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>10</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+    <location>
+      <longitude>25º33'51.00"E</longitude>
+      <latitude>60º59'36.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Lahti University of Applied Sciences</loc_name>
+      <loc_name lang="fi" class="&lt;">Lahden ammattikorkeakoulu</loc_name>
+      <address>
+        <street>Hoitajankatu 3</street>
+        <city>Lahti</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level/>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>10</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>metropolia.fi</inst_realm>
+    <org_name lang="fi" class="&lt;">Metropolia</org_name>
+    <address>
+      <street>Vanha maantie 6</street>
+      <city>Espoo</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="en" class="&lt;">http://www.metropolia.fi/</info_URL>
+    <policy_URL lang="en" class="&gt;">-</policy_URL>
+    <ts>2017-05-10T02:06:34</ts>
+    <location>
+      <longitude>24º48'22.00"E</longitude>
+      <latitude>60º13'15.00"N</latitude>
+      <loc_name lang="fi" class="&lt;">Metropolia</loc_name>
+      <loc_name lang="en" class="&lt;">Metropolia</loc_name>
+      <address>
+        <street>Vanha Maantie 6</street>
+        <city>Espoo</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA/TKIP, WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>33</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.metropolia.fi/</info_URL>
+    </location>
+    <location>
+      <longitude>24º57'22.47"E</longitude>
+      <latitude>60º11'03.73"N</latitude>
+      <loc_name lang="en" class="&lt;">Metropolia</loc_name>
+      <loc_name lang="fi" class="&lt;">Metropolia</loc_name>
+      <address>
+        <street>Agricolankatu 1</street>
+        <city>Espoo</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA/TKIP, WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>13</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.metropolia.fi/</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>novia.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Novia University of Applied Sciences</org_name>
+    <org_name lang="en" class="&lt;">Ammattikorkeakoulu Novia</org_name>
+    <org_name lang="fi" class="&lt;">Yrkeshögskolan Novia</org_name>
+    <address>
+      <street>Wolffskavägen 33</street>
+      <city>Vasa</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="fi" class="&lt;"/>
+    <info_URL lang="en" class="&lt;"/>
+    <policy_URL lang="en" class="&gt;"/>
+    <policy_URL lang="en" class="&gt;"/>
+    <ts>2017-05-10T02:06:35</ts>
+    <location>
+      <longitude>21º35'41.00"E</longitude>
+      <latitude>63º06'20.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Novia University of Applied Sciences</loc_name>
+      <loc_name lang="fi" class="&lt;">Ammattikorkeakoulu Novia</loc_name>
+      <loc_name lang="en" class="&lt;">Yrkeshögskolan Novia</loc_name>
+      <address>
+        <street>Wolffskavägen 33</street>
+        <city>Vasa</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
+      <AP_no>10</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+    <location>
+      <longitude>21º40'54.00"E</longitude>
+      <latitude>63º05'18.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Novia University of Applied Sciences</loc_name>
+      <loc_name lang="fi" class="&lt;">Ammattikorkeakoulu Novia</loc_name>
+      <loc_name lang="en" class="&lt;">Yrkeshögskolan Novia</loc_name>
+      <address>
+        <street>Seriegatan 2</street>
+        <city>Vasa</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
+      <AP_no>10</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>oamk.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Oulu University of Applied Sciences</org_name>
+    <org_name lang="fi" class="&lt;">Oulun ammattikorkeakoulu</org_name>
+    <address>
+      <street>Kiviharjunlenkki 1B</street>
+      <city>Oulu</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="fi" class="&lt;"/>
+    <info_URL lang="en" class="&lt;"/>
+    <policy_URL lang="en" class="&gt;"/>
+    <policy_URL lang="en" class="&gt;"/>
+    <ts>2017-05-10T02:06:35</ts>
+    <location>
+      <longitude>25°28'51.00"E</longitude>
+      <latitude>65°0'56.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Oulu University of Applied Sciences, School of Vocational Teacher Education</loc_name>
+      <loc_name lang="fi" class="&lt;">Oulun ammattikorkeakoulu, Ammatillinen opettajakorkeakoulu</loc_name>
+      <address>
+        <street>Uusikatu 2</street>
+        <city>Oulu</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>2</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+    <location>
+      <longitude>25°30'36.00"E</longitude>
+      <latitude>65°0'36.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Oulu University of Applied Sciences, Rector's Office</loc_name>
+      <loc_name lang="en" class="&lt;">Oulun ammattikorkeakoulu, Hallintoyksikkö</loc_name>
+      <address>
+        <street>Kiviharjunlenkki 1 B</street>
+        <city>Oulu</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>2</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>puv.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Vaasa University of Applied Science</org_name>
+    <org_name lang="fi" class="&lt;">Vaasan ammattikorkeakoulu</org_name>
+    <address>
+      <street>Wolffintie 30</street>
+      <city>Vaasa</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    <policy_URL lang="en" class="&gt;">http://www.eduroam.org/</policy_URL>
+    <ts>2017-05-10T02:06:36</ts>
+    <location>
+      <longitude>21º35'30.69"E</longitude>
+      <latitude>63º06'25.23"N</latitude>
+      <loc_name lang="fi" class="&lt;">Vaasa University of Applied Science</loc_name>
+      <loc_name lang="en" class="&lt;">Vaasan ammattikorkeakoulu</loc_name>
+      <address>
+        <street>Wolffintie 30</street>
+        <city>Vaasa</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>27</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+    <location>
+      <longitude>21º35'43.77"E</longitude>
+      <latitude>63º06'17.85"N</latitude>
+      <loc_name lang="en" class="&lt;">Vaasa University of Applied Science</loc_name>
+      <loc_name lang="fi" class="&lt;">Vaasan ammattikorkeakoulu</loc_name>
+      <address>
+        <street>Puuvillakuja 3</street>
+        <city>Vaasa</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>6</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>saimia.fi</inst_realm>
+    <org_name lang="fi" class="&lt;">Saimaan ammattikorkeakoulu</org_name>
+    <address>
+      <street>Skinnarilankatu 36</street>
+      <city>Lappeenranta</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="en" class="&lt;">http://www.saimia.fi/</info_URL>
+    <policy_URL lang="en" class="&gt;">-</policy_URL>
+    <ts>2017-05-10T02:06:36</ts>
+    <location>
+      <longitude>28º05'30.00"E</longitude>
+      <latitude>61º04'03.00"N</latitude>
+      <loc_name lang="fi" class="&lt;">Saimaa University of Applied Sciences</loc_name>
+      <loc_name lang="fi" class="&lt;">Saimaan ammattikorkeakoulu</loc_name>
+      <address>
+        <street>Skinnarilankatu 36</street>
+        <city>Lappeenranta</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>1</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.saimia.fi/</info_URL>
+    </location>
+    <location>
+      <longitude>28º46'15.00"E</longitude>
+      <latitude>61º11'07.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Saimaa Univeristy of Applied Sciences</loc_name>
+      <loc_name lang="en" class="&lt;">Saimaan ammattikorkeakoulu</loc_name>
+      <address>
+        <street>Tietäjänkatu 3</street>
+        <city>Imatra</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>1</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.saimia.fi/</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>savonia.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Savonia University of Applied Science</org_name>
+    <org_name lang="fi" class="&lt;">Savonia-ammattikorkeakoulu</org_name>
+    <address>
+      <street>Microkatu 1</street>
+      <city>Kuopio</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="fi" class="&lt;">http://www.eduroam.org/</info_URL>
+    <policy_URL lang="en" class="&gt;">http://www.eduroam.org/</policy_URL>
+    <ts>2017-05-10T02:06:36</ts>
+    <location>
+      <longitude>27º39'48.00"E</longitude>
+      <latitude>62º53'53.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Savonia University of Applied Science</loc_name>
+      <loc_name lang="fi" class="&lt;">Savonian ammattikorkeakoulu</loc_name>
+      <address>
+        <street>Opistotie 2</street>
+        <city>Kuopio</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>26</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+    <location>
+      <longitude>27º41'12.00"E</longitude>
+      <latitude>62º53'20.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Savonia University of Applied Science</loc_name>
+      <loc_name lang="fi" class="&lt;">Savonian ammattikorkeakoulu</loc_name>
+      <address>
+        <street>Piispankatu 8</street>
+        <city>Kuopio</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>7</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>seamk.fi</inst_realm>
+    <inst_realm>epedu.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Seinäjoki University of Applied Sciences</org_name>
+    <org_name lang="fi" class="&lt;">Seinäjoen ammattikorkeakoulu</org_name>
+    <address>
+      <street>Kalevankatu 35</street>
+      <city>Seinäjoki</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="fi" class="&lt;"/>
+    <info_URL lang="en" class="&lt;"/>
+    <policy_URL lang="en" class="&gt;"/>
+    <policy_URL lang="en" class="&gt;"/>
+    <ts>2017-05-10T02:06:37</ts>
+    <location>
+      <longitude>22º49'52.00"E</longitude>
+      <latitude>62º47'19.00"N</latitude>
+      <loc_name lang="en" class="&lt;">SeAMK Kampustalo</loc_name>
+      <loc_name lang="fi" class="&lt;">SeAMK Kampustalo</loc_name>
+      <address>
+        <street>Kalevankatu 35</street>
+        <city>Seinäjoki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
+      <AP_no>10</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>tamk.fi</inst_realm>
+    <org_name lang="en" class="&lt;">TAMK University of Applied Science</org_name>
+    <org_name lang="en" class="&lt;">Tampereen ammattikorkeakoulu</org_name>
+    <address>
+      <street>Kuntokatu 3</street>
+      <city>Tampere</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    <policy_URL lang="fi" class="&gt;">http://www.eduroam.org/</policy_URL>
+    <ts>2017-05-10T02:06:37</ts>
+    <location>
+      <longitude>23º48'29.00"E</longitude>
+      <latitude>61º30'13.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Tampere University of Applied Sciences TAMK, Kuntokatu 3</loc_name>
+      <loc_name lang="fi" class="&lt;">Tampereen ammattikorkeakoulu TAMK, Kuntokatu 3</loc_name>
+      <address>
+        <street>Kuntokatu 3</street>
+        <city>Tampere</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA/TKIP</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
+      <AP_no>56</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+    <location>
+      <longitude>23º48'40.00"E</longitude>
+      <latitude>61º30'18.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Tampere University of Applied Sciences TAMK, Kuntokatu 4</loc_name>
+      <loc_name lang="en" class="&lt;">Tampereen ammattikorkeakoulu TAMK, Kuntokatu 4</loc_name>
+      <address>
+        <street>Kuntokatu 4</street>
+        <city>Tampere</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA/TKIP</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
+      <AP_no>15</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>turkuamk.fi</inst_realm>
+    <inst_realm>students.turkuamk.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Turku University of Applied Sciences</org_name>
+    <org_name lang="en" class="&lt;">Turun ammattikorkeakoulu</org_name>
+    <address>
+      <street>Joukahaisenkatu 3 A</street>
+      <city>Turku</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    <policy_URL lang="fi" class="&gt;">http://www.eduroam.org/</policy_URL>
+    <ts>2017-05-10T02:06:37</ts>
+    <location>
+      <longitude>22º17'57.65"E</longitude>
+      <latitude>60º26'48.11"N</latitude>
+      <loc_name lang="en" class="&lt;">Turku University of Applied Sciences</loc_name>
+      <loc_name lang="fi" class="&lt;">Turun ammattikorkeakoulu</loc_name>
+      <address>
+        <street>Lemminkäisenkatu 30</street>
+        <city>Turku</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
       <AP_no>34</AP_no>
       <wired>false</wired>
-      <info_URL lang="en" class="&lt;">lauttasaari.fi/howtosetup_eng</info_URL>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+    <location>
+      <longitude>22º14'37.73"E</longitude>
+      <latitude>60º26'25.20"N</latitude>
+      <loc_name lang="en" class="&lt;">Turku University of Applied Sciences: Linnannkatu</loc_name>
+      <loc_name lang="en" class="&lt;">Turun ammattikorkeakoulu: Linnankatu</loc_name>
+      <address>
+        <street>Linnankatu 54</street>
+        <city>Turku</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
+      <AP_no>20</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>2</type>
+    <inst_realm>ayy.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Aalto University Student Union</org_name>
+    <org_name lang="fi" class="&lt;">Aalto-yliopiston ylioppilaskunta</org_name>
+    <address>
+      <street>Lampomiehenkuja 2</street>
+      <city>Espoo</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="fi" class="&lt;">http://verkko.ayy.fi/wlan/</info_URL>
+    <policy_URL lang="en" class="&gt;">http://verkko.ayy.fi/wlan/</policy_URL>
+    <ts>2017-05-10T02:06:38</ts>
+    <location>
+      <longitude>24º50'04.70"E</longitude>
+      <latitude>60º11'12.37"N</latitude>
+      <loc_name lang="en" class="&lt;">Aalto University Student Union, Aate</loc_name>
+      <loc_name lang="fi" class="&lt;">Aalto-yliopiston ylioppilaskunta, Aate</loc_name>
+      <address>
+        <street>Jämeräntaival 1</street>
+        <city>Espoo</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>true</IPv6>
+      <NAT>false</NAT>
+      <AP_no>1</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://verkko.ayy.fi/wlan/</info_URL>
+    </location>
+    <location>
+      <longitude>24º50'16.65"E</longitude>
+      <latitude>60º11'16.47"N</latitude>
+      <loc_name lang="en" class="&lt;">Aalto University Student Union, Gorsu</loc_name>
+      <loc_name lang="fi" class="&lt;">Aalto-yliopiston ylioppilaskunta, Gorsu</loc_name>
+      <address>
+        <street>Jämeräntaival 5</street>
+        <city>Espoo</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>true</IPv6>
+      <NAT>false</NAT>
+      <AP_no>1</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://verkko.ayy.fi/wlan/</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>csc.fi</inst_realm>
+    <org_name lang="en" class="&lt;">CSC - IT Center for Science Ltd.</org_name>
+    <org_name lang="en" class="&lt;">CSC - Tieteen tietotekniikan keskus Oy</org_name>
+    <address>
+      <street>Keilaranta 14</street>
+      <city>Espoo</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="en" class="&lt;">http://www.csc.fi/hallinto/funet/palvelut/eduroam/kaytto</info_URL>
+    <info_URL lang="en" class="&lt;">http://www.csc.fi/english/institutions/funet_en/networkservices/connecting/eduroam/index_html</info_URL>
+    <policy_URL lang="fi" class="&gt;"/>
+    <ts>2017-05-10T02:06:39</ts>
+    <location>
+      <longitude>24º49'59.00"E</longitude>
+      <latitude>60º10'42.00"N</latitude>
+      <loc_name lang="fi" class="&lt;">CSC - IT Center for Science Ltd.</loc_name>
+      <loc_name lang="en" class="&lt;">CSC - Tieteen tietotekniikan keskus Oy</loc_name>
+      <address>
+        <street>Keilaranta 14</street>
+        <city>Espoo</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>18</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.csc.fi/hallinto/funet/palvelut/eduroam/kaytto</info_URL>
+    </location>
+    <location>
+      <longitude>24º57'31.00"E</longitude>
+      <latitude>60º10'12.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Ministry of Education and Culture, Auditorium Jukola</loc_name>
+      <loc_name lang="fi" class="&lt;">Opetus- ja kulttuuriministeriö, Jukola-sali</loc_name>
+      <address>
+        <street>Meritullinkatu 1</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>1</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.csc.fi/hallinto/funet/palvelut/eduroam/kaytto</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>hiit.fi</inst_realm>
+    <org_name lang="fi" class="&lt;">Helsinki Institute of Information Technology (HIIT)</org_name>
+    <org_name lang="en" class="&lt;">Tietotekniikan tutkimuslaitos HIIT</org_name>
+    <address>
+      <street>street2</street>
+      <city>city2</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="fi" class="&lt;">http://www.eduroam.org/</info_URL>
+    <policy_URL lang="en" class="&gt;">http://www.eduroam.org/</policy_URL>
+    <ts>2017-05-10T02:06:39</ts>
+    <location>
+      <longitude>24º48'20.00"E</longitude>
+      <latitude>60º11'16.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Helsinki Institute of Information Technology (HIIT)</loc_name>
+      <loc_name lang="en" class="&lt;">Helsinki Institute of Information Technology (HIIT)</loc_name>
+      <address>
+        <street>Metsänneidonkuja 4</street>
+        <city>Espoo</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level/>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>10</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+    <location>
+      <longitude>24º57'49.28"E</longitude>
+      <latitude>60º12'18.70"N</latitude>
+      <loc_name lang="fi" class="&lt;">Helsinki Institute of Information Technology (HIIT)</loc_name>
+      <loc_name lang="en" class="&lt;">Helsinki Institute of Information Technology (HIIT)</loc_name>
+      <address>
+        <street>Gustaf Hällströmin katu 2 B</street>
+        <city>Espoo</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level/>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>20</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">http://www.eduroam.org/</info_URL>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>2</type>
+    <inst_realm>hus.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Helsingfors och Nylands sjukvårdsdistrikt, HNS</org_name>
+    <org_name lang="en" class="&lt;">Helsingin ja Uudenmaan sairaanhoitopiiri, HUS</org_name>
+    <address>
+      <street>Stenbäckinkatu 9</street>
+      <city>Helsinki</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="en" class="&lt;"/>
+    <policy_URL lang="fi" class="&gt;">-</policy_URL>
+    <ts>2017-05-10T02:06:39</ts>
+    <location>
+      <longitude>24º54'30.00"E</longitude>
+      <latitude>60º11'17.00"N</latitude>
+      <loc_name lang="en" class="&lt;">HUS, Hallintokeskus</loc_name>
+      <address>
+        <street>Stenbäckinkatu 9</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level/>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
+      <AP_no>20</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+    <location>
+      <longitude>24º54'36.00"E</longitude>
+      <latitude>60º11'23.00"N</latitude>
+      <loc_name lang="fi" class="&lt;">HUS, Naistenklinikka</loc_name>
+      <address>
+        <street>Haartamaninkatu 2</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level/>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
+      <AP_no>20</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>2</type>
+    <inst_realm>keilaniemi.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Keilaniemi.fi-lounasravintolat</org_name>
+    <address>
+      <street>Keilaranta 6</street>
+      <city>Espoo</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="fi" class="&lt;"/>
+    <policy_URL lang="en" class="&gt;"/>
+    <ts>2017-05-10T02:06:40</ts>
+    <location>
+      <longitude>24°49'57.00"E</longitude>
+      <latitude>60°10'37.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Lounasravintola Soup and Salad</loc_name>
+      <address>
+        <street>Keilaranta 4</street>
+        <city>Espoo</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>true</IPv6>
+      <NAT>false</NAT>
+      <AP_no>1</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+    <location>
+      <longitude>24°49'57.00"E</longitude>
+      <latitude>60°10'36.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Lounasravintola Keilalahden ranta</loc_name>
+      <address>
+        <street>Keilaranta 5</street>
+        <city>Espoo</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>true</IPv6>
+      <NAT>false</NAT>
+      <AP_no>1</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>2</type>
+    <inst_realm>lnet.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Lappeenrannan seudun opiskelija-asuntosäätiö (LOAS)</org_name>
+    <org_name lang="en" class="&lt;">The Lappeenranta Student Housing Foundation (LOAS)</org_name>
+    <address>
+      <street>Leirikatu 2 F</street>
+      <city>Lappeenranta</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="en" class="&lt;"/>
+    <policy_URL lang="fi" class="&gt;"/>
+    <ts>2017-05-10T02:06:41</ts>
+    <location>
+      <longitude>28°06'03.00"E</longitude>
+      <latitude>61°03'48.00"N</latitude>
+      <loc_name lang="en" class="&lt;">LOAS, Tervahaudankatu 1B</loc_name>
+      <address>
+        <street>Tervahaudankatu 1 B</street>
+        <city>Lappeenranta</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
+      <AP_no>5</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>2</type>
+    <inst_realm>turku.fi</inst_realm>
+    <org_name lang="fi" class="&lt;">City of Turku</org_name>
+    <org_name lang="en" class="&lt;">Turun kaupunki</org_name>
+    <address>
+      <street>Lemminkäisenkatu 14-18A, IT-keskus</street>
+      <city>Turku</city>
+    </address>
+    <contact>
+      <name/>
+      <email/>
+      <phone/>
+    </contact>
+    <info_URL lang="en" class="&lt;"/>
+    <info_URL lang="en" class="&lt;"/>
+    <policy_URL lang="en" class="&gt;"/>
+    <policy_URL lang="fi" class="&gt;"/>
+    <ts>2017-05-10T02:06:41</ts>
+    <location>
+      <longitude>22º16'15.00"E</longitude>
+      <latitude>60º27'01.00"N</latitude>
+      <loc_name lang="fi" class="&lt;">Turku City Library</loc_name>
+      <loc_name lang="en" class="&lt;">Turun kaupunkin pääkirjasto</loc_name>
+      <address>
+        <street>Linnankatu 2</street>
+        <city>Turku</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
+      <AP_no>35</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+    <location>
+      <longitude>22º13'37.00"E</longitude>
+      <latitude>60º24'46.00"N</latitude>
+      <loc_name lang="en" class="&lt;">Hirvensalo Library</loc_name>
+      <loc_name lang="fi" class="&lt;">Hirvensalon kirjasto</loc_name>
+      <address>
+        <street>Wäinö Aaltosen koulutie 1</street>
+        <city>Turku</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>true</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>true</NAT>
+      <AP_no>13</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;"/>
+    </location>
+  </institution>
+  <institution>
+    <country>fi</country>
+    <type>3</type>
+    <inst_realm>lauttasaari.fi</inst_realm>
+    <org_name lang="en" class="&lt;">Lauttasaari University</org_name>
+    <org_name lang="fi" class="&lt;">Lauttasaaren yliopisto</org_name>
+    <org_name lang="sv" class="&lt;">Lauttasaari universitet</org_name>
+    <address>
+      <street>Lauttasaarentie 10</street>
+      <city>Helsinki</city>
+    </address>
+    <contact>
+      <name>Raul Becker</name>
+      <email>raul.becker@iki.fi</email>
+      <phone>55555</phone>
+    </contact>
+    <info_URL lang="fi" class="&lt;">http://lauttasaari.fi/apu</info_URL>
+    <info_URL lang="sv" class="&lt;">http://lauttasaari.fi/hjalp</info_URL>
+    <info_URL lang="en" class="&lt;">https://testworks/english</info_URL>
+    <policy_URL lang="en" class="&gt;">http://lauttasaari.fi/policy</policy_URL>
+    <policy_URL lang="fi" class="&gt;">http://lauttasaari.fi/kayttosaannot</policy_URL>
+    <policy_URL lang="sv" class="&gt;">http://lauttasaari.fi/brukvilkor</policy_URL>
+    <ts>2017-05-10T02:19:32</ts>
+    <location>
+      <longitude>24°53'19.28"E</longitude>
+      <latitude>60°9'39.33"N</latitude>
+      <loc_name lang="en" class="&lt;">Lauttasaarentie 10</loc_name>
+      <address>
+        <street>Lauttasaarentie 10 B</street>
+        <city>Helsinki</city>
+      </address>
+      <SSID>eduroam</SSID>
+      <enc_level>WPA2/AES</enc_level>
+      <port_restrict>false</port_restrict>
+      <transp_proxy>false</transp_proxy>
+      <IPv6>false</IPv6>
+      <NAT>false</NAT>
+      <AP_no>5</AP_no>
+      <wired>false</wired>
+      <info_URL lang="en" class="&lt;">https://testworks/english</info_URL>
     </location>
   </institution>
 </institutions>

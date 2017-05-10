@@ -2,6 +2,9 @@ class Entry < ActiveRecord::Base
   has_one :institution
   has_one :location
   has_one :orgssid
+  belongs_to :institution
+  belongs_to :location
+
   #attr_accessor :location_id
 
   def self.getEntry(id)
