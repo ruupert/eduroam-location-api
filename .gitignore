@@ -1,5 +1,4 @@
 tmp/cache
 .byebug_history
-.coveralls.yml
 .idea/*
 config/database.yml
