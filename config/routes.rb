@@ -13,7 +13,9 @@ Rails.application.routes.draw do
       match ':apikey/set/info/lang/:lang/*url' => 'orginfos#set', :via => :get, :format => false, constraints: { url: /\D*/ }
       get ':apikey/get/loc_names' => 'loc_names#get'
       match ':apikey/set/loc_name/:location_id/lang/:lang/*name' => 'loc_names#set', :via => :get, :format => false, constraints: { url: /\D*/ }
-      get ':apikey/set/ssid/:id/:key/:value' => 'ssids#set'
+      match ':apikey/set/ssid/:id/:key/:value' => 'ssids#set', :via => :get,  :format => false, constraints: { url: /\D*/ }
+      match ':apikey/set/ssid/:key/:value' => 'ssids#set', :via => :get,  :format => false, constraints: { url: /[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}/}
+   #   match ':apikey/set/ssid/:id/https://*url' => 'ssids#set', :via => :get,  :format => false, constraints: { url: /[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}/}
 
     end
   end

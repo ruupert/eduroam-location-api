@@ -17,7 +17,7 @@ RSpec.describe Api::V1::SsidsController, type: :controller do
     }
     Institution.create(valid_params)
     @apikey = Institution.first.apikey
-  #  Orgssid.create_default(1)
+
   end
   describe "GET #set" do
     it "it sets correctly ssid" do
@@ -28,7 +28,7 @@ RSpec.describe Api::V1::SsidsController, type: :controller do
   describe "GET #get" do
     it "it gets correct ssid count" do
       visit "/api/v1/#{@apikey}/get/ssids"
-      expect(page).to have_content("{\"ssids\":[{\"id\":1,\"name\":\"eduroam\",\"port_restrict\":false,\"transp_proxy\":false,\"ipv6\":false,\"nat\":true,\"wpa_tkip\":false,\"wpa_aes\":false,\"wpa2_tkip\":false,\"wpa2_aes\":true,\"wired\":false}]}")
+      expect(page).to have_content("{\"ssids\":[{\"id\":1,\"name\":\"eduroam\",\"port_restrict\":false,\"transp_proxy\":false,\"ipv6\":false,\"nat\":false,\"wpa_tkip\":false,\"wpa_aes\":false,\"wpa2_tkip\":false,\"wpa2_aes\":true,\"wired\":false}]}")
 
     end
   end
