@@ -30,7 +30,7 @@ class Location < ActiveRecord::Base
   def location_ap_count
     self.location_entry.first.ap_count
   end
-  def location_updated_At
+  def location_updated_at
     self.location_entry.first.updated_at
   end
 

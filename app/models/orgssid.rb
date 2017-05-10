@@ -37,7 +37,7 @@ class Orgssid < ActiveRecord::Base
     nssid.name = 'eduroam'
     nssid.wired = false
     nssid.ipv6 = false
-    nssid.nat = true
+    nssid.nat = false
     nssid.transp_proxy = false
     nssid.port_restrict = false
     nssid.save

@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170417212813) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-  enable_extension "pg_trgm"
+ActiveRecord::Schema.define(version: 20170509210127) do
 
   create_table "entries", force: :cascade do |t|
     t.integer  "institution_id"
@@ -54,10 +50,11 @@ ActiveRecord::Schema.define(version: 20170417212813) do
     t.string   "country"
     t.string   "longitude"
     t.string   "latitude"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "institution_id"
     t.string   "identifier"
+    t.string   "orig_import_string"
   end
 
   create_table "orginfos", force: :cascade do |t|

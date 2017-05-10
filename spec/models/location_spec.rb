@@ -71,9 +71,8 @@ RSpec.describe Location, type: :model do
                             contact_name: "welp",
                             contact_phone: "999",
                             id: 5)
-      Location.create_location(5,"Ratapihantie 13", "B","Helsinki")
-
-      expect(Location.get_location_id(5,"Ratapihantie 13","B", "Helsinki")).to eq(2)
+      Location.create_location(5,"Lauttasaarentie 10", "B","Helsinki")
+      expect(Location.get_location_id(5,"Lauttasaarentie 10","B", "Helsinki")).to eq(2)
     end
 
 

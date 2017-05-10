@@ -61,15 +61,32 @@
   <%= @institution.apikey %>
 </p>
 <hr>
+<strong>Clicky API urls</strong>
+<p><a href="/api/v1/<%=@institution.apikey%>/get/locations">Locations</a></p>
+<p><a href="/api/v1/<%=@institution.apikey%>/get/ssids">SSIDs</a></p>
+<p><a href="/api/v1/<%=@institution.apikey%>/get/policies">Policy URLs</a></p>
+<p><a href="/api/v1/<%=@institution.apikey%>/get/infos">Info URLs</a></p>
+
+<hr>
 <table style="text-align: left;">
   <tr>
     <th>Address</th>
+    <th>Identifier</th>
+    <th>City</th>
     <th>AP Count</th>
+    <th>Longitude</th>
+    <th>Latitude</th>
     <th>Last updated</th>
+    <th>Original import string</th>
   </tr><% @locations.each do |location| %>
-      <tr><td><%= location.address %> <%= location.identifier %></td>
+      <tr><td><%= location.address %></td>
+        <td><%= location.identifier %></td>
+        <td><%= location.city %></td>
         <td><%= location.location_ap_count %></td>
-        <td><%= location.location_updated_At %></td>
+        <td><%= location.longitude %></td>
+        <td><%= location.latitude %></td>
+        <td><%= location.updated_at %></td>
+        <td><%= location.orig_import_string %></td>
       </tr>
 <% end %>
 </table>

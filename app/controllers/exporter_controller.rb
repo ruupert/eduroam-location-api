@@ -1,4 +1,7 @@
+require 'csv'
 class ExporterController < ApplicationController
+
+
   before_action :authenticate
 
 
@@ -6,7 +9,16 @@ class ExporterController < ApplicationController
 
     xml.country var["country"]
     xml.type var["institution_type"]
-    xml.inst_realm var["inst_realm"]
+    tmp_realm = CSV.parse_line(var["inst_realm"])
+    if tmp_realm.count > 1
+      for i in 0..tmp_realm.count-1
+        xml.inst_realm tmp_realm[i]
+
+      end
+    else
+      xml.inst_realm var['inst_realm']
+    end
+
 
     Orgname.where(institution_id: var["id"]).each do |org|
       ## lol back in a jiffy...
@@ -16,11 +28,25 @@ class ExporterController < ApplicationController
       xml.street var["address"]
       xml.city var["city"]
     }
-    xml.contact {
-      xml.name var["contact_name"]
-      xml.email var["contact_email"]
-      xml.phone var["contact_phone"]
-    }
+    if !var["contact_name"].nil?
+      tmp_n = CSV.parse_line(var["contact_name"])
+      tmp_e = CSV.parse_line(var["contact_email"])
+      tmp_p = CSV.parse_line(var["contact_phone"])
+
+      for i in 0..tmp_n.count-1
+        xml.contact {
+          xml.name tmp_n[i]
+          xml.email tmp_e[i]
+          xml.phone tmp_p[i]
+        }
+      end
+    else
+      xml.contact {
+        xml.name var["contact_name"]
+        xml.email var["contact_email"]
+        xml.phone var["contact_phone"]
+      }
+    end
     Orginfo.where(institution_id: var["id"]).each do |o|
       xml.info_URL(:lang => o["lang"], :class => nil) < o["url"]
 
@@ -34,7 +60,7 @@ class ExporterController < ApplicationController
     xml.ts Time.parse(var["updated_at"].to_s).strftime("%Y-%m-%dT%H:%M:%S")
     #<ts>2015-01-23T14:00:00.0Z</ts>
 
-    add_locations_for(xml, Entry.where(institution_id: var["id"]).where(ap_count: 1..Float::INFINITY))
+    add_locations_for(xml, Entry.where(institution_id: var["id"], ap_count: 1..Float::INFINITY))
 
   end
 
