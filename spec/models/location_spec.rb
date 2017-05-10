@@ -119,7 +119,7 @@ RSpec.describe Location, type: :model do
       visit "/api/v1/#{@apikey}/set/ssid/1/wpa2_aes/false"
       expect(Orgssid.find(1).wpa2_aes).to eq(false)
     end
-    it "can change port_restrict" do
+    it "can change wired" do
       visit "/api/v1/#{@apikey}/set/ssid/1/wired/true"
       expect(Orgssid.find(1).wired).to eq(true)
     end

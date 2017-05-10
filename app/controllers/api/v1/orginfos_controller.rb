@@ -9,7 +9,7 @@ class Api::V1::OrginfosController < Api::V1::BaseController
   end
 
   def set
-    temp = Orginfo.where(:institution_id => apikeyToInstitutionId(params[:apikey]), :lang => params[:lang]).first
+    temp = Orginfo.where(:institution_id => get_institution_id, :lang => params[:lang]).first
     temp.url = params[:url].gsub!(/:\//, '://')
     temp.save
     render(
@@ -24,7 +24,7 @@ class Api::V1::OrginfosController < Api::V1::BaseController
   end
 
   def entry_params
-    params.require(:apikey).permit(:lang, :url)
+    params.require(:apikey).permit(:id, :lang, :url)
 
   end
 
