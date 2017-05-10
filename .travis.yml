@@ -10,6 +10,3 @@ after_success:
 - curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge
 - chmod a+x /tmp/travis-automerge
 - BRANCHES_TO_MERGE_REGEX='^devel' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=ruupert/eduroam-location-api /tmp/travis-automerge
-env:
-  global:
-      secure: edXCFYXSefyoTMeeILxh9PJmZDPdurvon4JSDo13d6ki8hmALRRrt4iBQIp25dX5D1ngjkqkaSSY4TzlHD7X/5iQ/Q+5zHXzAcqAT4W0XlxKVDeng9O2gU7B9JcKkUYufgdUZl3ubOoR2nyKkXTzBQgxL1/IxR7/Pj0f//jm13/IpOtsnU6NRQZPNvcnotDo2S+QLNKEKDMbNWYJKzrvxN0nIVkpv+walRd017mNbwkylBTh8jNL7D6Ltlu7zlYp41mbkdVYs3W35fYwzbsUS6lKtCbcbOfsUFYripuvxV2bE1xaT/0RSoz1RZLLqN8JyvYZRqiLwqP0R4+LRkq3jiSWBEw0RatP7A1B0U+t2jiznr0LM6jQf7uENTNZ9GV0p5vLMxqNvN+j9XW5fy2McOWppFKGSUlKLitaafmcW+qqYz1DJP7jXr8cGed0Q0YMSnlsWRqHBR3bas13y6c9Tjo5EG/0SRhgy5eRoEmb1xdkOHeo8600/FZb/4vrrula4FbMMhyaomgv0xs+qRDN3WVqQROau/JWbLMerItH+M12JB4YDdZsP0SgTRhq9RnxA8DEsikAboziYD8dtJIRzJWyUUnxubvldWaHiCHd84Z+9eOPoKJ1a5UpRfErqj0bq8SDuu1HCr8AJbzwkSJ3YT/3CElNyWDYdXZsMbqX40k=
