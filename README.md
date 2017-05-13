@@ -6,3 +6,35 @@ An attempt on creating an api for eduroam access point placement onto the 'Where
 
 [Latest build @ heroku](https://eduroam-api.herokuapp.com/)
 
+## Setup
+
+```sh
+# git clone https://github.com/ruupert/eduroam-location-api.git
+# bundle install
+# export EDUROAM_API_ADMIN_USERNAME=username
+# export EDUROAM_API_ADMIN_PW=secret
+# export EDUROAM_API_DEFAULT_LANGS=fi,se
+# export NRO_COUNTRY=fi
+
+```
+
+Edit config/database.yml to point to your database
+
+```sh
+# rake db:create
+# rake db:migrate
+# rails server
+```
+
+Using the set username and password you can access /institutions and /import paths. 
+ 
+ 
+ #### Issues
+ 
+ - import functionality can't handle all types of addresses. The application does not provide a way for the admin to edit locations except by directly modifying the database table "locations"
+ - importer doesn't fill the missing EDUROAM_API_DEFAULT_LANGS
+ - many more...
+ 
+ 
+ 
+

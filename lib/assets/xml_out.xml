@@ -8118,7 +8118,7 @@
       <IPv6>false</IPv6>
       <NAT>false</NAT>
       <AP_no>5</AP_no>
-      <wired>false</wired>
+      <wired>true</wired>
       <info_URL lang="en" class="&lt;">https://testworks/english</info_URL>
     </location>
   </institution>

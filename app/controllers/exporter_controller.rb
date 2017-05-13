@@ -21,7 +21,6 @@ class ExporterController < ApplicationController
 
 
     Orgname.where(institution_id: var["id"]).each do |org|
-      ## lol back in a jiffy...
       xml.org_name(:lang => org["lang"], :class => nil) < org["name"]
     end
     xml.address {

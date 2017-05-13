@@ -20,7 +20,7 @@ class InstitutionsController < ApplicationController
   def new
     @institution = Institution.new
     @countries = ISO3166::Country.codes
-    @default_langs = ENV['EDUROAM_API_DEFAULT_LANGS'].split(',')
+    @default_langs = ENV['EDUROAM_API_DEFAULT_LANGS'].split(',') 
     @institution.orgnames.build
     @institution.orgnames.last.lang = 'en'
     @institution.orgpolicies.build
