@@ -9,7 +9,7 @@
     SSIDs, location names.</p>
 </div>
 <div id="h2">
-  <h2>REST-medium</h2>
+  <h2>REST</h2>
   <div id="h3">
     <h3>Locations</h3>
     <div id="h4">
@@ -84,8 +84,21 @@
         required if
         the user wishes to change some SSID configuration</p>
       <h4>Set</h4>
-      <code>/api/v1/:apikey/set/ssid/:id/{:name, }</code>
-      <p></p>
+      <code>/api/v1/:apikey/set/ssid/:id/:key/:value</code>
+      <p>Possible :key variables with :value types
+      <ul>
+        <li>name :string</li>
+        <li>port_restrict :boolean</li>
+        <li>transp_proxy :boolean</li>
+        <li>ipv6 :boolean</li>
+        <li>nat :boolean</li>
+        <li>wpa_tkip :boolean</li>
+        <li>wpa_aes :boolean</li>
+        <li>wpa2_tkip :boolean</li>
+        <li>wpa2_aes :boolean</li>
+        <li>wired :boolean</li>
+      </ul>
+      </p>
     </div>
   </div>
   <div id="h3">
