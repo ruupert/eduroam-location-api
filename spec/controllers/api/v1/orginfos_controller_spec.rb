@@ -38,8 +38,10 @@ RSpec.describe Api::V1::OrginfosController, type: :controller do
 
   it "gets correct listing" do
 
-    visit "/api/v1/#{@apikey}/get/infos"
-    expect(page).to have_content("lauttasaari.fi/howtosetup_eng")
+   # visit "/api/v1/#{@apikey}/get/infos"  <- no controller code tested.. LOL
+   # expect(page).to have_content("lauttasaari.fi/howtosetup_eng") <- does not count.. LOL...
+    get :get, :apikey => Institution.find(1).apikey
+    assert_response :success
 
   end
 
