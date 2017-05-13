@@ -15,6 +15,7 @@ An attempt on creating an api for eduroam access point placement onto the 'Where
 # export EDUROAM_API_ADMIN_PW=secret
 # export EDUROAM_API_DEFAULT_LANGS=fi,se
 # export NRO_COUNTRY=fi
+# export GMAPAPI=<Google Maps API-key>
 
 ```
 

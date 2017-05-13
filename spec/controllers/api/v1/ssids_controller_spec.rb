@@ -90,6 +90,11 @@ RSpec.describe Api::V1::SsidsController, type: :controller do
 
   end
 
+  it "returns for get_boolean correct values" do
+
+    expect(controller.get_boolean("true")).to eq(true)
+    expect(controller.get_boolean("false")).to eq(false)
+  end
 
 
 
