@@ -27,18 +27,21 @@
     </div>
 
     <div class="field">
-      <%= f.label :inst_realm %><br>
+      <%= f.label :inst_realm%><br>
       <%= f.text_field :inst_realm %>
+      <p>csv if multiple e.g. realm1.tld,realm2.tld</p>
     </div>
 
     <div class="field">
       <%= f.label :address %><br>
       <%= f.text_field :address %>
     </div>
+
     <div class="field">
       <%= f.label :city %><br>
       <%= f.text_field :city %>
     </div>
+    <hr>
     <div class="field">
       <%= f.label :contact_name %><br>
       <%= f.text_field :contact_name %>
@@ -51,6 +54,9 @@
       <%= f.label :contact_phone %><br>
       <%= f.text_field :contact_phone %>
     </div>
+    <div><p>Does not work with CSV values for now.</p>
+    </div>
+    <hr>
     <div class="field">
       <%= f.fields_for :orginfos do |oinf| %>
           <%= oinf.label :info %>
@@ -69,6 +75,7 @@
           <%= :url %><br>
           <%= policy.text_field :url %><br>
       <% end %>
+
     </div>
 
     <div class="actions">

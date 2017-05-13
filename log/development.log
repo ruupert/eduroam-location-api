@@ -1,0 +1,1058 @@
+  [1m[36m (134.3ms)[0m  [1mDROP DATABASE IF EXISTS "eduroamapi"[0m
+  [1m[35m (2423.4ms)[0m  CREATE DATABASE "eduroamapi" ENCODING = 'utf8'
+  [1m[36m (36.9ms)[0m  [1mCREATE TABLE "entries" ("id" serial primary key, "institution_id" integer, "location_id" integer, "ap_count" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "orgssid_id" integer) [0m
+  [1m[35m (39.1ms)[0m  CREATE TABLE "institutions" ("id" serial primary key, "country" character varying, "institution_type" integer, "inst_realm" character varying, "address" character varying, "city" character varying, "contact_name" character varying, "contact_email" character varying, "contact_phone" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "apikey" character varying) 
+  [1m[36m (40.0ms)[0m  [1mCREATE TABLE "loc_names" ("id" serial primary key, "lang" character varying, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "location_id" integer) [0m
+  [1m[35m (31.4ms)[0m  CREATE TABLE "locations" ("id" serial primary key, "address" character varying, "city" character varying, "country" character varying, "longitude" character varying, "latitude" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "institution_id" integer, "identifier" character varying, "orig_import_string" character varying) 
+  [1m[36m (31.6ms)[0m  [1mCREATE TABLE "orginfos" ("id" serial primary key, "lang" character varying, "url" character varying, "institution_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (31.7ms)[0m  CREATE TABLE "orgnames" ("id" serial primary key, "lang" character varying, "name" character varying, "institution_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (31.8ms)[0m  [1mCREATE TABLE "orgpolicies" ("id" serial primary key, "lang" character varying, "url" character varying, "institution_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (39.1ms)[0m  CREATE TABLE "orgssids" ("id" serial primary key, "number" integer, "institution_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "name" character varying, "port_restrict" boolean, "transp_proxy" boolean, "ipv6" boolean, "nat" boolean, "wpa_tkip" boolean, "wpa_aes" boolean, "wpa2_tkip" boolean, "wpa2_aes" boolean, "wired" boolean) 
+  [1m[36m (24.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (27.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (1.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (10.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170509210127')
+  [1m[36m (12.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170331100122')[0m
+  [1m[35m (8.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170331122823')
+  [1m[36m (8.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170417212813')[0m
+  [1m[35m (8.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170317043840')
+  [1m[36m (8.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170410180744')[0m
+  [1m[35m (8.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170316220501')
+  [1m[36m (10.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170317041034')[0m
+  [1m[35m (11.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170331114511')
+  [1m[36m (8.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170317041046')[0m
+  [1m[35m (62.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170317000511')
+  [1m[36m (63.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170410161958')[0m
+  [1m[35m (10.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170331100228')
+  [1m[36m (8.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170317041027')[0m
+  [1m[35m (8.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170410181024')
+  [1m[36m (8.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170331100805')[0m
+  [1m[35m (8.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170331122505')
+  [1m[36m (35.3ms)[0m  [1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "institution_id" integer, "location_id" integer, "ap_count" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "orgssid_id" integer) [0m
+  [1m[35m (12.1ms)[0m  CREATE TABLE "institutions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "country" varchar, "institution_type" integer, "inst_realm" varchar, "address" varchar, "city" varchar, "contact_name" varchar, "contact_email" varchar, "contact_phone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "apikey" varchar) 
+  [1m[36m (21.3ms)[0m  [1mCREATE TABLE "loc_names" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lang" varchar, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "location_id" integer) [0m
+  [1m[35m (28.6ms)[0m  CREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "address" varchar, "city" varchar, "country" varchar, "longitude" varchar, "latitude" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "institution_id" integer, "identifier" varchar, "orig_import_string" varchar) 
+  [1m[36m (25.4ms)[0m  [1mCREATE TABLE "orginfos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lang" varchar, "url" varchar, "institution_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (24.1ms)[0m  CREATE TABLE "orgnames" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lang" varchar, "name" varchar, "institution_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (25.2ms)[0m  [1mCREATE TABLE "orgpolicies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lang" varchar, "url" varchar, "institution_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (24.0ms)[0m  CREATE TABLE "orgssids" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "number" integer, "institution_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" varchar, "port_restrict" boolean, "transp_proxy" boolean, "ipv6" boolean, "nat" boolean, "wpa_tkip" boolean, "wpa_aes" boolean, "wpa2_tkip" boolean, "wpa2_aes" boolean, "wired" boolean) 
+  [1m[36m (24.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (24.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (18.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170509210127')[0m
+  [1m[35m (25.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170331100122')
+  [1m[36m (25.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170331122823')[0m
+  [1m[35m (25.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170417212813')
+  [1m[36m (26.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170317043840')[0m
+  [1m[35m (26.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170410180744')
+  [1m[36m (25.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170316220501')[0m
+  [1m[35m (26.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170317041034')
+  [1m[36m (27.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170331114511')[0m
+  [1m[35m (26.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170317041046')
+  [1m[36m (25.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170317000511')[0m
+  [1m[35m (26.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170410161958')
+  [1m[36m (25.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170331100228')[0m
+  [1m[35m (26.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170317041027')
+  [1m[36m (26.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170410181024')[0m
+  [1m[35m (26.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170331100805')
+  [1m[36m (25.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170331122505')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.8ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/exporter/institutions" for 127.0.0.1 at 2017-05-13 21:38:11 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ExporterController#institutions as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/exporter/institutions" for 127.0.0.1 at 2017-05-13 21:38:13 +0300
+Processing by ExporterController#institutions as HTML
+  [1m[35mInstitution Load (1.3ms)[0m  SELECT "institutions".* FROM "institutions"
+Completed 200 OK in 185ms (Views: 1.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2017-05-13 21:38:17 +0300
+Processing by InstitutionsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2017-05-13 21:38:17 +0300
+Processing by InstitutionsController#index as HTML
+  [1m[36mInstitution Load (0.9ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  Rendered institutions/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 830ms (Views: 828.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2017-05-13 21:38:18 +0300
+Processing by InstitutionsController#index as HTML
+  [1m[35mInstitution Load (0.7ms)[0m  SELECT "institutions".* FROM "institutions"
+  Rendered institutions/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-05-13 21:38:18 +0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2017-05-13 21:38:18 +0300
+
+
+Started GET "/assets/exporter.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-05-13 21:38:18 +0300
+
+
+Started GET "/assets/institutions.self-18c5407430b939bd93d9a4d27aa5c2923b0d858a9ac28562b05e0acc15fb5c84.css?body=1" for 127.0.0.1 at 2017-05-13 21:38:18 +0300
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-05-13 21:38:18 +0300
+
+
+Started GET "/assets/scaffolds.self-ec1b26ecdc4a06027bffac61974c88a052e9469f95b1a1bd598854c24bd8ca07.css?body=1" for 127.0.0.1 at 2017-05-13 21:38:18 +0300
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 127.0.0.1 at 2017-05-13 21:38:18 +0300
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-05-13 21:38:18 +0300
+
+
+Started GET "/assets/api/v1/welcome.self-97a6298caa92bc8617ec1600811c2dd34507545cb1b6a55500be23e25d4ece1e.css?body=1" for 127.0.0.1 at 2017-05-13 21:38:18 +0300
+
+
+Started GET "/assets/api/v1/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-05-13 21:38:18 +0300
+
+
+Started GET "/assets/exporter.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-05-13 21:38:18 +0300
+
+
+Started GET "/assets/institutions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-05-13 21:38:19 +0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2017-05-13 21:38:19 +0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-05-13 21:38:19 +0300
+
+
+Started GET "/institutions/new" for 127.0.0.1 at 2017-05-13 21:38:21 +0300
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (100.5ms)
+  Rendered institutions/new.html.erb within layouts/application (128.5ms)
+Completed 200 OK in 478ms (Views: 150.4ms | ActiveRecord: 12.8ms)
+
+
+Started POST "/institutions" for 127.0.0.1 at 2017-05-13 21:38:47 +0300
+Processing by InstitutionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gXyYBx9fbVdHHU1MdPQWGdI7r9z4PqKPYaCyZLwt92IM8DZy561Q9m519LI7babfdEpDqIU+Az9UxWWMFp49hw==", "institution"=>{"institution_type"=>"3", "orgnames_attributes"=>{"0"=>{"lang"=>"en", "name"=>"Lauttasaari University"}, "1"=>{"lang"=>"fi", "name"=>"Lauttasaaren yliopisto"}, "2"=>{"lang"=>"sv", "name"=>"Lauttasaari universitet"}}, "inst_realm"=>"lauttasaari.fi", "address"=>"Lauttasaarentie 10", "city"=>"Helsinki", "contact_name"=>"Raul Becker", "contact_email"=>"raul.becker@iki.fi", "contact_phone"=>"55555", "orginfos_attributes"=>{"0"=>{"lang"=>"en", "url"=>"http://lauttasaari.fi/info"}, "1"=>{"lang"=>"fi", "url"=>"http://lauttasaari.fi/apu"}, "2"=>{"lang"=>"sv", "url"=>"http://lauttasaari.fi/hjalp"}}, "orgpolicies_attributes"=>{"0"=>{"lang"=>"en", "url"=>"http://lauttasaari.fi/policy"}, "1"=>{"lang"=>"fi", "url"=>"http://lauttasaari.fi/kayttosaannot"}, "2"=>{"lang"=>"sv", "url"=>"http://lauttasaari.fi/brukvilkor"}}}, "commit"=>"Create Institution"}
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mOrgname Exists (1.6ms)[0m  SELECT  1 AS one FROM "orgnames" WHERE ("orgnames"."lang" = 'en' AND "orgnames"."institution_id" IS NULL AND "orgnames"."name" = 'Lauttasaari University') LIMIT 1
+  [1m[36mOrgname Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "orgnames" WHERE ("orgnames"."lang" = 'fi' AND "orgnames"."institution_id" IS NULL AND "orgnames"."name" = 'Lauttasaaren yliopisto') LIMIT 1[0m
+  [1m[35mOrgname Exists (0.8ms)[0m  SELECT  1 AS one FROM "orgnames" WHERE ("orgnames"."lang" = 'sv' AND "orgnames"."institution_id" IS NULL AND "orgnames"."name" = 'Lauttasaari universitet') LIMIT 1
+  [1m[36mOrginfo Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "orginfos" WHERE ("orginfos"."lang" = 'en' AND "orginfos"."institution_id" IS NULL AND "orginfos"."url" = 'http://lauttasaari.fi/info') LIMIT 1[0m
+  [1m[35mOrginfo Exists (0.9ms)[0m  SELECT  1 AS one FROM "orginfos" WHERE ("orginfos"."lang" = 'fi' AND "orginfos"."institution_id" IS NULL AND "orginfos"."url" = 'http://lauttasaari.fi/apu') LIMIT 1
+  [1m[36mOrginfo Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "orginfos" WHERE ("orginfos"."lang" = 'sv' AND "orginfos"."institution_id" IS NULL AND "orginfos"."url" = 'http://lauttasaari.fi/hjalp') LIMIT 1[0m
+  [1m[35mOrgpolicy Exists (1.0ms)[0m  SELECT  1 AS one FROM "orgpolicies" WHERE ("orgpolicies"."lang" = 'en' AND "orgpolicies"."institution_id" IS NULL AND "orgpolicies"."url" = 'http://lauttasaari.fi/policy') LIMIT 1
+  [1m[36mOrgpolicy Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "orgpolicies" WHERE ("orgpolicies"."lang" = 'fi' AND "orgpolicies"."institution_id" IS NULL AND "orgpolicies"."url" = 'http://lauttasaari.fi/kayttosaannot') LIMIT 1[0m
+  [1m[35mOrgpolicy Exists (0.9ms)[0m  SELECT  1 AS one FROM "orgpolicies" WHERE ("orgpolicies"."lang" = 'sv' AND "orgpolicies"."institution_id" IS NULL AND "orgpolicies"."url" = 'http://lauttasaari.fi/brukvilkor') LIMIT 1
+  [1m[36mInstitution Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'lauttasaari.fi' AND "institutions"."inst_realm" = 'lauttasaari.fi') LIMIT 1[0m
+  [1m[35mInstitution Exists (0.9ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'lauttasaari.fi' AND "institutions"."country" IS NULL AND "institutions"."institution_type" = 3 AND "institutions"."inst_realm" = 'lauttasaari.fi') LIMIT 1
+  [1m[36mInstitution Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "institutions" ("institution_type", "inst_realm", "address", "city", "contact_name", "contact_email", "contact_phone", "created_at", "updated_at", "apikey", "country") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["institution_type", 3], ["inst_realm", "lauttasaari.fi"], ["address", "Lauttasaarentie 10"], ["city", "Helsinki"], ["contact_name", "Raul Becker"], ["contact_email", "raul.becker@iki.fi"], ["contact_phone", "55555"], ["created_at", "2017-05-13 18:38:47.708482"], ["updated_at", "2017-05-13 18:38:47.708482"], ["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"], ["country", "fi"]]
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "orgnames" ("lang", "name", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["lang", "en"], ["name", "Lauttasaari University"], ["institution_id", 1], ["created_at", "2017-05-13 18:38:47.759121"], ["updated_at", "2017-05-13 18:38:47.759121"]]
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "orgnames" ("lang", "name", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["lang", "fi"], ["name", "Lauttasaaren yliopisto"], ["institution_id", 1], ["created_at", "2017-05-13 18:38:47.762696"], ["updated_at", "2017-05-13 18:38:47.762696"]]
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "orgnames" ("lang", "name", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["lang", "sv"], ["name", "Lauttasaari universitet"], ["institution_id", 1], ["created_at", "2017-05-13 18:38:47.765591"], ["updated_at", "2017-05-13 18:38:47.765591"]]
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "orginfos" ("lang", "url", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["lang", "en"], ["url", "http://lauttasaari.fi/info"], ["institution_id", 1], ["created_at", "2017-05-13 18:38:47.768457"], ["updated_at", "2017-05-13 18:38:47.768457"]]
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "orginfos" ("lang", "url", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["lang", "fi"], ["url", "http://lauttasaari.fi/apu"], ["institution_id", 1], ["created_at", "2017-05-13 18:38:47.772968"], ["updated_at", "2017-05-13 18:38:47.772968"]]
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "orginfos" ("lang", "url", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["lang", "sv"], ["url", "http://lauttasaari.fi/hjalp"], ["institution_id", 1], ["created_at", "2017-05-13 18:38:47.777489"], ["updated_at", "2017-05-13 18:38:47.777489"]]
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "orgpolicies" ("lang", "url", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["lang", "en"], ["url", "http://lauttasaari.fi/policy"], ["institution_id", 1], ["created_at", "2017-05-13 18:38:47.781737"], ["updated_at", "2017-05-13 18:38:47.781737"]]
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "orgpolicies" ("lang", "url", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["lang", "fi"], ["url", "http://lauttasaari.fi/kayttosaannot"], ["institution_id", 1], ["created_at", "2017-05-13 18:38:47.785819"], ["updated_at", "2017-05-13 18:38:47.785819"]]
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "orgpolicies" ("lang", "url", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["lang", "sv"], ["url", "http://lauttasaari.fi/brukvilkor"], ["institution_id", 1], ["created_at", "2017-05-13 18:38:47.788484"], ["updated_at", "2017-05-13 18:38:47.788484"]]
+  [1m[35mSQL (3.3ms)[0m  INSERT INTO "orgssids" ("institution_id", "wpa_aes", "wpa_tkip", "wpa2_tkip", "wpa2_aes", "name", "wired", "ipv6", "nat", "transp_proxy", "port_restrict", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["institution_id", 1], ["wpa_aes", "f"], ["wpa_tkip", "f"], ["wpa2_tkip", "f"], ["wpa2_aes", "t"], ["name", "eduroam"], ["wired", "f"], ["ipv6", "f"], ["nat", "f"], ["transp_proxy", "f"], ["port_restrict", "f"], ["created_at", "2017-05-13 18:38:47.825972"], ["updated_at", "2017-05-13 18:38:47.825972"]]
+  [1m[36m (62.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/institutions/1
+Completed 302 Found in 288ms (ActiveRecord: 89.9ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2017-05-13 21:38:47 +0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mInstitution Load (1.1ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrgname Load (0.9ms)[0m  [1mSELECT  "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  ORDER BY "orgnames"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  [1m[35mOrginfo Load (1.1ms)[0m  SELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1  [["institution_id", 1]]
+  [1m[36mOrgpolicy Load (0.9ms)[0m  [1mSELECT  "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1  ORDER BY "orgpolicies"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  [1m[35mLocation Load (0.9ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."institution_id" = $1  [["institution_id", 1]]
+  Rendered institutions/show.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 119ms (Views: 83.6ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/api/v1/Nt7Qxjc73Q6Jjl1nHdm9gAtt/get/ssids" for 127.0.0.1 at 2017-05-13 21:38:50 +0300
+Processing by Api::V1::SsidsController#get as HTML
+  Parameters: {"apikey"=>"Nt7Qxjc73Q6Jjl1nHdm9gAtt"}
+  [1m[36mInstitution Load (0.8ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mOrgssid Load (0.8ms)[0m  SELECT "orgssids"."id", "orgssids"."name", "orgssids"."port_restrict", "orgssids"."transp_proxy", "orgssids"."ipv6", "orgssids"."nat", "orgssids"."wpa_tkip", "orgssids"."wpa_aes", "orgssids"."wpa2_tkip", "orgssids"."wpa2_aes", "orgssids"."wired" FROM "orgssids" WHERE "orgssids"."institution_id" = $1  [["institution_id", 1]]
+Completed 200 OK in 44ms (Views: 37.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/Nt7Qxjc73Q6Jjl1nHdm9gAtt/set/location/Lauttasaarentie%2011/0/Helsinki/50" for 127.0.0.1 at 2017-05-13 21:39:27 +0300
+Processing by Api::V1::EntriesController#set as HTML
+  Parameters: {"apikey"=>"Nt7Qxjc73Q6Jjl1nHdm9gAtt", "address"=>"Lauttasaarentie 11", "identifier"=>"0", "city"=>"Helsinki", "ap"=>"50"}
+  [1m[36mInstitution Load (1.1ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mOrgssid Load (0.8ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."institution_id" = $1  ORDER BY "orgssids"."id" ASC LIMIT 1  [["institution_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "locations" WHERE "locations"."address" = $1 AND "locations"."identifier" = $2 AND "locations"."city" = $3 AND "locations"."institution_id" = $4  [["address", "Lauttasaarentie 11"], ["identifier", "0"], ["city", "Helsinki"], ["institution_id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "orgssids" WHERE "orgssids"."id" = $1 AND "orgssids"."institution_id" = $2  [["id", 1], ["institution_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "locations" ("institution_id", "address", "city", "identifier", "latitude", "longitude", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["institution_id", 1], ["address", "Lauttasaarentie 11"], ["city", "Helsinki"], ["identifier", "0"], ["latitude", "60°9'39.57\"N"], ["longitude", "24°53'14.53\"E"], ["country", "FI"], ["created_at", "2017-05-13 18:39:28.438003"], ["updated_at", "2017-05-13 18:39:28.438003"]]
+  [1m[35m (25.7ms)[0m  COMMIT
+  [1m[36mLocName Load (0.9ms)[0m  [1mSELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1[0m  [["location_id", 1]]
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "loc_names" ("location_id", "name", "lang", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["location_id", 1], ["name", "Lauttasaarentie 11"], ["lang", "en"], ["created_at", "2017-05-13 18:39:28.511876"], ["updated_at", "2017-05-13 18:39:28.511876"]]
+  [1m[35m (12.2ms)[0m  COMMIT
+  [1m[36mInstitution Load (0.8ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mEntry Load (1.1ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."location_id" = $1 AND "entries"."institution_id" = $2  ORDER BY created_at desc LIMIT 1  [["location_id", 1], ["institution_id", 1]]
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "entries" ("institution_id", "location_id", "orgssid_id", "ap_count", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["institution_id", 1], ["location_id", 1], ["orgssid_id", 1], ["ap_count", 50], ["created_at", "2017-05-13 18:39:28.569939"], ["updated_at", "2017-05-13 18:39:28.569939"]]
+  [1m[36m (11.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 977ms (Views: 23.8ms | ActiveRecord: 66.6ms)
+
+
+Started GET "/exporter/institutions" for 127.0.0.1 at 2017-05-13 21:39:46 +0300
+Processing by ExporterController#institutions as HTML
+  [1m[35mInstitution Load (0.8ms)[0m  SELECT "institutions".* FROM "institutions"
+  [1m[36mOrgname Load (0.7ms)[0m  [1mSELECT "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mOrginfo Load (0.7ms)[0m  SELECT "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mOrgpolicy Load (0.6ms)[0m  [1mSELECT "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mEntry Load (1.3ms)[0m  select entries.id, institution_id, location_id, ap_count, orgssid_id from (select max(id) as id from entries where institution_id = 1 group by location_id) as link, entries where link.id=entries.id and ap_count > 0
+  [1m[36mLocation Load (1.2ms)[0m  [1mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLocName Load (0.8ms)[0m  SELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1  [["location_id", 1]]
+  [1m[36mOrgssid Load (0.7ms)[0m  [1mSELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mInstitution Load (0.8ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrginfo Load (0.7ms)[0m  [1mSELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+Completed 200 OK in 53ms (Views: 0.2ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/api/v1/Nt7Qxjc73Q6Jjl1nHdm9gAtt/set/location/Lauttasaarentie%2011/0/Helsinki/0" for 127.0.0.1 at 2017-05-13 21:39:56 +0300
+Processing by Api::V1::EntriesController#set as HTML
+  Parameters: {"apikey"=>"Nt7Qxjc73Q6Jjl1nHdm9gAtt", "address"=>"Lauttasaarentie 11", "identifier"=>"0", "city"=>"Helsinki", "ap"=>"0"}
+  [1m[35mInstitution Load (0.8ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[36mOrgssid Load (0.7ms)[0m  [1mSELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."institution_id" = $1  ORDER BY "orgssids"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "locations" WHERE "locations"."address" = $1 AND "locations"."identifier" = $2 AND "locations"."city" = $3 AND "locations"."institution_id" = $4[0m  [["address", "Lauttasaarentie 11"], ["identifier", "0"], ["city", "Helsinki"], ["institution_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "orgssids" WHERE "orgssids"."id" = $1 AND "orgssids"."institution_id" = $2[0m  [["id", 1], ["institution_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[36mLocation Load (0.6ms)[0m  [1mSELECT  "locations".* FROM "locations" WHERE "locations"."institution_id" = $1 AND "locations"."address" = $2 AND "locations"."identifier" = $3 AND "locations"."city" = $4  ORDER BY "locations"."id" ASC LIMIT 1[0m  [["institution_id", 1], ["address", "Lauttasaarentie 11"], ["identifier", "0"], ["city", "Helsinki"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[36mEntry Load (0.6ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."location_id" = $1 AND "entries"."institution_id" = $2  ORDER BY created_at desc LIMIT 1[0m  [["location_id", 1], ["institution_id", 1]]
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "entries" ("institution_id", "location_id", "orgssid_id", "ap_count", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["institution_id", 1], ["location_id", 1], ["orgssid_id", 1], ["ap_count", 0], ["created_at", "2017-05-13 18:39:56.271085"], ["updated_at", "2017-05-13 18:39:56.271085"]]
+  [1m[35m (23.5ms)[0m  COMMIT
+Completed 200 OK in 37ms (Views: 1.2ms | ActiveRecord: 28.9ms)
+
+
+Started GET "/exporter/institutions" for 127.0.0.1 at 2017-05-13 21:40:01 +0300
+Processing by ExporterController#institutions as HTML
+  [1m[36mInstitution Load (1.0ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  [1m[35mOrgname Load (0.7ms)[0m  SELECT "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mOrginfo Load (0.7ms)[0m  [1mSELECT "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mOrgpolicy Load (0.6ms)[0m  SELECT "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mEntry Load (1.1ms)[0m  [1mselect entries.id, institution_id, location_id, ap_count, orgssid_id from (select max(id) as id from entries where institution_id = 1 group by location_id) as link, entries where link.id=entries.id and ap_count > 0[0m
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/api/v1/Nt7Qxjc73Q6Jjl1nHdm9gAtt/set/location/Lauttasaarentie%2011/C/Helsinki/5" for 127.0.0.1 at 2017-05-13 21:40:09 +0300
+Processing by Api::V1::EntriesController#set as HTML
+  Parameters: {"apikey"=>"Nt7Qxjc73Q6Jjl1nHdm9gAtt", "address"=>"Lauttasaarentie 11", "identifier"=>"C", "city"=>"Helsinki", "ap"=>"5"}
+  [1m[35mInstitution Load (0.8ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[36mOrgssid Load (0.7ms)[0m  [1mSELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."institution_id" = $1  ORDER BY "orgssids"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "locations" WHERE "locations"."address" = $1 AND "locations"."identifier" = $2 AND "locations"."city" = $3 AND "locations"."institution_id" = $4[0m  [["address", "Lauttasaarentie 11"], ["identifier", "C"], ["city", "Helsinki"], ["institution_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "orgssids" WHERE "orgssids"."id" = $1 AND "orgssids"."institution_id" = $2[0m  [["id", 1], ["institution_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "locations" ("institution_id", "address", "city", "identifier", "latitude", "longitude", "country", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["institution_id", 1], ["address", "Lauttasaarentie 11"], ["city", "Helsinki"], ["identifier", "C"], ["latitude", "60°9'39.57\"N"], ["longitude", "24°53'14.53\"E"], ["country", "FI"], ["created_at", "2017-05-13 18:40:09.196594"], ["updated_at", "2017-05-13 18:40:09.196594"]]
+  [1m[36m (29.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mLocName Load (0.8ms)[0m  SELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1  [["location_id", 2]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "loc_names" ("location_id", "name", "lang", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["location_id", 2], ["name", "Lauttasaarentie 11"], ["lang", "en"], ["created_at", "2017-05-13 18:40:09.232613"], ["updated_at", "2017-05-13 18:40:09.232613"]]
+  [1m[36m (11.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mInstitution Load (1.3ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[36mEntry Load (0.7ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."location_id" = $1 AND "entries"."institution_id" = $2  ORDER BY created_at desc LIMIT 1[0m  [["location_id", 2], ["institution_id", 1]]
+  [1m[35m (1.2ms)[0m  BEGIN
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "entries" ("institution_id", "location_id", "orgssid_id", "ap_count", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["institution_id", 1], ["location_id", 2], ["orgssid_id", 1], ["ap_count", 5], ["created_at", "2017-05-13 18:40:09.252339"], ["updated_at", "2017-05-13 18:40:09.252339"]]
+  [1m[35m (11.3ms)[0m  COMMIT
+Completed 200 OK in 218ms (Views: 1.9ms | ActiveRecord: 63.8ms)
+
+
+Started GET "/exporter/institutions" for 127.0.0.1 at 2017-05-13 21:40:11 +0300
+Processing by ExporterController#institutions as HTML
+  [1m[36mInstitution Load (0.8ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  [1m[35mOrgname Load (0.8ms)[0m  SELECT "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mOrginfo Load (0.6ms)[0m  [1mSELECT "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mOrgpolicy Load (0.7ms)[0m  SELECT "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mEntry Load (1.2ms)[0m  [1mselect entries.id, institution_id, location_id, ap_count, orgssid_id from (select max(id) as id from entries where institution_id = 1 group by location_id) as link, entries where link.id=entries.id and ap_count > 0[0m
+  [1m[35mLocation Load (1.1ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mLocName Load (0.6ms)[0m  [1mSELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1[0m  [["location_id", 2]]
+  [1m[35mOrgssid Load (0.6ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mInstitution Load (0.7ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrginfo Load (0.7ms)[0m  SELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1  [["institution_id", 1]]
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/exporter/institutions" for 127.0.0.1 at 2017-05-13 21:40:56 +0300
+Processing by ExporterController#institutions as HTML
+  [1m[36mInstitution Load (0.7ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  [1m[35mOrgname Load (0.6ms)[0m  SELECT "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mOrginfo Load (0.6ms)[0m  [1mSELECT "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mOrgpolicy Load (0.7ms)[0m  SELECT "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mEntry Load (0.9ms)[0m  [1mselect entries.id, institution_id, location_id, ap_count, orgssid_id from (select max(id) as id from entries where institution_id = 1 group by location_id) as link, entries where link.id=entries.id and ap_count > 0[0m
+  [1m[35mLocation Load (0.7ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mLocName Load (0.6ms)[0m  [1mSELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1[0m  [["location_id", 2]]
+  [1m[35mOrgssid Load (0.8ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mInstitution Load (0.7ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrginfo Load (0.7ms)[0m  SELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1  [["institution_id", 1]]
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2017-05-13 21:40:59 +0300
+Processing by InstitutionsController#index as HTML
+  [1m[36mInstitution Load (0.8ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  [1m[35mOrgname Load (0.7ms)[0m  SELECT  "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  ORDER BY "orgnames"."id" ASC LIMIT 1  [["institution_id", 1]]
+  Rendered institutions/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2017-05-13 21:41:02 +0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInstitution Load (1.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrgname Load (0.8ms)[0m  SELECT  "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  ORDER BY "orgnames"."id" ASC LIMIT 1  [["institution_id", 1]]
+  [1m[36mOrginfo Load (0.7ms)[0m  [1mSELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  [1m[35mOrgpolicy Load (0.7ms)[0m  SELECT  "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1  ORDER BY "orgpolicies"."id" ASC LIMIT 1  [["institution_id", 1]]
+  [1m[36mLocation Load (0.7ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE "locations"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mEntry Load (0.8ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."location_id" = $1 AND "entries"."location_id" = $2  ORDER BY "entries"."id" DESC LIMIT 1  [["location_id", 1], ["location_id", 1]]
+  [1m[36mEntry Load (0.7ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."location_id" = $1 AND "entries"."location_id" = $2  ORDER BY "entries"."id" DESC LIMIT 1[0m  [["location_id", 2], ["location_id", 2]]
+  Rendered institutions/show.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 37ms (Views: 29.0ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/api/v1/Nt7Qxjc73Q6Jjl1nHdm9gAtt/get/ssids" for 127.0.0.1 at 2017-05-13 21:41:03 +0300
+Processing by Api::V1::SsidsController#get as HTML
+  Parameters: {"apikey"=>"Nt7Qxjc73Q6Jjl1nHdm9gAtt"}
+  [1m[35mInstitution Load (0.7ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[36mOrgssid Load (0.7ms)[0m  [1mSELECT "orgssids"."id", "orgssids"."name", "orgssids"."port_restrict", "orgssids"."transp_proxy", "orgssids"."ipv6", "orgssids"."nat", "orgssids"."wpa_tkip", "orgssids"."wpa_aes", "orgssids"."wpa2_tkip", "orgssids"."wpa2_aes", "orgssids"."wired" FROM "orgssids" WHERE "orgssids"."institution_id" = $1[0m  [["institution_id", 1]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/Nt7Qxjc73Q6Jjl1nHdm9gAtt/set/ssid/1/nat/true" for 127.0.0.1 at 2017-05-13 21:41:28 +0300
+Processing by Api::V1::SsidsController#set as HTML
+  Parameters: {"apikey"=>"Nt7Qxjc73Q6Jjl1nHdm9gAtt", "id"=>"1", "key"=>"nat", "value"=>"true"}
+  [1m[35mInstitution Load (0.8ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[36mOrgssid Load (0.8ms)[0m  [1mSELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."institution_id" = $1 AND "orgssids"."id" = $2 LIMIT 1[0m  [["institution_id", 1], ["id", 1]]
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "orgssids" SET "nat" = $1, "updated_at" = $2 WHERE "orgssids"."id" = $3[0m  [["nat", "t"], ["updated_at", "2017-05-13 18:41:28.657220"], ["id", 1]]
+  [1m[35m (21.6ms)[0m  COMMIT
+Completed 200 OK in 37ms (Views: 0.7ms | ActiveRecord: 24.6ms)
+
+
+Started GET "/exporter/institutions" for 127.0.0.1 at 2017-05-13 21:41:32 +0300
+Processing by ExporterController#institutions as HTML
+  [1m[36mInstitution Load (0.8ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  [1m[35mOrgname Load (0.6ms)[0m  SELECT "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mOrginfo Load (0.6ms)[0m  [1mSELECT "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mOrgpolicy Load (0.6ms)[0m  SELECT "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mEntry Load (1.0ms)[0m  [1mselect entries.id, institution_id, location_id, ap_count, orgssid_id from (select max(id) as id from entries where institution_id = 1 group by location_id) as link, entries where link.id=entries.id and ap_count > 0[0m
+  [1m[35mLocation Load (0.7ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mLocName Load (0.6ms)[0m  [1mSELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1[0m  [["location_id", 2]]
+  [1m[35mOrgssid Load (0.7ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mInstitution Load (0.7ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrginfo Load (0.6ms)[0m  SELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1  [["institution_id", 1]]
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/api/v1/Nt7Qxjc73Q6Jjl1nHdm9gAtt/set/location/Lauttasaarentie%2011/0/Helsinki/59" for 127.0.0.1 at 2017-05-13 21:41:45 +0300
+Processing by Api::V1::EntriesController#set as HTML
+  Parameters: {"apikey"=>"Nt7Qxjc73Q6Jjl1nHdm9gAtt", "address"=>"Lauttasaarentie 11", "identifier"=>"0", "city"=>"Helsinki", "ap"=>"59"}
+  [1m[36mInstitution Load (0.6ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mOrgssid Load (0.8ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."institution_id" = $1  ORDER BY "orgssids"."id" ASC LIMIT 1  [["institution_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "locations" WHERE "locations"."address" = $1 AND "locations"."identifier" = $2 AND "locations"."city" = $3 AND "locations"."institution_id" = $4  [["address", "Lauttasaarentie 11"], ["identifier", "0"], ["city", "Helsinki"], ["institution_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "orgssids" WHERE "orgssids"."id" = $1 AND "orgssids"."institution_id" = $2  [["id", 1], ["institution_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mLocation Load (0.7ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."institution_id" = $1 AND "locations"."address" = $2 AND "locations"."identifier" = $3 AND "locations"."city" = $4  ORDER BY "locations"."id" ASC LIMIT 1  [["institution_id", 1], ["address", "Lauttasaarentie 11"], ["identifier", "0"], ["city", "Helsinki"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mEntry Load (0.8ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."location_id" = $1 AND "entries"."institution_id" = $2  ORDER BY created_at desc LIMIT 1  [["location_id", 1], ["institution_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "entries" ("institution_id", "location_id", "orgssid_id", "ap_count", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["institution_id", 1], ["location_id", 1], ["orgssid_id", 1], ["ap_count", 59], ["created_at", "2017-05-13 18:41:45.285274"], ["updated_at", "2017-05-13 18:41:45.285274"]]
+  [1m[36m (18.4ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 32ms (Views: 1.1ms | ActiveRecord: 23.9ms)
+
+
+Started GET "/exporter/institutions" for 127.0.0.1 at 2017-05-13 21:41:47 +0300
+Processing by ExporterController#institutions as HTML
+  [1m[35mInstitution Load (0.8ms)[0m  SELECT "institutions".* FROM "institutions"
+  [1m[36mOrgname Load (0.8ms)[0m  [1mSELECT "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mOrginfo Load (0.6ms)[0m  SELECT "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mOrgpolicy Load (0.8ms)[0m  [1mSELECT "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mEntry Load (1.1ms)[0m  select entries.id, institution_id, location_id, ap_count, orgssid_id from (select max(id) as id from entries where institution_id = 1 group by location_id) as link, entries where link.id=entries.id and ap_count > 0
+  [1m[36mLocation Load (0.7ms)[0m  [1mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLocName Load (0.5ms)[0m  SELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1  [["location_id", 1]]
+  [1m[36mOrgssid Load (0.7ms)[0m  [1mSELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mInstitution Load (0.6ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrginfo Load (0.5ms)[0m  [1mSELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  [1m[35mLocation Load (1.0ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mLocName Load (0.8ms)[0m  [1mSELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1[0m  [["location_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1  [["institution_id", 1]]
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/api/v1/Nt7Qxjc73Q6Jjl1nHdm9gAtt/set/ssid/1/transp_proxy/true" for 127.0.0.1 at 2017-05-13 21:43:41 +0300
+Processing by Api::V1::SsidsController#set as HTML
+  Parameters: {"apikey"=>"Nt7Qxjc73Q6Jjl1nHdm9gAtt", "id"=>"1", "key"=>"transp_proxy", "value"=>"true"}
+  [1m[36mInstitution Load (0.9ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mOrgssid Load (0.8ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."institution_id" = $1 AND "orgssids"."id" = $2 LIMIT 1  [["institution_id", 1], ["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "orgssids" SET "transp_proxy" = $1, "updated_at" = $2 WHERE "orgssids"."id" = $3  [["transp_proxy", "t"], ["updated_at", "2017-05-13 18:43:41.052786"], ["id", 1]]
+  [1m[36m (29.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 38ms (Views: 0.5ms | ActiveRecord: 32.1ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2017-05-13 21:43:51 +0300
+Processing by InstitutionsController#index as HTML
+  [1m[35mInstitution Load (0.8ms)[0m  SELECT "institutions".* FROM "institutions"
+  [1m[36mOrgname Load (0.7ms)[0m  [1mSELECT  "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  ORDER BY "orgnames"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  Rendered institutions/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2017-05-13 21:43:53 +0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mInstitution Load (0.7ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrgname Load (0.8ms)[0m  [1mSELECT  "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  ORDER BY "orgnames"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  [1m[35mOrginfo Load (0.7ms)[0m  SELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1  [["institution_id", 1]]
+  [1m[36mOrgpolicy Load (0.7ms)[0m  [1mSELECT  "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1  ORDER BY "orgpolicies"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  [1m[35mLocation Load (0.7ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mEntry Load (0.7ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."location_id" = $1 AND "entries"."location_id" = $2  ORDER BY "entries"."id" DESC LIMIT 1[0m  [["location_id", 1], ["location_id", 1]]
+  [1m[35mEntry Load (0.9ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."location_id" = $1 AND "entries"."location_id" = $2  ORDER BY "entries"."id" DESC LIMIT 1  [["location_id", 2], ["location_id", 2]]
+  Rendered institutions/show.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 35ms (Views: 28.8ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/api/v1/Nt7Qxjc73Q6Jjl1nHdm9gAtt/get/policies" for 127.0.0.1 at 2017-05-13 21:43:55 +0300
+Processing by Api::V1::OrgpoliciesController#get as HTML
+  Parameters: {"apikey"=>"Nt7Qxjc73Q6Jjl1nHdm9gAtt"}
+  [1m[36mInstitution Load (0.8ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mOrgpolicy Load (0.7ms)[0m  SELECT "orgpolicies"."id", "orgpolicies"."lang", "orgpolicies"."url" FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1  [["institution_id", 1]]
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/Nt7Qxjc73Q6Jjl1nHdm9gAtt/get/policies" for 127.0.0.1 at 2017-05-13 21:44:03 +0300
+Processing by Api::V1::OrgpoliciesController#get as HTML
+  Parameters: {"apikey"=>"Nt7Qxjc73Q6Jjl1nHdm9gAtt"}
+  [1m[36mInstitution Load (1.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mOrgpolicy Load (0.9ms)[0m  SELECT "orgpolicies"."id", "orgpolicies"."lang", "orgpolicies"."url" FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1  [["institution_id", 1]]
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/Nt7Qxjc73Q6Jjl1nHdm9gAtt/set/policy/lang/en/http://www.google.com" for 127.0.0.1 at 2017-05-13 21:44:23 +0300
+Processing by Api::V1::OrgpoliciesController#set as HTML
+  Parameters: {"apikey"=>"Nt7Qxjc73Q6Jjl1nHdm9gAtt", "lang"=>"en", "url"=>"http:/www.google.com"}
+  [1m[36mInstitution Load (0.9ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mOrgpolicy Load (0.8ms)[0m  SELECT  "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1 AND "orgpolicies"."lang" = $2  ORDER BY "orgpolicies"."id" ASC LIMIT 1  [["institution_id", 1], ["lang", "en"]]
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mOrgpolicy Exists (1.1ms)[0m  SELECT  1 AS one FROM "orgpolicies" WHERE ("orgpolicies"."lang" = 'en' AND "orgpolicies"."id" != 1 AND "orgpolicies"."institution_id" = 1 AND "orgpolicies"."url" = 'http://www.google.com') LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "orgpolicies" SET "url" = $1, "updated_at" = $2 WHERE "orgpolicies"."id" = $3[0m  [["url", "http://www.google.com"], ["updated_at", "2017-05-13 18:44:23.107384"], ["id", 1]]
+  [1m[35m (30.8ms)[0m  COMMIT
+Completed 200 OK in 50ms (Views: 0.7ms | ActiveRecord: 35.2ms)
+
+
+Started GET "/api/v1/Nt7Qxjc73Q6Jjl1nHdm9gAtt/set/location/Lauttasaarentie%2011/0/Helsinki/59" for 127.0.0.1 at 2017-05-13 21:44:29 +0300
+Processing by Api::V1::EntriesController#set as HTML
+  Parameters: {"apikey"=>"Nt7Qxjc73Q6Jjl1nHdm9gAtt", "address"=>"Lauttasaarentie 11", "identifier"=>"0", "city"=>"Helsinki", "ap"=>"59"}
+  [1m[36mInstitution Load (0.6ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mOrgssid Load (0.7ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."institution_id" = $1  ORDER BY "orgssids"."id" ASC LIMIT 1  [["institution_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "locations" WHERE "locations"."address" = $1 AND "locations"."identifier" = $2 AND "locations"."city" = $3 AND "locations"."institution_id" = $4  [["address", "Lauttasaarentie 11"], ["identifier", "0"], ["city", "Helsinki"], ["institution_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "orgssids" WHERE "orgssids"."id" = $1 AND "orgssids"."institution_id" = $2  [["id", 1], ["institution_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mLocation Load (0.7ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."institution_id" = $1 AND "locations"."address" = $2 AND "locations"."identifier" = $3 AND "locations"."city" = $4  ORDER BY "locations"."id" ASC LIMIT 1  [["institution_id", 1], ["address", "Lauttasaarentie 11"], ["identifier", "0"], ["city", "Helsinki"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mEntry Load (0.7ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."location_id" = $1 AND "entries"."institution_id" = $2  ORDER BY created_at desc LIMIT 1  [["location_id", 1], ["institution_id", 1]]
+Completed 200 OK in 14ms (Views: 1.0ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/exporter/institutions" for 127.0.0.1 at 2017-05-13 21:44:32 +0300
+Processing by ExporterController#institutions as HTML
+  [1m[36mInstitution Load (0.9ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  [1m[35mOrgname Load (0.6ms)[0m  SELECT "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mOrginfo Load (0.8ms)[0m  [1mSELECT "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mOrgpolicy Load (0.6ms)[0m  SELECT "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mEntry Load (1.0ms)[0m  [1mselect entries.id, institution_id, location_id, ap_count, orgssid_id from (select max(id) as id from entries where institution_id = 1 group by location_id) as link, entries where link.id=entries.id and ap_count > 0[0m
+  [1m[35mLocation Load (0.6ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLocName Load (0.6ms)[0m  [1mSELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1[0m  [["location_id", 1]]
+  [1m[35mOrgssid Load (0.7ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mInstitution Load (0.5ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrginfo Load (0.5ms)[0m  SELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1  [["institution_id", 1]]
+  [1m[36mLocation Load (0.6ms)[0m  [1mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mLocName Load (0.5ms)[0m  SELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1  [["location_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+Completed 200 OK in 22ms (Views: 0.4ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/api/v1/Nt7Qxjc73Q6Jjl1nHdm9gAtt/set/info/lang/en/http://www.google.com" for 127.0.0.1 at 2017-05-13 21:44:43 +0300
+Processing by Api::V1::OrginfosController#set as HTML
+  Parameters: {"apikey"=>"Nt7Qxjc73Q6Jjl1nHdm9gAtt", "lang"=>"en", "url"=>"http:/www.google.com"}
+  [1m[35mInstitution Load (0.7ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[36mOrginfo Load (0.8ms)[0m  [1mSELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1 AND "orginfos"."lang" = $2  ORDER BY "orginfos"."id" ASC LIMIT 1[0m  [["institution_id", 1], ["lang", "en"]]
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mOrginfo Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "orginfos" WHERE ("orginfos"."lang" = 'en' AND "orginfos"."id" != 1 AND "orginfos"."institution_id" = 1 AND "orginfos"."url" = 'http://www.google.com') LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "orginfos" SET "url" = $1, "updated_at" = $2 WHERE "orginfos"."id" = $3  [["url", "http://www.google.com"], ["updated_at", "2017-05-13 18:44:43.334707"], ["id", 1]]
+  [1m[36m (28.6ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 37ms (Views: 0.3ms | ActiveRecord: 32.1ms)
+
+
+Started GET "/exporter/institutions" for 127.0.0.1 at 2017-05-13 21:44:47 +0300
+Processing by ExporterController#institutions as HTML
+  [1m[35mInstitution Load (0.7ms)[0m  SELECT "institutions".* FROM "institutions"
+  [1m[36mOrgname Load (0.6ms)[0m  [1mSELECT "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mOrginfo Load (0.7ms)[0m  SELECT "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mOrgpolicy Load (1.0ms)[0m  [1mSELECT "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mEntry Load (1.3ms)[0m  select entries.id, institution_id, location_id, ap_count, orgssid_id from (select max(id) as id from entries where institution_id = 1 group by location_id) as link, entries where link.id=entries.id and ap_count > 0
+  [1m[36mLocation Load (0.5ms)[0m  [1mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLocName Load (0.6ms)[0m  SELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1  [["location_id", 1]]
+  [1m[36mOrgssid Load (0.6ms)[0m  [1mSELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mInstitution Load (0.6ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrginfo Load (0.5ms)[0m  [1mSELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  [1m[35mLocation Load (0.5ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mLocName Load (0.6ms)[0m  [1mSELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1[0m  [["location_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1  [["institution_id", 1]]
+Completed 200 OK in 24ms (Views: 0.7ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/api/v1/Nt7Qxjc73Q6Jjl1nHdm9gAtt/set/ssid/1/wpa2_tkip/true" for 127.0.0.1 at 2017-05-13 21:50:15 +0300
+Processing by Api::V1::SsidsController#set as HTML
+  Parameters: {"apikey"=>"Nt7Qxjc73Q6Jjl1nHdm9gAtt", "id"=>"1", "key"=>"wpa2_tkip", "value"=>"true"}
+  [1m[36mInstitution Load (0.7ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mOrgssid Load (0.8ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."institution_id" = $1 AND "orgssids"."id" = $2 LIMIT 1  [["institution_id", 1], ["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "orgssids" SET "wpa2_tkip" = $1, "updated_at" = $2 WHERE "orgssids"."id" = $3  [["wpa2_tkip", "t"], ["updated_at", "2017-05-13 18:50:15.397972"], ["id", 1]]
+  [1m[36m (21.6ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 29ms (Views: 0.4ms | ActiveRecord: 24.3ms)
+
+
+Started GET "/exporter/institutions" for 127.0.0.1 at 2017-05-13 21:50:19 +0300
+Processing by ExporterController#institutions as HTML
+  [1m[35mInstitution Load (0.8ms)[0m  SELECT "institutions".* FROM "institutions"
+  [1m[36mOrgname Load (0.5ms)[0m  [1mSELECT "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mOrginfo Load (0.5ms)[0m  SELECT "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mOrgpolicy Load (0.5ms)[0m  [1mSELECT "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mEntry Load (1.1ms)[0m  select entries.id, institution_id, location_id, ap_count, orgssid_id from (select max(id) as id from entries where institution_id = 1 group by location_id) as link, entries where link.id=entries.id and ap_count > 0
+  [1m[36mLocation Load (0.5ms)[0m  [1mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLocName Load (0.6ms)[0m  SELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1  [["location_id", 1]]
+  [1m[36mOrgssid Load (0.5ms)[0m  [1mSELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mInstitution Load (0.5ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrginfo Load (0.5ms)[0m  [1mSELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  [1m[35mLocation Load (0.5ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mLocName Load (0.6ms)[0m  [1mSELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1[0m  [["location_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1  [["institution_id", 1]]
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/api/v1/Nt7Qxjc73Q6Jjl1nHdm9gAtt/set/ssid/1/wired/true" for 127.0.0.1 at 2017-05-13 21:51:49 +0300
+Processing by Api::V1::SsidsController#set as HTML
+  Parameters: {"apikey"=>"Nt7Qxjc73Q6Jjl1nHdm9gAtt", "id"=>"1", "key"=>"wired", "value"=>"true"}
+  [1m[36mInstitution Load (0.6ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mOrgssid Load (0.8ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."institution_id" = $1 AND "orgssids"."id" = $2 LIMIT 1  [["institution_id", 1], ["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "orgssids" SET "wired" = $1, "updated_at" = $2 WHERE "orgssids"."id" = $3  [["wired", "t"], ["updated_at", "2017-05-13 18:51:49.164443"], ["id", 1]]
+  [1m[36m (20.4ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 28ms (Views: 0.3ms | ActiveRecord: 23.0ms)
+
+
+Started GET "/exporter/institutions" for 127.0.0.1 at 2017-05-13 21:51:52 +0300
+Processing by ExporterController#institutions as HTML
+  [1m[35mInstitution Load (0.9ms)[0m  SELECT "institutions".* FROM "institutions"
+  [1m[36mOrgname Load (0.6ms)[0m  [1mSELECT "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mOrginfo Load (0.7ms)[0m  SELECT "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mOrgpolicy Load (0.5ms)[0m  [1mSELECT "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mEntry Load (1.0ms)[0m  select entries.id, institution_id, location_id, ap_count, orgssid_id from (select max(id) as id from entries where institution_id = 1 group by location_id) as link, entries where link.id=entries.id and ap_count > 0
+  [1m[36mLocation Load (0.7ms)[0m  [1mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLocName Load (0.5ms)[0m  SELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1  [["location_id", 1]]
+  [1m[36mOrgssid Load (0.8ms)[0m  [1mSELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mInstitution Load (0.7ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrginfo Load (0.6ms)[0m  [1mSELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  [1m[35mLocation Load (0.5ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mLocName Load (0.5ms)[0m  [1mSELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1[0m  [["location_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1  [["institution_id", 1]]
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/exporter/institutions" for 127.0.0.1 at 2017-05-13 21:52:16 +0300
+Processing by ExporterController#institutions as HTML
+  [1m[36mInstitution Load (0.9ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  [1m[35mOrgname Load (0.8ms)[0m  SELECT "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mOrginfo Load (0.6ms)[0m  [1mSELECT "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mOrgpolicy Load (0.6ms)[0m  SELECT "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mEntry Load (1.1ms)[0m  [1mselect entries.id, institution_id, location_id, ap_count, orgssid_id from (select max(id) as id from entries where institution_id = 1 group by location_id) as link, entries where link.id=entries.id and ap_count > 0[0m
+  [1m[35mLocation Load (0.5ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLocName Load (0.7ms)[0m  [1mSELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1[0m  [["location_id", 1]]
+  [1m[35mOrgssid Load (0.9ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mInstitution Load (0.8ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrginfo Load (0.6ms)[0m  SELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1  [["institution_id", 1]]
+  [1m[36mLocation Load (0.6ms)[0m  [1mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mLocName Load (0.6ms)[0m  SELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1  [["location_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2017-05-13 21:52:21 +0300
+Processing by InstitutionsController#index as HTML
+  [1m[35mInstitution Load (0.8ms)[0m  SELECT "institutions".* FROM "institutions"
+  [1m[36mOrgname Load (0.8ms)[0m  [1mSELECT  "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  ORDER BY "orgnames"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  Rendered institutions/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/institutions/1" for 127.0.0.1 at 2017-05-13 21:52:23 +0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mInstitution Load (1.0ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrgname Load (0.7ms)[0m  [1mSELECT  "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  ORDER BY "orgnames"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  [1m[35mOrginfo Load (0.8ms)[0m  SELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1  [["institution_id", 1]]
+  [1m[36mOrgpolicy Load (0.8ms)[0m  [1mSELECT  "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1  ORDER BY "orgpolicies"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  [1m[35mLocation Load (0.7ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mEntry Load (0.8ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."location_id" = $1 AND "entries"."location_id" = $2  ORDER BY "entries"."id" DESC LIMIT 1[0m  [["location_id", 1], ["location_id", 1]]
+  [1m[35mEntry Load (0.7ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."location_id" = $1 AND "entries"."location_id" = $2  ORDER BY "entries"."id" DESC LIMIT 1  [["location_id", 2], ["location_id", 2]]
+  Rendered institutions/show.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 33ms (Views: 24.8ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/api/v1/Nt7Qxjc73Q6Jjl1nHdm9gAtt/get/locations" for 127.0.0.1 at 2017-05-13 21:52:31 +0300
+Processing by Api::V1::LocationsController#get as HTML
+  Parameters: {"apikey"=>"Nt7Qxjc73Q6Jjl1nHdm9gAtt"}
+  [1m[36mInstitution Load (0.8ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mLocation Load (0.7ms)[0m  SELECT "locations"."id", "locations"."address", "locations"."identifier", "locations"."city", "locations"."country" FROM "locations" WHERE "locations"."institution_id" = $1  [["institution_id", 1]]
+Completed 200 OK in 17ms (Views: 13.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/Nt7Qxjc73Q6Jjl1nHdm9gAtt/get/infos" for 127.0.0.1 at 2017-05-13 21:52:36 +0300
+Processing by Api::V1::OrginfosController#get as HTML
+  Parameters: {"apikey"=>"Nt7Qxjc73Q6Jjl1nHdm9gAtt"}
+  [1m[36mInstitution Load (0.6ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mOrginfo Load (0.6ms)[0m  SELECT "orginfos"."id", "orginfos"."lang", "orginfos"."url" FROM "orginfos" WHERE "orginfos"."institution_id" = $1  [["institution_id", 1]]
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/Nt7Qxjc73Q6Jjl1nHdm9gAtt/get/policies" for 127.0.0.1 at 2017-05-13 21:52:38 +0300
+Processing by Api::V1::OrgpoliciesController#get as HTML
+  Parameters: {"apikey"=>"Nt7Qxjc73Q6Jjl1nHdm9gAtt"}
+  [1m[36mInstitution Load (0.6ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mOrgpolicy Load (0.6ms)[0m  SELECT "orgpolicies"."id", "orgpolicies"."lang", "orgpolicies"."url" FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1  [["institution_id", 1]]
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2017-05-13 21:52:56 +0300
+Processing by InstitutionsController#index as HTML
+  [1m[36mInstitution Load (0.8ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  [1m[35mOrgname Load (0.7ms)[0m  SELECT  "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  ORDER BY "orgnames"."id" ASC LIMIT 1  [["institution_id", 1]]
+  Rendered institutions/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/institutions/new" for 127.0.0.1 at 2017-05-13 21:53:01 +0300
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (9.8ms)
+  Rendered institutions/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 37ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/institutions/new" for 127.0.0.1 at 2017-05-13 21:53:59 +0300
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (9.2ms)
+  Rendered institutions/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 40ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/institutions/new" for 127.0.0.1 at 2017-05-13 21:54:00 +0300
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (6.3ms)
+  Rendered institutions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 47ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/institutions/new" for 127.0.0.1 at 2017-05-13 21:54:52 +0300
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (12.4ms)
+  Rendered institutions/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 37ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/institutions/new" for 127.0.0.1 at 2017-05-13 21:55:04 +0300
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (8.5ms)
+  Rendered institutions/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 38ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/institutions/new" for 127.0.0.1 at 2017-05-13 21:55:42 +0300
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (8.8ms)
+  Rendered institutions/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 39ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/institutions/new" for 127.0.0.1 at 2017-05-13 21:55:50 +0300
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (14.4ms)
+  Rendered institutions/new.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 59ms (Views: 51.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/institutions/new" for 127.0.0.1 at 2017-05-13 21:57:21 +0300
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (9.8ms)
+  Rendered institutions/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 51ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/institutions/new" for 127.0.0.1 at 2017-05-13 21:57:32 +0300
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (9.2ms)
+  Rendered institutions/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 42ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/institutions/new" for 127.0.0.1 at 2017-05-13 21:58:40 +0300
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (10.8ms)
+  Rendered institutions/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 39ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/institutions" for 127.0.0.1 at 2017-05-13 22:00:21 +0300
+Processing by InstitutionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KToju/R5d4yQC1rcpJDZwFIzAExgc76PY4xeQS5U43ikto3ODItKLblj4yLrCWkG9ELsOB1zHz9W6YmphOcpnQ==", "institution"=>{"institution_type"=>"3", "orgnames_attributes"=>{"0"=>{"lang"=>"en", "name"=>"Lauttasaari University2"}, "1"=>{"lang"=>"fi", "name"=>"Lauttasaaren yliopisto2"}, "2"=>{"lang"=>"sv", "name"=>"Lauttasaari universitet2"}}, "inst_realm"=>"lauttasaari2.fi,lauttasaari3.fi", "address"=>"Lauttasaarentie 10", "city"=>"Helsinki", "contact_name"=>"Raul Becker,Becker Raul", "contact_email"=>"raul.becker@iki.fi,", "contact_phone"=>"55555", "orginfos_attributes"=>{"0"=>{"lang"=>"en", "url"=>"http://lauttasaari.fi/info"}, "1"=>{"lang"=>"fi", "url"=>"http://lauttasaari.fi/apu"}, "2"=>{"lang"=>"sv", "url"=>"http://lauttasaari.fi/hjalp"}}, "orgpolicies_attributes"=>{"0"=>{"lang"=>"en", "url"=>"http://lauttasaari.fi/policy"}, "1"=>{"lang"=>"fi", "url"=>"http://lauttasaari.fi/kayttosaannot"}, "2"=>{"lang"=>"sv", "url"=>"http://lauttasaari.fi/brukvilkor"}}}, "commit"=>"Create Institution"}
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+  [1m[35mOrgname Exists (0.9ms)[0m  SELECT  1 AS one FROM "orgnames" WHERE ("orgnames"."lang" = 'en' AND "orgnames"."institution_id" IS NULL AND "orgnames"."name" = 'Lauttasaari University2') LIMIT 1
+  [1m[36mOrgname Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "orgnames" WHERE ("orgnames"."lang" = 'fi' AND "orgnames"."institution_id" IS NULL AND "orgnames"."name" = 'Lauttasaaren yliopisto2') LIMIT 1[0m
+  [1m[35mOrgname Exists (0.7ms)[0m  SELECT  1 AS one FROM "orgnames" WHERE ("orgnames"."lang" = 'sv' AND "orgnames"."institution_id" IS NULL AND "orgnames"."name" = 'Lauttasaari universitet2') LIMIT 1
+  [1m[36mOrginfo Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "orginfos" WHERE ("orginfos"."lang" = 'en' AND "orginfos"."institution_id" IS NULL AND "orginfos"."url" = 'http://lauttasaari.fi/info') LIMIT 1[0m
+  [1m[35mOrginfo Exists (0.7ms)[0m  SELECT  1 AS one FROM "orginfos" WHERE ("orginfos"."lang" = 'fi' AND "orginfos"."institution_id" IS NULL AND "orginfos"."url" = 'http://lauttasaari.fi/apu') LIMIT 1
+  [1m[36mOrginfo Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "orginfos" WHERE ("orginfos"."lang" = 'sv' AND "orginfos"."institution_id" IS NULL AND "orginfos"."url" = 'http://lauttasaari.fi/hjalp') LIMIT 1[0m
+  [1m[35mOrgpolicy Exists (0.7ms)[0m  SELECT  1 AS one FROM "orgpolicies" WHERE ("orgpolicies"."lang" = 'en' AND "orgpolicies"."institution_id" IS NULL AND "orgpolicies"."url" = 'http://lauttasaari.fi/policy') LIMIT 1
+  [1m[36mOrgpolicy Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "orgpolicies" WHERE ("orgpolicies"."lang" = 'fi' AND "orgpolicies"."institution_id" IS NULL AND "orgpolicies"."url" = 'http://lauttasaari.fi/kayttosaannot') LIMIT 1[0m
+  [1m[35mOrgpolicy Exists (0.7ms)[0m  SELECT  1 AS one FROM "orgpolicies" WHERE ("orgpolicies"."lang" = 'sv' AND "orgpolicies"."institution_id" IS NULL AND "orgpolicies"."url" = 'http://lauttasaari.fi/brukvilkor') LIMIT 1
+  [1m[36mInstitution Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'lauttasaari2.fi,lauttasaari3.fi' AND "institutions"."inst_realm" = 'lauttasaari2.fi,lauttasaari3.fi') LIMIT 1[0m
+  [1m[35mInstitution Exists (0.7ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'lauttasaari2.fi,lauttasaari3.fi' AND "institutions"."country" IS NULL AND "institutions"."institution_type" = 3 AND "institutions"."inst_realm" = 'lauttasaari2.fi,lauttasaari3.fi') LIMIT 1
+  [1m[36mInstitution Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "sQ6fQiKW9HdNKsvXz7QGrQtt"]]
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "institutions" ("institution_type", "inst_realm", "address", "city", "contact_name", "contact_email", "contact_phone", "created_at", "updated_at", "apikey", "country") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["institution_type", 3], ["inst_realm", "lauttasaari2.fi,lauttasaari3.fi"], ["address", "Lauttasaarentie 10"], ["city", "Helsinki"], ["contact_name", "Raul Becker,Becker Raul"], ["contact_email", "raul.becker@iki.fi,"], ["contact_phone", "55555"], ["created_at", "2017-05-13 19:00:21.080856"], ["updated_at", "2017-05-13 19:00:21.080856"], ["apikey", "sQ6fQiKW9HdNKsvXz7QGrQtt"], ["country", "fi"]]
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "orgnames" ("lang", "name", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["lang", "en"], ["name", "Lauttasaari University2"], ["institution_id", 2], ["created_at", "2017-05-13 19:00:21.086395"], ["updated_at", "2017-05-13 19:00:21.086395"]]
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "orgnames" ("lang", "name", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["lang", "fi"], ["name", "Lauttasaaren yliopisto2"], ["institution_id", 2], ["created_at", "2017-05-13 19:00:21.088052"], ["updated_at", "2017-05-13 19:00:21.088052"]]
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "orgnames" ("lang", "name", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["lang", "sv"], ["name", "Lauttasaari universitet2"], ["institution_id", 2], ["created_at", "2017-05-13 19:00:21.091067"], ["updated_at", "2017-05-13 19:00:21.091067"]]
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "orginfos" ("lang", "url", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["lang", "en"], ["url", "http://lauttasaari.fi/info"], ["institution_id", 2], ["created_at", "2017-05-13 19:00:21.094531"], ["updated_at", "2017-05-13 19:00:21.094531"]]
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "orginfos" ("lang", "url", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["lang", "fi"], ["url", "http://lauttasaari.fi/apu"], ["institution_id", 2], ["created_at", "2017-05-13 19:00:21.096279"], ["updated_at", "2017-05-13 19:00:21.096279"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "orginfos" ("lang", "url", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["lang", "sv"], ["url", "http://lauttasaari.fi/hjalp"], ["institution_id", 2], ["created_at", "2017-05-13 19:00:21.097617"], ["updated_at", "2017-05-13 19:00:21.097617"]]
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "orgpolicies" ("lang", "url", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["lang", "en"], ["url", "http://lauttasaari.fi/policy"], ["institution_id", 2], ["created_at", "2017-05-13 19:00:21.099070"], ["updated_at", "2017-05-13 19:00:21.099070"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "orgpolicies" ("lang", "url", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["lang", "fi"], ["url", "http://lauttasaari.fi/kayttosaannot"], ["institution_id", 2], ["created_at", "2017-05-13 19:00:21.100499"], ["updated_at", "2017-05-13 19:00:21.100499"]]
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "orgpolicies" ("lang", "url", "institution_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["lang", "sv"], ["url", "http://lauttasaari.fi/brukvilkor"], ["institution_id", 2], ["created_at", "2017-05-13 19:00:21.101941"], ["updated_at", "2017-05-13 19:00:21.101941"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "orgssids" ("institution_id", "wpa_aes", "wpa_tkip", "wpa2_tkip", "wpa2_aes", "name", "wired", "ipv6", "nat", "transp_proxy", "port_restrict", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["institution_id", 2], ["wpa_aes", "f"], ["wpa_tkip", "f"], ["wpa2_tkip", "f"], ["wpa2_aes", "t"], ["name", "eduroam"], ["wired", "f"], ["ipv6", "f"], ["nat", "f"], ["transp_proxy", "f"], ["port_restrict", "f"], ["created_at", "2017-05-13 19:00:21.103664"], ["updated_at", "2017-05-13 19:00:21.103664"]]
+  [1m[36m (23.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/institutions/2
+Completed 302 Found in 81ms (ActiveRecord: 40.7ms)
+
+
+Started GET "/institutions/2" for 127.0.0.1 at 2017-05-13 22:00:21 +0300
+Processing by InstitutionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mInstitution Load (0.6ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mOrgname Load (0.7ms)[0m  [1mSELECT  "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  ORDER BY "orgnames"."id" ASC LIMIT 1[0m  [["institution_id", 2]]
+  [1m[35mOrginfo Load (0.9ms)[0m  SELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1  [["institution_id", 2]]
+  [1m[36mOrgpolicy Load (0.9ms)[0m  [1mSELECT  "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1  ORDER BY "orgpolicies"."id" ASC LIMIT 1[0m  [["institution_id", 2]]
+  [1m[35mLocation Load (0.6ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."institution_id" = $1  [["institution_id", 2]]
+  Rendered institutions/show.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 29ms (Views: 24.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/v1/Nt7Qxjc73Q6Jjl1nHdm9gAtt/set/location/Lauttasaarentie%2011/0/Helsinki/59" for 127.0.0.1 at 2017-05-13 22:00:23 +0300
+Processing by Api::V1::EntriesController#set as HTML
+  Parameters: {"apikey"=>"Nt7Qxjc73Q6Jjl1nHdm9gAtt", "address"=>"Lauttasaarentie 11", "identifier"=>"0", "city"=>"Helsinki", "ap"=>"59"}
+  [1m[36mInstitution Load (0.8ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mOrgssid Load (1.0ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."institution_id" = $1  ORDER BY "orgssids"."id" ASC LIMIT 1  [["institution_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "locations" WHERE "locations"."address" = $1 AND "locations"."identifier" = $2 AND "locations"."city" = $3 AND "locations"."institution_id" = $4  [["address", "Lauttasaarentie 11"], ["identifier", "0"], ["city", "Helsinki"], ["institution_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "orgssids" WHERE "orgssids"."id" = $1 AND "orgssids"."institution_id" = $2  [["id", 1], ["institution_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mLocation Load (0.7ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."institution_id" = $1 AND "locations"."address" = $2 AND "locations"."identifier" = $3 AND "locations"."city" = $4  ORDER BY "locations"."id" ASC LIMIT 1  [["institution_id", 1], ["address", "Lauttasaarentie 11"], ["identifier", "0"], ["city", "Helsinki"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = $1 LIMIT 1[0m  [["apikey", "Nt7Qxjc73Q6Jjl1nHdm9gAtt"]]
+  [1m[35mEntry Load (0.7ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."location_id" = $1 AND "entries"."institution_id" = $2  ORDER BY created_at desc LIMIT 1  [["location_id", 1], ["institution_id", 1]]
+Completed 200 OK in 16ms (Views: 1.7ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/exporter/institutions" for 127.0.0.1 at 2017-05-13 22:00:25 +0300
+Processing by ExporterController#institutions as HTML
+  [1m[36mInstitution Load (0.8ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  [1m[35mOrgname Load (0.6ms)[0m  SELECT "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mOrginfo Load (0.6ms)[0m  [1mSELECT "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mOrgpolicy Load (0.7ms)[0m  SELECT "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mEntry Load (1.1ms)[0m  [1mselect entries.id, institution_id, location_id, ap_count, orgssid_id from (select max(id) as id from entries where institution_id = 1 group by location_id) as link, entries where link.id=entries.id and ap_count > 0[0m
+  [1m[35mLocation Load (0.8ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLocName Load (0.8ms)[0m  [1mSELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1[0m  [["location_id", 1]]
+  [1m[35mOrgssid Load (0.6ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mInstitution Load (0.5ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mOrginfo Load (0.5ms)[0m  SELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1  [["institution_id", 1]]
+  [1m[36mLocation Load (0.7ms)[0m  [1mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mLocName Load (0.5ms)[0m  SELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1  [["location_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  [1m[35mOrgname Load (0.6ms)[0m  SELECT "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  [["institution_id", 2]]
+  [1m[36mOrginfo Load (0.8ms)[0m  [1mSELECT "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1[0m  [["institution_id", 2]]
+  [1m[35mOrgpolicy Load (0.7ms)[0m  SELECT "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1  [["institution_id", 2]]
+  [1m[36mEntry Load (1.0ms)[0m  [1mselect entries.id, institution_id, location_id, ap_count, orgssid_id from (select max(id) as id from entries where institution_id = 2 group by location_id) as link, entries where link.id=entries.id and ap_count > 0[0m
+Completed 200 OK in 35ms (Views: 0.2ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2017-05-13 22:00:45 +0300
+Processing by InstitutionsController#index as HTML
+  [1m[35mInstitution Load (0.9ms)[0m  SELECT "institutions".* FROM "institutions"
+  [1m[36mOrgname Load (0.6ms)[0m  [1mSELECT  "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  ORDER BY "orgnames"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  [1m[35mOrgname Load (0.7ms)[0m  SELECT  "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  ORDER BY "orgnames"."id" ASC LIMIT 1  [["institution_id", 2]]
+  Rendered institutions/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/institutions/new" for 127.0.0.1 at 2017-05-13 22:00:46 +0300
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (10.1ms)
+  Rendered institutions/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 35ms (Views: 29.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/institutions" for 127.0.0.1 at 2017-05-13 22:01:40 +0300
+Processing by InstitutionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FY6IZIDPvs+x6fKhpYkKZQ/bw+OLvuBAdgNfUg/UD7iYAiYReD2DbpiBS1/qELqjqaovl/a+QfBDZoi6pWfFXQ==", "institution"=>{"institution_type"=>"3", "orgnames_attributes"=>{"0"=>{"lang"=>"en", "name"=>"Lauttasaari University3"}, "1"=>{"lang"=>"fi", "name"=>"Lauttasaaren yliopisto3"}, "2"=>{"lang"=>"sv", "name"=>"Lauttasaari universitet3"}}, "inst_realm"=>"lauttasaari2.fi,lauttasaari3.fi", "address"=>"Lauttasaarentie 10", "city"=>"Helsinki", "contact_name"=>"Raul Becker,Becker Raul", "contact_email"=>"raul.becker@iki.fi,becker.raul@iki.fi", "contact_phone"=>"55555,44444", "orginfos_attributes"=>{"0"=>{"lang"=>"en", "url"=>"http://lauttasaari.fi/info"}, "1"=>{"lang"=>"fi", "url"=>"http://lauttasaari.fi/apu"}, "2"=>{"lang"=>"sv", "url"=>"http://lauttasaari.fi/hjalp"}}, "orgpolicies_attributes"=>{"0"=>{"lang"=>"en", "url"=>"http://lauttasaari.fi/policy"}, "1"=>{"lang"=>"fi", "url"=>"http://lauttasaari.fi/kayttosaannot"}, "2"=>{"lang"=>"sv", "url"=>"http://lauttasaari.fi/brukvilkor"}}}, "commit"=>"Create Institution"}
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mOrgname Exists (0.8ms)[0m  SELECT  1 AS one FROM "orgnames" WHERE ("orgnames"."lang" = 'en' AND "orgnames"."institution_id" IS NULL AND "orgnames"."name" = 'Lauttasaari University3') LIMIT 1
+  [1m[36mOrgname Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "orgnames" WHERE ("orgnames"."lang" = 'fi' AND "orgnames"."institution_id" IS NULL AND "orgnames"."name" = 'Lauttasaaren yliopisto3') LIMIT 1[0m
+  [1m[35mOrgname Exists (0.8ms)[0m  SELECT  1 AS one FROM "orgnames" WHERE ("orgnames"."lang" = 'sv' AND "orgnames"."institution_id" IS NULL AND "orgnames"."name" = 'Lauttasaari universitet3') LIMIT 1
+  [1m[36mOrginfo Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "orginfos" WHERE ("orginfos"."lang" = 'en' AND "orginfos"."institution_id" IS NULL AND "orginfos"."url" = 'http://lauttasaari.fi/info') LIMIT 1[0m
+  [1m[35mOrginfo Exists (0.9ms)[0m  SELECT  1 AS one FROM "orginfos" WHERE ("orginfos"."lang" = 'fi' AND "orginfos"."institution_id" IS NULL AND "orginfos"."url" = 'http://lauttasaari.fi/apu') LIMIT 1
+  [1m[36mOrginfo Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "orginfos" WHERE ("orginfos"."lang" = 'sv' AND "orginfos"."institution_id" IS NULL AND "orginfos"."url" = 'http://lauttasaari.fi/hjalp') LIMIT 1[0m
+  [1m[35mOrgpolicy Exists (0.8ms)[0m  SELECT  1 AS one FROM "orgpolicies" WHERE ("orgpolicies"."lang" = 'en' AND "orgpolicies"."institution_id" IS NULL AND "orgpolicies"."url" = 'http://lauttasaari.fi/policy') LIMIT 1
+  [1m[36mOrgpolicy Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "orgpolicies" WHERE ("orgpolicies"."lang" = 'fi' AND "orgpolicies"."institution_id" IS NULL AND "orgpolicies"."url" = 'http://lauttasaari.fi/kayttosaannot') LIMIT 1[0m
+  [1m[35mOrgpolicy Exists (0.7ms)[0m  SELECT  1 AS one FROM "orgpolicies" WHERE ("orgpolicies"."lang" = 'sv' AND "orgpolicies"."institution_id" IS NULL AND "orgpolicies"."url" = 'http://lauttasaari.fi/brukvilkor') LIMIT 1
+  [1m[36mInstitution Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'lauttasaari2.fi,lauttasaari3.fi' AND "institutions"."inst_realm" = 'lauttasaari2.fi,lauttasaari3.fi') LIMIT 1[0m
+  [1m[35mInstitution Exists (0.7ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'lauttasaari2.fi,lauttasaari3.fi' AND "institutions"."country" IS NULL AND "institutions"."institution_type" = 3 AND "institutions"."inst_realm" = 'lauttasaari2.fi,lauttasaari3.fi') LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  Rendered institutions/_form.html.erb (26.5ms)
+  Rendered institutions/new.html.erb within layouts/application (27.8ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 9.6ms)
+
+NoMethodError - undefined method `empty?' for nil:NilClass:
+  actionview (4.2.7.1) lib/action_view/helpers/tags/select.rb:36:in `grouped_choices?'
+  actionview (4.2.7.1) lib/action_view/helpers/tags/select.rb:20:in `render'
+  actionview (4.2.7.1) lib/action_view/helpers/form_options_helper.rb:163:in `select'
+  actionview (4.2.7.1) lib/action_view/helpers/form_options_helper.rb:777:in `select'
+  app/views/institutions/_form.html.erb:17:in `block in _app_views_institutions__form_html_erb__2321282298106098799_17368814080'
+  actionview (4.2.7.1) lib/action_view/helpers/capture_helper.rb:38:in `block in capture'
+  actionview (4.2.7.1) lib/action_view/helpers/capture_helper.rb:202:in `with_output_buffer'
+  actionview (4.2.7.1) lib/action_view/helpers/capture_helper.rb:38:in `capture'
+  actionview (4.2.7.1) lib/action_view/helpers/form_helper.rb:444:in `form_for'
+  app/views/institutions/_form.html.erb:1:in `_app_views_institutions__form_html_erb__2321282298106098799_17368814080'
+  actionview (4.2.7.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.7.1) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.7.1) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.7.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.7.1) lib/action_view/renderer/partial_renderer.rb:339:in `render_partial'
+  actionview (4.2.7.1) lib/action_view/renderer/partial_renderer.rb:310:in `block in render'
+  actionview (4.2.7.1) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.7.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.7.1) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.7.1) lib/action_view/renderer/partial_renderer.rb:309:in `render'
+  actionview (4.2.7.1) lib/action_view/renderer/renderer.rb:51:in `render_partial'
+  actionview (4.2.7.1) lib/action_view/helpers/rendering_helper.rb:35:in `render'
+  app/views/institutions/new.html.erb:3:in `_app_views_institutions_new_html_erb___3320902302659107346_17342949740'
+  actionview (4.2.7.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.7.1) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.7.1) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.7.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.7.1) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.7.1) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.7.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.7.1) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.7.1) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.7.1) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.7.1) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.7.1) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.7.1) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.7.1) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.7.1) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.7.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.7.1) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.7.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.7.1) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.7.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.7.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.7.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/ruupert/.rbenv/versions/2.3.1/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.7.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.7.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  app/controllers/institutions_controller.rb:62:in `block (2 levels) in create'
+  actionpack (4.2.7.1) lib/action_controller/metal/mime_responds.rb:217:in `respond_to'
+  app/controllers/institutions_controller.rb:57:in `create'
+  actionpack (4.2.7.1) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.7.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.7.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.7.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.7.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.7.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.7.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.7.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.7.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.7.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.7.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.7.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.7.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.7.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.7.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.7.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.7.1) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.6) lib/rack/etag.rb:24:in `call'
+  rack (1.6.6) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.6) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.6) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.6) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7.1) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.6) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.6) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.6) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7.1) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.6) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.6) lib/rack/lock.rb:17:in `call'
+  rack (1.6.6) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.6) lib/rack/handler/webrick.rb:88:in `service'
+  /home/ruupert/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/ruupert/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/ruupert/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/08d859a49821eb88/variables" for 127.0.0.1 at 2017-05-13 22:01:41 +0300
+
+
+Started GET "/institutions" for 127.0.0.1 at 2017-05-13 22:03:06 +0300
+Processing by InstitutionsController#index as HTML
+  [1m[35mInstitution Load (0.8ms)[0m  SELECT "institutions".* FROM "institutions"
+  [1m[36mOrgname Load (0.6ms)[0m  [1mSELECT  "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  ORDER BY "orgnames"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  [1m[35mOrgname Load (0.7ms)[0m  SELECT  "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  ORDER BY "orgnames"."id" ASC LIMIT 1  [["institution_id", 2]]
+  Rendered institutions/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 38ms (Views: 35.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/institutions/new" for 127.0.0.1 at 2017-05-13 22:03:21 +0300
+Processing by InstitutionsController#new as HTML
+  Rendered institutions/_form.html.erb (8.8ms)
+  Rendered institutions/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 37ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/institutions" for 127.0.0.1 at 2017-05-13 22:03:32 +0300
+Processing by InstitutionsController#index as HTML
+  [1m[36mInstitution Load (1.1ms)[0m  [1mSELECT "institutions".* FROM "institutions"[0m
+  [1m[35mOrgname Load (0.7ms)[0m  SELECT  "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  ORDER BY "orgnames"."id" ASC LIMIT 1  [["institution_id", 1]]
+  [1m[36mOrgname Load (0.6ms)[0m  [1mSELECT  "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1  ORDER BY "orgnames"."id" ASC LIMIT 1[0m  [["institution_id", 2]]
+  Rendered institutions/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/exporter/institutions" for 127.0.0.1 at 2017-05-13 22:03:36 +0300
+Processing by ExporterController#institutions as HTML
+  [1m[35mInstitution Load (0.8ms)[0m  SELECT "institutions".* FROM "institutions"
+  [1m[36mOrgname Load (0.7ms)[0m  [1mSELECT "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mOrginfo Load (0.7ms)[0m  SELECT "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  [["institution_id", 1]]
+  [1m[36mOrgpolicy Load (0.5ms)[0m  [1mSELECT "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1[0m  [["institution_id", 1]]
+  [1m[35mEntry Load (1.3ms)[0m  select entries.id, institution_id, location_id, ap_count, orgssid_id from (select max(id) as id from entries where institution_id = 1 group by location_id) as link, entries where link.id=entries.id and ap_count > 0
+  [1m[36mLocation Load (0.8ms)[0m  [1mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLocName Load (0.6ms)[0m  SELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1  [["location_id", 1]]
+  [1m[36mOrgssid Load (0.7ms)[0m  [1mSELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mInstitution Load (0.5ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mOrginfo Load (0.6ms)[0m  [1mSELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1[0m  [["institution_id", 1]]
+  [1m[35mLocation Load (0.6ms)[0m  SELECT  "locations".* FROM "locations" WHERE "locations"."id" = $1  ORDER BY "locations"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mLocName Load (0.5ms)[0m  [1mSELECT "loc_names".* FROM "loc_names" WHERE "loc_names"."location_id" = $1[0m  [["location_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "orgssids".* FROM "orgssids" WHERE "orgssids"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  ORDER BY "orginfos"."id" ASC LIMIT 1  [["institution_id", 1]]
+  [1m[36mOrgname Load (0.7ms)[0m  [1mSELECT "orgnames".* FROM "orgnames" WHERE "orgnames"."institution_id" = $1[0m  [["institution_id", 2]]
+  [1m[35mOrginfo Load (0.9ms)[0m  SELECT "orginfos".* FROM "orginfos" WHERE "orginfos"."institution_id" = $1  [["institution_id", 2]]
+  [1m[36mOrgpolicy Load (0.6ms)[0m  [1mSELECT "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = $1[0m  [["institution_id", 2]]
+  [1m[35mEntry Load (1.0ms)[0m  select entries.id, institution_id, location_id, ap_count, orgssid_id from (select max(id) as id from entries where institution_id = 2 group by location_id) as link, entries where link.id=entries.id and ap_count > 0
+Completed 200 OK in 34ms (Views: 0.2ms | ActiveRecord: 11.6ms)
