@@ -32,7 +32,7 @@ Using the set username and password you can access /institutions and /import pat
  
  #### Issues
  
- - import functionality can't handle all types of addresses. The application does not provide a way for the admin to edit locations except by directly modifying the database table "locations"
+ - import functionality can't handle all types of addresses. The application does not __currently__ provide any way for the admin to edit locations.
  - importer doesn't fill the missing EDUROAM_API_DEFAULT_LANGS
  - many more...
  
