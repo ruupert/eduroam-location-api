@@ -15,11 +15,6 @@
       <email>helpdesk@haaga-helia.fi</email>
       <phone></phone>
     </contact>
-    <contact>
-      <name />
-      <email>helpdesk@haaga-helia.fi</email>
-      <phone></phone>
-    </contact>
     <info_URL lang="en" />
     <info_URL lang="fi" />
     <policy_URL lang="en" />
@@ -165,25 +160,6 @@
       <latitude>60°12'04.00"N</latitude>
       <loc_name lang="en">Lauttasaari University, main building</loc_name>
       <loc_name lang="fi">Lauttasaaren yliopisto, päärakennus</loc_name>
-      <address>
-        <street>Lauttasaarentie 10</street>
-        <city>Helsinki</city>
-      </address>
-      <SSID>eduroam</SSID>
-      <enc_level>WPA2/AES, WPA/AES</enc_level>
-      <port_restrict>true</port_restrict>
-      <transp_proxy>false</transp_proxy>
-      <IPv6>false</IPv6>
-      <NAT>false</NAT>
-      <AP_no>146</AP_no>
-      <wired>false</wired>
-      <info_URL lang="en" />
-    </location>
-    <location>
-      <longitude>24°56'02.00"E</longitude>
-      <latitude>60°12'04.00"N</latitude>
-      <loc_name lang="en">Lauttasaari University, secondary duplicate</loc_name>
-      <loc_name lang="fi">Lauttasaaren yliopisto, toinen sama sijainti</loc_name>
       <address>
         <street>Lauttasaarentie 10</street>
         <city>Helsinki</city>

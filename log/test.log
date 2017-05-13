@@ -13135,3 +13135,47 @@ Processing by Api::V1::OrgpoliciesController#get as HTML
   [1m[36mOrgpolicy Load (0.1ms)[0m  [1mSELECT "orgpolicies"."id", "orgpolicies"."lang", "orgpolicies"."url" FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = ?[0m  [["institution_id", 1]]
 Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
   [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInstitution Exists (0.1ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'tesjjjjt.fe' AND "institutions"."inst_realm" = 'tesjjjjt.fe') LIMIT 1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'tesjjjjt.fe' AND "institutions"."country" = 'fi' AND "institutions"."institution_type" = 3 AND "institutions"."inst_realm" = 'tesjjjjt.fe') LIMIT 1[0m
+  [1m[35mInstitution Exists (0.2ms)[0m  SELECT  1 AS one FROM "institutions" WHERE "institutions"."apikey" = ? LIMIT 1  [["apikey", "tavDXeHQDIGJDAHe8a75EQtt"]]
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "institutions" ("id", "institution_type", "country", "inst_realm", "address", "city", "contact_name", "contact_email", "contact_phone", "created_at", "updated_at", "apikey") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["institution_type", 3], ["country", "fi"], ["inst_realm", "tesjjjjt.fe"], ["address", "Lauttasaarentie 3"], ["city", "Helsinki"], ["contact_name", "Elämäm Mestari"], ["contact_email", "elämäm@mestari.fi"], ["contact_phone", "050505050"], ["created_at", "2017-05-13 09:19:47.672709"], ["updated_at", "2017-05-13 09:19:47.672709"], ["apikey", "tavDXeHQDIGJDAHe8a75EQtt"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "orgssids" ("institution_id", "wpa_aes", "wpa_tkip", "wpa2_tkip", "wpa2_aes", "name", "wired", "ipv6", "nat", "transp_proxy", "port_restrict", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["institution_id", 1], ["wpa_aes", "f"], ["wpa_tkip", "f"], ["wpa2_tkip", "f"], ["wpa2_aes", "t"], ["name", "eduroam"], ["wired", "f"], ["ipv6", "f"], ["nat", "f"], ["transp_proxy", "f"], ["port_restrict", "f"], ["created_at", "2017-05-13 09:19:47.745814"], ["updated_at", "2017-05-13 09:19:47.745814"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mOrgpolicy Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "orgpolicies" WHERE ("orgpolicies"."lang" = 'en' AND "orgpolicies"."institution_id" = 1 AND "orgpolicies"."url" = 'lauttasaari.fi/howtosetup_eng') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "orgpolicies" ("id", "lang", "url", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["id", 1], ["lang", "en"], ["url", "lauttasaari.fi/howtosetup_eng"], ["institution_id", 1], ["created_at", "2017-05-13 09:19:47.753310"], ["updated_at", "2017-05-13 09:19:47.753310"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mInstitution Load (0.1ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = ? LIMIT 1  [["id", 1]]
+Processing by Api::V1::OrgpoliciesController#set as HTML
+  Parameters: {"session"=>{}, "apikey"=>"tavDXeHQDIGJDAHe8a75EQtt", "lang"=>"en", "url"=>"http:/testworks/english"}
+  [1m[36mInstitution Load (0.2ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = ? LIMIT 1[0m  [["apikey", "tavDXeHQDIGJDAHe8a75EQtt"]]
+  [1m[35mOrgpolicy Load (0.1ms)[0m  SELECT  "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = ? AND "orgpolicies"."lang" = ?  ORDER BY "orgpolicies"."id" ASC LIMIT 1  [["institution_id", 1], ["lang", "en"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mOrgpolicy Exists (0.1ms)[0m  SELECT  1 AS one FROM "orgpolicies" WHERE ("orgpolicies"."lang" = 'en' AND "orgpolicies"."id" != 1 AND "orgpolicies"."institution_id" = 1 AND "orgpolicies"."url" = 'http://testworks/english') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "orgpolicies" SET "url" = ?, "updated_at" = ? WHERE "orgpolicies"."id" = ?[0m  [["url", "http://testworks/english"], ["updated_at", "2017-05-13 09:19:47.770099"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 19ms (Views: 13.9ms | ActiveRecord: 0.5ms)
+  [1m[36mOrgpolicy Load (0.1ms)[0m  [1mSELECT  "orgpolicies".* FROM "orgpolicies" WHERE "orgpolicies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInstitution Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'tesjjjjt.fe' AND "institutions"."inst_realm" = 'tesjjjjt.fe') LIMIT 1[0m
+  [1m[35mInstitution Exists (0.1ms)[0m  SELECT  1 AS one FROM "institutions" WHERE ("institutions"."inst_realm" = 'tesjjjjt.fe' AND "institutions"."country" = 'fi' AND "institutions"."institution_type" = 3 AND "institutions"."inst_realm" = 'tesjjjjt.fe') LIMIT 1
+  [1m[36mInstitution Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "institutions" WHERE "institutions"."apikey" = ? LIMIT 1[0m  [["apikey", "7JzJhheOG5G9q1CiH0G9PAtt"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "institutions" ("id", "institution_type", "country", "inst_realm", "address", "city", "contact_name", "contact_email", "contact_phone", "created_at", "updated_at", "apikey") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 1], ["institution_type", 3], ["country", "fi"], ["inst_realm", "tesjjjjt.fe"], ["address", "Lauttasaarentie 3"], ["city", "Helsinki"], ["contact_name", "Elämäm Mestari"], ["contact_email", "elämäm@mestari.fi"], ["contact_phone", "050505050"], ["created_at", "2017-05-13 09:19:47.796018"], ["updated_at", "2017-05-13 09:19:47.796018"], ["apikey", "7JzJhheOG5G9q1CiH0G9PAtt"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "orgssids" ("institution_id", "wpa_aes", "wpa_tkip", "wpa2_tkip", "wpa2_aes", "name", "wired", "ipv6", "nat", "transp_proxy", "port_restrict", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["institution_id", 1], ["wpa_aes", "f"], ["wpa_tkip", "f"], ["wpa2_tkip", "f"], ["wpa2_aes", "t"], ["name", "eduroam"], ["wired", "f"], ["ipv6", "f"], ["nat", "f"], ["transp_proxy", "f"], ["port_restrict", "f"], ["created_at", "2017-05-13 09:19:47.801556"], ["updated_at", "2017-05-13 09:19:47.801556"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mOrgpolicy Exists (0.1ms)[0m  SELECT  1 AS one FROM "orgpolicies" WHERE ("orgpolicies"."lang" = 'en' AND "orgpolicies"."institution_id" = 1 AND "orgpolicies"."url" = 'lauttasaari.fi/howtosetup_eng') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "orgpolicies" ("id", "lang", "url", "institution_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["lang", "en"], ["url", "lauttasaari.fi/howtosetup_eng"], ["institution_id", 1], ["created_at", "2017-05-13 09:19:47.804570"], ["updated_at", "2017-05-13 09:19:47.804570"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mInstitution Load (0.0ms)[0m  [1mSELECT  "institutions".* FROM "institutions" WHERE "institutions"."id" = ? LIMIT 1[0m  [["id", 1]]
+Processing by Api::V1::OrgpoliciesController#get as HTML
+  Parameters: {"apikey"=>"7JzJhheOG5G9q1CiH0G9PAtt"}
+  [1m[35mInstitution Load (0.1ms)[0m  SELECT  "institutions".* FROM "institutions" WHERE "institutions"."apikey" = ? LIMIT 1  [["apikey", "7JzJhheOG5G9q1CiH0G9PAtt"]]
+  [1m[36mOrgpolicy Load (0.1ms)[0m  [1mSELECT "orgpolicies"."id", "orgpolicies"."lang", "orgpolicies"."url" FROM "orgpolicies" WHERE "orgpolicies"."institution_id" = ?[0m  [["institution_id", 1]]
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction

@@ -15,4 +15,9 @@ RSpec.describe InstitutionsHelper, type: :helper do
     import_data(File.read("lib/assets/haagahelia2.xml"))
     expect(Institution.count).to eql(2)
   end
+  it "successfully imports institutions with multiple contact informations" do
+    import_data(File.read("lib/assets/haagahelia3.xml"))
+    expect(Institution.count).to eql(2)
+  end
+
 end
