@@ -53,7 +53,6 @@ RSpec.describe Api::V1::LocationsController, type: :controller do
     end
     it "checks boolean ok" do
       expect(controller.get_boolean("true")).to eq(true)
-      expect(controller.get_boolean("1")).to eq(true)
       expect(controller.get_boolean("treu")).to eq(false)
       expect(controller.get_boolean("tffsa")).to eq(false)
     end
