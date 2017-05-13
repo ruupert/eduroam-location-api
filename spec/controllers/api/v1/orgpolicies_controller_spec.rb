@@ -23,6 +23,8 @@ RSpec.describe Api::V1::OrgpoliciesController, type: :controller do
                     "institution_id"=>"1"
 
                    })
+    @apikey = Institution.first.apikey
+
   end
 
 
@@ -31,6 +33,11 @@ RSpec.describe Api::V1::OrgpoliciesController, type: :controller do
 
     expect(Orgpolicy.find(1).url).to eq("http://testworks/english")
 
+
+  end
+  it "gets correct listing" do
+    visit "/api/v1/#{@apikey}/get/policies"
+    expect(page).to have_content("lauttasaari.fi/howtosetup_eng")
 
   end
 

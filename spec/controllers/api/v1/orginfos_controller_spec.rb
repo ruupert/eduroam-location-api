@@ -23,6 +23,8 @@ RSpec.describe Api::V1::OrginfosController, type: :controller do
                     "institution_id"=>"1"
 
                    })
+    @apikey = Institution.first.apikey
+
   end
 
 
@@ -33,5 +35,13 @@ RSpec.describe Api::V1::OrginfosController, type: :controller do
 
 
   end
+
+  it "gets correct listing" do
+
+    visit "/api/v1/#{@apikey}/get/infos"
+    expect(page).to have_content("lauttasaari.fi/howtosetup_eng")
+
+  end
+
 
 end
